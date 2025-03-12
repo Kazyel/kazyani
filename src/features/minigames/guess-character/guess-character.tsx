@@ -2,47 +2,44 @@
 
 import { useGuessCharacters } from "@/features/animes/api/use-get-characters";
 import { Character } from "./character";
+import { shuffle } from "lodash";
 
 export type FilteredCharacters = {
-    id: string;
+    id: number;
     label: string;
     image: string;
 };
 
-function shuffle(array: any[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
 export const GuessCharacter = () => {
-    const { data, isLoading } = useGuessCharacters("Howl's Moving Castle");
+    const {
+        characterList,
+        isLoading,
+        isFetching,
+        isSuccess,
+        isError,
+        isInitialLoading,
+    } = useGuessCharacters(2);
 
-    if (isLoading) {
-        return <p>Loading...</p>;
-    }
+    console.log(isLoading, "isLoading");
+    console.log(isFetching, "isFetching");
+    console.log(isSuccess, "isSuccess");
+    console.log(isError, "isError");
+    console.log(isInitialLoading, "isInitialLoading");
 
-    if (!data) {
-        return <p>No data found.</p>;
-    }
+    const filteredCharacters: FilteredCharacters[] = characterList
+        ? characterList!.map((character, index) => ({
+              id: index,
+              label: character.name.full,
+              image: character.image.large,
+          }))
+        : [];
 
-    const charactersList = data!.Media!.characters!.nodes!.filter(
-        (character) => character!.name!.full! !== "Narrator"
-    );
-
-    const filteredCharacters: FilteredCharacters[] = charactersList.map(
-        (character) => ({
-            id: character!.name!.full!,
-            label: character!.name!.full!,
-            image: character!.image!.large!,
-        })
+    const randomStartIndex = Math.floor(
+        Math.random() * filteredCharacters.length
     );
 
     const charactersToGuess: FilteredCharacters[] = shuffle(
-        [...filteredCharacters].slice(0, 4)
+        [...filteredCharacters].slice(randomStartIndex, randomStartIndex + 4)
     );
 
     return (
@@ -52,6 +49,7 @@ export const GuessCharacter = () => {
                 <Character
                     characters={filteredCharacters}
                     charactersToGuess={charactersToGuess}
+                    isLoading={isLoading}
                 />
             </div>
         </>

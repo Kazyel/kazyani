@@ -1,7 +1,7 @@
 "use client";
 
 import { type FilteredCharacters } from "./guess-character";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Suspense } from "react";
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -12,13 +12,17 @@ import {
     CommandList,
 } from "@/components/ui/command";
 
+interface CharacterProps {
+    characters: FilteredCharacters[];
+    charactersToGuess: FilteredCharacters[];
+    isLoading: boolean;
+}
+
 export const Character = ({
     characters,
     charactersToGuess,
-}: {
-    characters: FilteredCharacters[];
-    charactersToGuess: FilteredCharacters[];
-}) => {
+    isLoading,
+}: CharacterProps) => {
     const [characterNames, setCharacterNames] = useState<string[]>([]);
 
     const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -71,6 +75,7 @@ export const Character = ({
                             width={1920}
                             height={1080}
                         />
+
                         <div className="rounded-lg relative drop-shadow-sm">
                             <Command>
                                 <CommandInput
@@ -91,7 +96,7 @@ export const Character = ({
                                         {characters.map((character) => (
                                             <CommandItem
                                                 key={character.id}
-                                                value={character.id}
+                                                value={character.label}
                                                 onSelect={(currentValue) => {
                                                     updateCharacterNames(
                                                         currentValue,

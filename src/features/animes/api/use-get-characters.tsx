@@ -1,44 +1,77 @@
 import { graphql } from "@/gql";
+import { CharacterSort } from "@/gql/graphql";
 import { useQuery } from "@tanstack/react-query";
 import request from "graphql-request";
 
-const fetchAnimeQueryDocument = graphql(
-    `
-        query fetchAnimeQuery($search: String) {
-            Media(type: ANIME, search: $search) {
-                id
-                title {
-                    romaji
-                    english
-                    native
+const fetchCharacterQuery = graphql(`
+    query fetchCharacterQuery(
+        $sort: [CharacterSort]
+        $perPage: Int
+        $page: Int
+    ) {
+        Page(perPage: $perPage, page: $page) {
+            characters(sort: $sort) {
+                image {
+                    large
                 }
-                meanScore
-                popularity
-                description
-                characters(sort: FAVOURITES_DESC) {
-                    nodes {
-                        name {
-                            full
-                            native
-                            alternative
-                        }
-                        image {
-                            large
-                            medium
-                        }
-                    }
+                name {
+                    full
                 }
             }
         }
-    `
-);
+    }
+`);
 
-export const useGuessCharacters = (anime: string) => {
-    const { data, isLoading, isError } = useQuery(["anime", anime], async () =>
-        request("https://graphql.anilist.co", fetchAnimeQueryDocument, {
-            search: anime,
-        })
-    );
+type Characters = {
+    image: {
+        large: string;
+    };
+    name: {
+        full: string;
+    };
+};
 
-    return { data, isLoading, isError };
+const fetchAllCharacters = async (quantity: number) => {
+    let allCharacters: Characters[] = [];
+
+    for (let page = 1; page <= quantity; page++) {
+        const { Page } = await request(
+            "https://graphql.anilist.co",
+            fetchCharacterQuery,
+            {
+                sort: [CharacterSort.FavouritesDesc],
+                perPage: 50,
+                page: page,
+            }
+        );
+
+        allCharacters = (allCharacters as any[]).concat(Page!.characters!);
+    }
+    return allCharacters;
+};
+
+export const useGuessCharacters = (quantity: number) => {
+    const {
+        data: characterList,
+        isLoading,
+        isFetching,
+        isSuccess,
+        isError,
+        isInitialLoading,
+    } = useQuery({
+        queryKey: ["characters"],
+        queryFn: () => fetchAllCharacters(quantity),
+        staleTime: 1000 * 60 * 5,
+    });
+
+    console.log(characterList);
+
+    return {
+        characterList,
+        isLoading,
+        isFetching,
+        isError,
+        isSuccess,
+        isInitialLoading,
+    };
 };
