@@ -22,7 +22,7 @@ const fetchCharacterQuery = graphql(`
     }
 `);
 
-type Characters = {
+export type Characters = {
     image: {
         large: string;
     };
@@ -40,7 +40,7 @@ const fetchAllCharacters = async (quantity: number) => {
             fetchCharacterQuery,
             {
                 sort: [CharacterSort.FavouritesDesc],
-                perPage: 50,
+                perPage: 48,
                 page: page,
             }
         );
@@ -63,8 +63,6 @@ export const useGuessCharacters = (quantity: number) => {
         queryFn: () => fetchAllCharacters(quantity),
         staleTime: 1000 * 60 * 5,
     });
-
-    console.log(characterList);
 
     return {
         characterList,

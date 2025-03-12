@@ -1,8 +1,11 @@
 "use client";
 
 import { type FilteredCharacters } from "./guess-character";
-import { useEffect, useRef, useState, Suspense } from "react";
+import { type Characters } from "@/features/animes/api/use-get-characters";
 
+import { useEffect, useRef, useState, useMemo } from "react";
+
+import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import {
@@ -11,21 +14,21 @@ import {
     CommandItem,
     CommandList,
 } from "@/components/ui/command";
-
 interface CharacterProps {
-    characters: FilteredCharacters[];
-    charactersToGuess: FilteredCharacters[];
+    characterList: Characters[];
     isLoading: boolean;
 }
 
-export const Character = ({
-    characters,
-    charactersToGuess,
-    isLoading,
-}: CharacterProps) => {
+export const Character = ({ characterList, isLoading }: CharacterProps) => {
     const [characterNames, setCharacterNames] = useState<string[]>([]);
-
     const [openIndex, setOpenIndex] = useState<number | null>(null);
+    const [filteredNames, setFilteredNames] = useState<FilteredCharacters[]>(
+        []
+    );
+    const [charactersToGuess, setCharactersToGuess] = useState<
+        FilteredCharacters[]
+    >([]);
+
     const commandListRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -45,6 +48,41 @@ export const Character = ({
         };
     }, []);
 
+    const filteredCharacters: FilteredCharacters[] = useMemo(() => {
+        return characterList
+            ? characterList.map((character, index) => ({
+                  id: index,
+                  label: character.name.full,
+                  image: character.image.large,
+              }))
+            : [];
+    }, [characterList]);
+
+    const shuffleCharacters = () => {
+        const shuffledCharacters: FilteredCharacters[] = [];
+        const usedIndices = new Set<number>();
+
+        while (shuffledCharacters.length < 4) {
+            const randomIndex = Math.floor(
+                Math.random() * filteredCharacters.length
+            );
+
+            if (!usedIndices.has(randomIndex)) {
+                usedIndices.add(randomIndex);
+                shuffledCharacters.push(filteredCharacters[randomIndex]);
+            }
+        }
+
+        return shuffledCharacters;
+    };
+
+    useEffect(() => {
+        if (filteredCharacters.length > 0) {
+            const shuffledCharacters = shuffleCharacters();
+            setCharactersToGuess(shuffledCharacters);
+        }
+    }, [filteredCharacters]);
+
     const updateCharacterNames = (characterName: string, index: number) => {
         const newCharacterNames = [...characterNames];
         newCharacterNames[index] = characterName;
@@ -55,45 +93,89 @@ export const Character = ({
         if (characterNames.length !== 4) {
             alert("Please enter all character names.");
         }
+    };
 
-        if (charactersToGuess) {
-            if (true) {
-                alert("Correct!");
-            }
-        }
+    const sortedNames = filteredNames.sort((a, b) =>
+        a.label.localeCompare(b.label)
+    );
+
+    const handleReShuffle = () => {
+        setOpenIndex(null);
+        setCharacterNames([]);
+
+        const newCharacters = shuffleCharacters();
+        setCharactersToGuess(newCharacters);
+    };
+
+    const handleInputChange = (value: string, index: number) => {
+        setOpenIndex(index);
+        updateCharacterNames(value, index);
+
+        const filtered = filteredCharacters
+            .filter((character) =>
+                character.label.toLowerCase().includes(value.toLowerCase())
+            )
+            .sort((a, b) => a.label.localeCompare(b.label));
+
+        setFilteredNames(filtered.slice(0, 15));
     };
 
     return (
         <>
             <div className="flex gap-x-12">
-                {charactersToGuess.map((_, index) => (
+                {isLoading &&
+                    Array.from({ length: 4 }).map((_, index) => (
+                        <div key={index} className="flex flex-col gap-y-4">
+                            <div className="rounded-lg bg-zinc-200 dark:bg-muted-foreground flex justify-center items-center w-[300px] h-[450px]">
+                                <Loader2 className="animate-spin size-12 text-black dar:text-white" />
+                            </div>
+                            <div className="rounded-lg relative drop-shadow-sm">
+                                <Command>
+                                    <CommandInput placeholder="Enter character name..." />
+
+                                    <CommandList
+                                        ref={commandListRef}
+                                        className="absolute top-10 w-full bg-white drop-shadow-sm rounded-sm z-50 max-h-[225px] transition-transform ease duration-300 translate-y-1"
+                                    ></CommandList>
+                                </Command>
+                            </div>
+                        </div>
+                    ))}
+
+                {charactersToGuess.map((character, index) => (
                     <div key={index} className="flex flex-col gap-y-4">
-                        <Image
-                            src={charactersToGuess[index]!.image!}
-                            alt="Character"
-                            className="rounded-lg w-full h-[400px]"
-                            width={1920}
-                            height={1080}
-                        />
+                        <div className="relative overflow-hidden rounded-lg">
+                            <Image
+                                src={character.image}
+                                alt="Character"
+                                className="drop-shadow-md  w-[300px] h-[450px]"
+                                width={1920}
+                                height={1080}
+                            />
+                            <div className="w-full h-full absolute -bottom-16 from-[#fff]/65 dark:from-[#000]/65 hover:bottom-0 transition-all duration-300 ease to-transparent bg-gradient-to-t z-10"></div>
+                        </div>
 
                         <div className="rounded-lg relative drop-shadow-sm">
-                            <Command>
+                            <Command loop>
                                 <CommandInput
                                     value={characterNames[index]}
                                     onValueChange={(value) => {
-                                        setOpenIndex(index);
-                                        updateCharacterNames(value, index);
+                                        handleInputChange(value, index);
                                     }}
-                                    onFocus={() => setOpenIndex(index)}
                                     placeholder="Enter character name..."
+                                    onKeyDown={(event) => {
+                                        if (event.key === "Escape") {
+                                            setOpenIndex(null); // Close the dropdown
+                                        }
+                                    }}
                                 />
 
                                 {openIndex === index ? (
                                     <CommandList
                                         ref={commandListRef}
-                                        className="absolute top-10 w-full bg-white drop-shadow-sm rounded-sm z-50 max-h-[225px] transition-transform ease duration-300 translate-y-1"
+                                        className="absolute top-10 w-full bg-background drop-shadow-sm rounded-sm z-50 max-h-[225px] transition-transform ease duration-300 translate-y-1"
                                     >
-                                        {characters.map((character) => (
+                                        {sortedNames.map((character) => (
                                             <CommandItem
                                                 key={character.id}
                                                 value={character.label}
@@ -126,9 +208,17 @@ export const Character = ({
                 ))}
             </div>
 
-            <Button className="cursor-pointer" onClick={handleGuessCharacter}>
-                Guess
-            </Button>
+            <div className="flex gap-x-6">
+                <Button
+                    className="cursor-pointer"
+                    onClick={handleGuessCharacter}
+                >
+                    Guess
+                </Button>
+                <Button className="cursor-pointer" onClick={handleReShuffle}>
+                    Re-shuffle
+                </Button>
+            </div>
         </>
     );
 };
