@@ -19,7 +19,7 @@ export type FilteredCharacters = {
 };
 
 export const GuessCharacter = () => {
-    const { characterList, isLoading } = useGetCharacters(15);
+    const { characterList, isLoading } = useGetCharacters(30);
 
     const [characterNames, setCharacterNames] = useState<string[]>([]);
     const [openIndex, setOpenIndex] = useState<number | null>(null);

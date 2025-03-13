@@ -1,26 +1,6 @@
-import { graphql } from "@/gql";
 import { CharacterSort } from "@/gql/graphql";
 import { useQuery } from "@tanstack/react-query";
 import request from "graphql-request";
-
-const fetchCharacterQuery = graphql(`
-    query fetchCharacterQuery(
-        $sort: [CharacterSort]
-        $perPage: Int
-        $page: Int
-    ) {
-        Page(perPage: $perPage, page: $page) {
-            characters(sort: $sort) {
-                image {
-                    large
-                }
-                name {
-                    full
-                }
-            }
-        }
-    }
-`);
 
 export type Characters = {
     image: {
@@ -31,40 +11,69 @@ export type Characters = {
     };
 };
 
-const fetchAllCharacters = async (quantity: number) => {
-    const fetchPage = async (page: number) => {
-        const { Page } = await request(
-            "https://graphql.anilist.co",
-            fetchCharacterQuery,
-            {
-                sort: [CharacterSort.FavouritesDesc],
-                perPage: 48,
-                page: page,
-            }
-        );
-        return Page!.characters!;
+type PageData = {
+    [key: string]: {
+        characters: Characters[];
     };
+};
 
-    const pagePromises = [];
+const characterFields = `
+    image {
+        large
+    }
+    name {
+        full
+    }
+`;
+
+const generateBatchQuery = (quantity: number) => {
+    let query = `
+        query fetchCharacterQuery(
+            $sort: [CharacterSort]
+            $perPage: Int
+        ) {
+    `;
 
     for (let page = 1; page <= quantity; page++) {
-        pagePromises.push(fetchPage(page));
+        query += `
+            page${page}: Page(perPage: $perPage, page: ${page}) {
+                characters(sort: $sort) {
+                    ${characterFields}
+                }
+            }
+        `;
     }
 
-    const pages = (await Promise.all(pagePromises)).flat();
-    return pages as Characters[];
+    query += `
+        }
+    `;
+
+    return query;
+};
+
+const fetchAllCharacters = async (quantity: number) => {
+    const query = generateBatchQuery(quantity);
+
+    const data: PageData = await request("https://graphql.anilist.co", query, {
+        sort: [CharacterSort.FavouritesDesc],
+        perPage: 48,
+    });
+
+    let allCharacters: Characters[] = [];
+
+    for (let page = 1; page <= quantity; page++) {
+        const pageData = data[`page${page}`];
+
+        if (pageData && pageData.characters) {
+            allCharacters = allCharacters.concat(pageData.characters);
+        }
+    }
+
+    return allCharacters;
 };
 
 export const useGetCharacters = (quantity: number) => {
-    const {
-        data: characterList,
-        isLoading,
-        isFetching,
-        isSuccess,
-        isError,
-        isInitialLoading,
-        status,
-    } = useQuery({
+    const { data: characterList, isLoading } = useQuery({
         queryKey: ["characters", quantity],
         queryFn: () => fetchAllCharacters(quantity),
         staleTime: 1000 * 60 * 5,
@@ -73,10 +82,5 @@ export const useGetCharacters = (quantity: number) => {
     return {
         characterList,
         isLoading,
-        isFetching,
-        isError,
-        isSuccess,
-        isInitialLoading,
-        status,
     };
 };
