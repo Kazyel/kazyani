@@ -13,7 +13,6 @@ const fetchCharacterQuery = graphql(`
             characters(sort: $sort) {
                 image {
                     large
-                    medium
                 }
                 name {
                     full
@@ -26,7 +25,6 @@ const fetchCharacterQuery = graphql(`
 export type Characters = {
     image: {
         large: string;
-        medium: string;
     };
     name: {
         full: string;
@@ -34,9 +32,7 @@ export type Characters = {
 };
 
 const fetchAllCharacters = async (quantity: number) => {
-    let allCharacters: Characters[] = [];
-
-    for (let page = 1; page <= quantity; page++) {
+    const fetchPage = async (page: number) => {
         const { Page } = await request(
             "https://graphql.anilist.co",
             fetchCharacterQuery,
@@ -46,10 +42,17 @@ const fetchAllCharacters = async (quantity: number) => {
                 page: page,
             }
         );
+        return Page!.characters!;
+    };
 
-        allCharacters = (allCharacters as any[]).concat(Page!.characters!);
+    const pagePromises = [];
+
+    for (let page = 1; page <= quantity; page++) {
+        pagePromises.push(fetchPage(page));
     }
-    return allCharacters;
+
+    const pages = (await Promise.all(pagePromises)).flat();
+    return pages as Characters[];
 };
 
 export const useGetCharacters = (quantity: number) => {
@@ -62,7 +65,7 @@ export const useGetCharacters = (quantity: number) => {
         isInitialLoading,
         status,
     } = useQuery({
-        queryKey: ["characters"],
+        queryKey: ["characters", quantity],
         queryFn: () => fetchAllCharacters(quantity),
         staleTime: 1000 * 60 * 5,
     });

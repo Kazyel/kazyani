@@ -14,13 +14,12 @@ import { CharacterPortrait } from "./character-portrait";
 
 export type FilteredCharacters = {
     id: number;
-    label: string;
-    imageLarge: string;
-    imageMedium: string;
+    fullName: string;
+    largeImage: string;
 };
 
 export const GuessCharacter = () => {
-    const { characterList, isLoading } = useGetCharacters(8);
+    const { characterList, isLoading } = useGetCharacters(15);
 
     const [characterNames, setCharacterNames] = useState<string[]>([]);
     const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -54,9 +53,8 @@ export const GuessCharacter = () => {
         return characterList
             ? characterList.map((character, index) => ({
                   id: index,
-                  label: character.name.full,
-                  imageLarge: character.image.large,
-                  imageMedium: character.image.medium,
+                  fullName: character.name.full,
+                  largeImage: character.image.large,
               }))
             : [];
     }, [characterList]);
@@ -93,7 +91,7 @@ export const GuessCharacter = () => {
     };
 
     const sortedNames = filteredNames.sort((a, b) =>
-        a.label.localeCompare(b.label)
+        a.fullName.localeCompare(b.fullName)
     );
 
     const handleReShuffle = () => {
@@ -110,9 +108,9 @@ export const GuessCharacter = () => {
 
         const filtered = filteredCharacters
             .filter((character) =>
-                character.label.toLowerCase().includes(value.toLowerCase())
+                character.fullName.toLowerCase().includes(value.toLowerCase())
             )
-            .sort((a, b) => a.label.localeCompare(b.label));
+            .sort((a, b) => a.fullName.localeCompare(b.fullName));
 
         setFilteredNames(filtered.slice(0, 15));
     };
@@ -138,10 +136,10 @@ export const GuessCharacter = () => {
                     {charactersToGuess.map((character, index) => (
                         <div key={index} className="flex flex-col gap-y-4">
                             <CharacterPortrait
-                                characterImage={character.imageLarge}
+                                characterImage={character.largeImage}
                             />
 
-                            <div className="rounded-lg relative drop-shadow-sm">
+                            <div className="rounded-lg relative drop-shadow-sm z-50">
                                 <Command loop>
                                     <CommandInput
                                         value={characterNames[index]}
@@ -164,7 +162,7 @@ export const GuessCharacter = () => {
                                             {sortedNames.map((character) => (
                                                 <CommandItem
                                                     key={character.id}
-                                                    value={character.label}
+                                                    value={character.fullName}
                                                     onSelect={(
                                                         currentValue
                                                     ) => {
@@ -177,13 +175,13 @@ export const GuessCharacter = () => {
                                                     onMouseDown={(event) => {
                                                         event.preventDefault();
                                                         updateCharacterNames(
-                                                            character.label,
+                                                            character.fullName,
                                                             index
                                                         );
                                                         setOpenIndex(null);
                                                     }}
                                                 >
-                                                    {character.label}
+                                                    {character.fullName}
                                                 </CommandItem>
                                             ))}
                                         </CommandList>
