@@ -54,15 +54,21 @@ const generateBatchQuery = (quantity: number) => {
 const fetchAllCharacters = async (quantity: number) => {
     const query = generateBatchQuery(quantity);
 
-    const data: PageData = await request("https://graphql.anilist.co", query, {
+    const variables = {
         sort: [CharacterSort.FavouritesDesc],
         perPage: 48,
-    });
+    };
+
+    const pages: PageData = await request(
+        "https://graphql.anilist.co",
+        query,
+        variables
+    );
 
     let allCharacters: Characters[] = [];
 
     for (let page = 1; page <= quantity; page++) {
-        const pageData = data[`page${page}`];
+        const pageData = pages[`page${page}`];
 
         if (pageData && pageData.characters) {
             allCharacters = allCharacters.concat(pageData.characters);
