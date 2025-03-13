@@ -14,10 +14,10 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
-    "\n    query fetchCharacterQuery(\n        $sort: [CharacterSort]\n        $perPage: Int\n        $page: Int\n    ) {\n        Page(perPage: $perPage, page: $page) {\n            characters(sort: $sort) {\n                image {\n                    large\n                }\n                name {\n                    full\n                }\n            }\n        }\n    }\n": typeof types.FetchCharacterQueryDocument,
+    "\n    query fetchCharacterQuery(\n        $sort: [CharacterSort]\n        $perPage: Int\n        $page: Int\n    ) {\n        Page(perPage: $perPage, page: $page) {\n            characters(sort: $sort) {\n                image {\n                    large\n                    medium\n                }\n                name {\n                    full\n                }\n            }\n        }\n    }\n": typeof types.FetchCharacterQueryDocument,
 };
 const documents: Documents = {
-    "\n    query fetchCharacterQuery(\n        $sort: [CharacterSort]\n        $perPage: Int\n        $page: Int\n    ) {\n        Page(perPage: $perPage, page: $page) {\n            characters(sort: $sort) {\n                image {\n                    large\n                }\n                name {\n                    full\n                }\n            }\n        }\n    }\n": types.FetchCharacterQueryDocument,
+    "\n    query fetchCharacterQuery(\n        $sort: [CharacterSort]\n        $perPage: Int\n        $page: Int\n    ) {\n        Page(perPage: $perPage, page: $page) {\n            characters(sort: $sort) {\n                image {\n                    large\n                    medium\n                }\n                name {\n                    full\n                }\n            }\n        }\n    }\n": types.FetchCharacterQueryDocument,
 };
 
 /**
@@ -37,7 +37,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    query fetchCharacterQuery(\n        $sort: [CharacterSort]\n        $perPage: Int\n        $page: Int\n    ) {\n        Page(perPage: $perPage, page: $page) {\n            characters(sort: $sort) {\n                image {\n                    large\n                }\n                name {\n                    full\n                }\n            }\n        }\n    }\n"): (typeof documents)["\n    query fetchCharacterQuery(\n        $sort: [CharacterSort]\n        $perPage: Int\n        $page: Int\n    ) {\n        Page(perPage: $perPage, page: $page) {\n            characters(sort: $sort) {\n                image {\n                    large\n                }\n                name {\n                    full\n                }\n            }\n        }\n    }\n"];
+export function graphql(source: "\n    query fetchCharacterQuery(\n        $sort: [CharacterSort]\n        $perPage: Int\n        $page: Int\n    ) {\n        Page(perPage: $perPage, page: $page) {\n            characters(sort: $sort) {\n                image {\n                    large\n                    medium\n                }\n                name {\n                    full\n                }\n            }\n        }\n    }\n"): (typeof documents)["\n    query fetchCharacterQuery(\n        $sort: [CharacterSort]\n        $perPage: Int\n        $page: Int\n    ) {\n        Page(perPage: $perPage, page: $page) {\n            characters(sort: $sort) {\n                image {\n                    large\n                    medium\n                }\n                name {\n                    full\n                }\n            }\n        }\n    }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

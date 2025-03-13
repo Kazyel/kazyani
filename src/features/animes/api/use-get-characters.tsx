@@ -13,6 +13,7 @@ const fetchCharacterQuery = graphql(`
             characters(sort: $sort) {
                 image {
                     large
+                    medium
                 }
                 name {
                     full
@@ -25,6 +26,7 @@ const fetchCharacterQuery = graphql(`
 export type Characters = {
     image: {
         large: string;
+        medium: string;
     };
     name: {
         full: string;

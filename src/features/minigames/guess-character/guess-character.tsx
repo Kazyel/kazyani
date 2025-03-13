@@ -6,11 +6,14 @@ import { Character } from "./character";
 export type FilteredCharacters = {
     id: number;
     label: string;
-    image: string;
+    imageLarge: string;
+    imageMedium: string;
 };
 
 export const GuessCharacter = () => {
     const { characterList, isLoading } = useGuessCharacters(4);
+
+    console.log(characterList);
 
     return (
         <>

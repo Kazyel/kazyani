@@ -5,8 +5,7 @@ import { type Characters } from "@/features/animes/api/use-get-characters";
 
 import { useEffect, useRef, useState, useMemo } from "react";
 
-import { Loader2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ButtonRipple } from "@/components/button-ripple";
 import Image from "next/image";
 import {
     Command,
@@ -14,6 +13,8 @@ import {
     CommandItem,
     CommandList,
 } from "@/components/ui/command";
+import { Loader2 } from "lucide-react";
+
 interface CharacterProps {
     characterList: Characters[];
     isLoading: boolean;
@@ -53,7 +54,8 @@ export const Character = ({ characterList, isLoading }: CharacterProps) => {
             ? characterList.map((character, index) => ({
                   id: index,
                   label: character.name.full,
-                  image: character.image.large,
+                  imageLarge: character.image.large,
+                  imageMedium: character.image.medium,
               }))
             : [];
     }, [characterList]);
@@ -126,7 +128,7 @@ export const Character = ({ characterList, isLoading }: CharacterProps) => {
                 {isLoading &&
                     Array.from({ length: 4 }).map((_, index) => (
                         <div key={index} className="flex flex-col gap-y-4">
-                            <div className="rounded-lg bg-zinc-200 dark:bg-muted-foreground flex justify-center items-center w-[300px] h-[450px]">
+                            <div className="rounded-lg bg-zinc-200 dark:bg-muted-foreground flex justify-center items-center w-[275px] h-[375px]">
                                 <Loader2 className="animate-spin size-12 text-black dar:text-white" />
                             </div>
                             <div className="rounded-lg relative drop-shadow-sm">
@@ -143,14 +145,17 @@ export const Character = ({ characterList, isLoading }: CharacterProps) => {
                     ))}
 
                 {charactersToGuess.map((character, index) => (
-                    <div key={index} className="flex flex-col gap-y-4">
+                    <div
+                        key={index}
+                        className="flex flex-col gap-y-4  w-[275px] h-[425px]"
+                    >
                         <div className="relative overflow-hidden rounded-lg">
                             <Image
-                                src={character.image}
+                                src={character.imageLarge}
                                 alt="Character"
-                                className="drop-shadow-md  w-[300px] h-[450px]"
-                                width={1920}
-                                height={1080}
+                                className="drop-shadow-md  w-[275px] h-[425px]"
+                                width={275}
+                                height={425}
                             />
                             <div className="w-full h-full absolute -bottom-16 from-[#fff]/65 dark:from-[#000]/65 hover:bottom-0 transition-all duration-300 ease to-transparent bg-gradient-to-t z-10"></div>
                         </div>
@@ -165,7 +170,7 @@ export const Character = ({ characterList, isLoading }: CharacterProps) => {
                                     placeholder="Enter character name..."
                                     onKeyDown={(event) => {
                                         if (event.key === "Escape") {
-                                            setOpenIndex(null); // Close the dropdown
+                                            setOpenIndex(null);
                                         }
                                     }}
                                 />
@@ -209,15 +214,16 @@ export const Character = ({ characterList, isLoading }: CharacterProps) => {
             </div>
 
             <div className="flex gap-x-6">
-                <Button
-                    className="cursor-pointer"
-                    onClick={handleGuessCharacter}
-                >
+                <ButtonRipple className="cursor-pointer" onClick={() => {}}>
                     Guess
-                </Button>
-                <Button className="cursor-pointer" onClick={handleReShuffle}>
+                </ButtonRipple>
+                <ButtonRipple
+                    className="cursor-pointer"
+                    onClick={handleReShuffle}
+                >
                     Re-shuffle
-                </Button>
+                </ButtonRipple>
+                <ButtonRipple className="cursor-pointer">Foda-se?</ButtonRipple>
             </div>
         </>
     );
