@@ -52,7 +52,7 @@ const fetchAllCharacters = async (quantity: number) => {
     return allCharacters;
 };
 
-export const useGuessCharacters = (quantity: number) => {
+export const useGetCharacters = (quantity: number) => {
     const {
         data: characterList,
         isLoading,
@@ -60,6 +60,7 @@ export const useGuessCharacters = (quantity: number) => {
         isSuccess,
         isError,
         isInitialLoading,
+        status,
     } = useQuery({
         queryKey: ["characters"],
         queryFn: () => fetchAllCharacters(quantity),
@@ -73,5 +74,6 @@ export const useGuessCharacters = (quantity: number) => {
         isError,
         isSuccess,
         isInitialLoading,
+        status,
     };
 };

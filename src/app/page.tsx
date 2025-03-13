@@ -1,6 +1,6 @@
 "use client";
 
-import { GuessCharacter } from "@/features/minigames/guess-character/guess-character";
+import { GuessCharacter } from "@/features/guess-character/components/guess-character";
 
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
