@@ -3,18 +3,18 @@ import { useQuery } from "@tanstack/react-query";
 import request from "graphql-request";
 
 export type Characters = {
-    image: {
-        large: string;
-    };
-    name: {
-        full: string;
-    };
+  image: {
+    large: string;
+  };
+  name: {
+    full: string;
+  };
 };
 
 type PageData = {
-    [key: string]: {
-        characters: Characters[];
-    };
+  [key: string]: {
+    characters: Characters[];
+  };
 };
 
 const characterFields = `
@@ -27,66 +27,62 @@ const characterFields = `
 `;
 
 const generateBatchQuery = (quantity: number) => {
-    let query = `
+  let query = `
         query fetchCharacterQuery(
             $sort: [CharacterSort]
             $perPage: Int
         ) {
     `;
 
-    for (let page = 1; page <= quantity; page++) {
-        query += `
+  for (let page = 1; page <= quantity; page++) {
+    query += `
             page${page}: Page(perPage: $perPage, page: ${page}) {
                 characters(sort: $sort) {
                     ${characterFields}
                 }
             }
         `;
-    }
+  }
 
-    query += `
+  query += `
         }
     `;
 
-    return query;
+  return query;
 };
 
 const fetchAllCharacters = async (quantity: number) => {
-    const query = generateBatchQuery(quantity);
+  const query = generateBatchQuery(quantity);
 
-    const variables = {
-        sort: [CharacterSort.FavouritesDesc],
-        perPage: 48,
-    };
+  const variables = {
+    sort: [CharacterSort.FavouritesDesc],
+    perPage: 48,
+  };
 
-    const pages: PageData = await request(
-        "https://graphql.anilist.co",
-        query,
-        variables
-    );
+  const pages: PageData = await request("https://graphql.anilist.co", query, variables);
 
-    let allCharacters: Characters[] = [];
+  let allCharacters: Characters[] = [];
 
-    for (let page = 1; page <= quantity; page++) {
-        const pageData = pages[`page${page}`];
+  for (let page = 1; page <= quantity; page++) {
+    const pageData = pages[`page${page}`];
 
-        if (pageData && pageData.characters) {
-            allCharacters = allCharacters.concat(pageData.characters);
-        }
+    if (pageData && pageData.characters) {
+      allCharacters = allCharacters.concat(pageData.characters);
     }
+  }
 
-    return allCharacters;
+  return allCharacters;
 };
 
 export const useGetCharacters = (quantity: number) => {
-    const { data: characterList, isLoading } = useQuery({
-        queryKey: ["characters", quantity],
-        queryFn: () => fetchAllCharacters(quantity),
-        staleTime: 1000 * 60 * 5,
-    });
+  const { data: characterList, isLoading } = useQuery({
+    queryKey: ["characters", quantity],
+    queryFn: () => fetchAllCharacters(quantity),
+    staleTime: 1000 * 60 * 5,
+  });
 
-    return {
-        characterList,
-        isLoading,
-    };
+  return {
+    characterList,
+    isLoading,
+  };
 };
