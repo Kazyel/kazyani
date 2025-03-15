@@ -20,6 +20,12 @@ export const CharacterPortrait = ({ characterImage, isLoading }: CharacterPortra
 
             <CommandList className="absolute top-10 w-full bg-white drop-shadow-sm rounded-sm z-50 max-h-[225px] transition-transform ease duration-300 translate-y-1"></CommandList>
           </Command>
+
+          <Command>
+            <CommandInput placeholder="Enter character name..." />
+
+            <CommandList className="absolute top-10 w-full bg-white drop-shadow-sm rounded-sm z-50 max-h-[225px] transition-transform ease duration-300 translate-y-1"></CommandList>
+          </Command>
         </div>
       </div>
     );

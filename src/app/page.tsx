@@ -1,6 +1,6 @@
 "use client";
 
-import { GuessCharacter } from "@/features/guess-character/components/guess-character";
+// import { GuessCharacter } from "@/features/guess-character/components/guess-character";
 
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
@@ -13,6 +13,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+import { GuessCharacter } from "@/features/guess-character/components/guess-character";
 
 export default function Home() {
   const { setTheme } = useTheme();

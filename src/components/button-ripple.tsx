@@ -28,7 +28,6 @@ export const ButtonRipple = ({ children, className, onClick }: ButtonCircleProps
 
       button!.appendChild(circle);
 
-      console.log("xdd");
       circle.addEventListener("animationend", () => {
         circle.remove();
       });
