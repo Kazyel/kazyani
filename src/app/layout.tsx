@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
+import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Providers from "@/components/providers";
+
 import { Toaster } from "sonner";
+import Providers from "@/components/providers";
+
+import "./globals.css";
+
+export const apolloClient = new ApolloClient({
+  uri: "https://shikimori.one/api/graphql",
+  cache: new InMemoryCache(),
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

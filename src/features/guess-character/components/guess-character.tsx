@@ -28,8 +28,7 @@ export type GuessedEntries = {
 };
 
 export const GuessCharacter = () => {
-  const { data, isLoading } = useGetCharacters(10);
-  console.log(data);
+  const { data, isLoading } = useGetCharacters(5);
 
   const [characterInput, setCharacterInput] = useState<string[]>([]);
   const [animeInput, setAnimeInput] = useState<string[]>([]);
@@ -66,7 +65,7 @@ export const GuessCharacter = () => {
   const commandCharacterRef = useRef<HTMLDivElement>(null);
   const commandAnimeRef = useRef<HTMLDivElement>(null);
 
-  const shuffleCharacters = () => {
+  const populateCharacters = () => {
     const shuffledCharacters: GuessEntry[] = [];
     const usedIndices = new Set<number>();
 
@@ -155,7 +154,7 @@ export const GuessCharacter = () => {
 
   useEffect(() => {
     if (data) {
-      const shuffledCharacters = shuffleCharacters();
+      const shuffledCharacters = populateCharacters();
 
       setCharactersToGuess(shuffledCharacters);
       populateAnimesToSearch();
@@ -252,8 +251,8 @@ export const GuessCharacter = () => {
     handleGuess(animeName, index, guessedAnimes, setGuessedAnimes, animeInput, setAnimeInput);
   };
 
-  const handleReShuffle = () => {
-    const newCharacters = shuffleCharacters();
+  const handleRestartGame = () => {
+    const newCharacters = populateCharacters();
 
     setOpenCharacterSearch(null);
     setOpenAnimeSearch(null);
@@ -477,7 +476,7 @@ export const GuessCharacter = () => {
               Guess
             </ButtonRipple>
           )}
-          <ButtonRipple className="cursor-pointer" onClick={handleReShuffle}>
+          <ButtonRipple className="cursor-pointer" onClick={handleRestartGame}>
             Re-shuffle
           </ButtonRipple>
         </div>

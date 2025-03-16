@@ -30,31 +30,6 @@ type PageData = {
   };
 };
 
-const fullQuery = `
-query MediaList($sort: [MediaSort], $mediaPerPage: Int$page: Int, $perPage: Int, $charactersSort: [CharacterSort]) {
-    media(sort: $sort) {
-        title {
-          english
-          romaji
-      }
-      characters(page: $page, perPage: $perPage, sort: $charactersSort ) {
-        nodes {
-          id
-          image {
-            large
-          }
-          name {
-            full
-          }
-          favourites
-        }
-      }
-    
-      }
-    }
-  }
-`;
-
 const generateBatchQuery = (quantity: number) => {
   let query = `
         query MediaList($sort: [MediaSort], $mediaPerPage: Int, $perPage: Int, $charactersSort: [CharacterSort]) {    
