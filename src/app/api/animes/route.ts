@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { apolloClient } from "@/app/layout";
 import { gql } from "@apollo/client";
-import fs from "fs";
-import { normalizeFranchise } from "@/lib/write-json-anime-data";
 
 export type AnimeResponse = {
   franchiseList: SerializedFranchiseList;
@@ -33,8 +31,11 @@ export type Franchises = {
   synonyms: string[];
 };
 
-export type SerializedFranchiseList = {
-  [key: string]: Omit<Franchises, "franchiseCharacters"> & { franchiseCharacters: number[] };
+export type FranchisesList = Map<string, Franchises>;
+
+export type SerializedFranchiseList = { [key: string]: SerializedFranchise };
+export type SerializedFranchise = Omit<Franchises, "franchiseCharacters"> & {
+  franchiseCharacters: number[];
 };
 
 export type AnimeFranchiseList = {
@@ -43,22 +44,27 @@ export type AnimeFranchiseList = {
 
 export const addToFranchiseList = (
   anime: AnimeRequestData,
-  franchise: string,
-  list: AnimeFranchiseList
+  franchiseList: FranchisesList,
+  franchise: string
 ) => {
-  if (!list[franchise]) {
-    list[franchise] = {
+  if (!franchiseList.has(franchise)) {
+    franchiseList.set(franchise, {
       main: franchise,
-      franchiseCharacters: new Set(),
+      franchiseCharacters: new Set<number>(),
       synonyms: [],
-    };
+    });
   }
 
-  list[franchise].synonyms.push(anime.name);
+  const franchiseEntry = franchiseList.get(franchise)!;
+  franchiseEntry.synonyms.push(anime.name);
 
-  anime.characterRoles.map((character) => {
-    list[franchise].franchiseCharacters.add(character.character.id);
-  });
+  for (const character of anime.characterRoles) {
+    franchiseEntry.franchiseCharacters.add(character.character.id);
+  }
+};
+
+const normalizeFranchise = (franchise: string) => {
+  return franchise.replace(/[\s-]+/g, "_").toLowerCase();
 };
 
 export async function GET(req: NextRequest, res: NextResponse) {
@@ -104,37 +110,29 @@ export async function GET(req: NextRequest, res: NextResponse) {
   }
 
   const animes: AnimesList = Object.values(data).flat();
-  const franchiseList: AnimeFranchiseList = {};
-  const allMainAnimes: string[] = [];
 
-  animes.forEach((anime) => {
-    if (!anime.franchise) {
-      const franchiseName = normalizeFranchise(anime.name);
-      addToFranchiseList(anime, franchiseName, franchiseList);
-      return;
-    }
-
-    addToFranchiseList(anime, anime.franchise, franchiseList);
-  });
-
-  Object.keys(franchiseList).forEach((franchise) => {
-    const mainAnime = franchiseList[franchise].synonyms[0];
-
-    if (mainAnime) {
-      allMainAnimes.push(mainAnime);
-    }
-  });
-
-  allMainAnimes.sort((a, b) => a.localeCompare(b));
+  const franchiseList: FranchisesList = animes.reduce((acc, anime) => {
+    const franchiseName = anime.franchise ? anime.franchise : normalizeFranchise(anime.name);
+    addToFranchiseList(anime, acc, franchiseName);
+    return acc;
+  }, new Map<string, Franchises>());
 
   const serializedFranchiseList: SerializedFranchiseList = {};
+  const allMainAnimes: string[] = [];
 
-  Object.keys(franchiseList).forEach((franchise) => {
+  for (const [franchise, data] of franchiseList.entries()) {
     serializedFranchiseList[franchise] = {
-      ...franchiseList[franchise],
-      franchiseCharacters: [...franchiseList[franchise].franchiseCharacters].sort((a, b) => a - b),
+      main: data.main,
+      franchiseCharacters: [...data.franchiseCharacters].sort((a, b) => a - b),
+      synonyms: data.synonyms,
     };
-  });
+
+    if (data.synonyms[0]) {
+      allMainAnimes.push(data.synonyms[0]);
+    }
+  }
+
+  allMainAnimes.sort((a, b) => a.localeCompare(b));
 
   return NextResponse.json<AnimeResponse>({
     franchiseList: serializedFranchiseList,
