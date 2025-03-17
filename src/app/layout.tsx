@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { Toaster } from "sonner";
