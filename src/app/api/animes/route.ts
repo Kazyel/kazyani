@@ -1,50 +1,19 @@
+import {
+  AnimeRequest,
+  AnimeRequestData,
+  AnimeResponse,
+  Franchise,
+  FranchiseList,
+  SerializedFranchiseList,
+} from "@/types";
+
 import { NextRequest, NextResponse } from "next/server";
 import { apolloClient } from "@/app/layout";
 import { gql } from "@apollo/client";
 
-export type AnimeResponse = {
-  franchiseList: SerializedFranchiseList;
-  allMainAnimes: string[];
-};
-
-export type AnimeRequest = {
-  [key: string]: AnimesList;
-};
-
-export type AnimesList = AnimeRequestData[];
-
-export type AnimeRequestData = {
-  id: number;
-  malId: number;
-  name: string;
-  franchise: string;
-  characterRoles: {
-    character: {
-      id: number;
-    };
-  }[];
-};
-
-export type Franchises = {
-  main: string;
-  franchiseCharacters: Set<number>;
-  synonyms: string[];
-};
-
-export type FranchisesList = Map<string, Franchises>;
-
-export type SerializedFranchiseList = { [key: string]: SerializedFranchise };
-export type SerializedFranchise = Omit<Franchises, "franchiseCharacters"> & {
-  franchiseCharacters: number[];
-};
-
-export type AnimeFranchiseList = {
-  [key: string]: Franchises;
-};
-
 export const addToFranchiseList = (
   anime: AnimeRequestData,
-  franchiseList: FranchisesList,
+  franchiseList: FranchiseList,
   franchise: string
 ) => {
   if (!franchiseList.has(franchise)) {
@@ -109,15 +78,16 @@ export async function GET(req: NextRequest, res: NextResponse) {
     });
   }
 
-  const animes: AnimesList = Object.values(data).flat();
+  const animes: AnimeRequestData[] = Object.values(data).flat();
 
-  const franchiseList: FranchisesList = animes.reduce((acc, anime) => {
+  const franchiseList: FranchiseList = animes.reduce((acc, anime) => {
     const franchiseName = anime.franchise ? anime.franchise : normalizeFranchise(anime.name);
     addToFranchiseList(anime, acc, franchiseName);
     return acc;
-  }, new Map<string, Franchises>());
+  }, new Map<string, Franchise>());
 
   const serializedFranchiseList: SerializedFranchiseList = {};
+
   const allMainAnimes: string[] = [];
 
   for (const [franchise, data] of franchiseList.entries()) {
