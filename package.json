@@ -2,12 +2,12 @@
   "name": "kazyani",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.13.4",
@@ -39,7 +39,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@graphql-codegen/cli": "5.0.5",
     "@tailwindcss/postcss": "^4",
     "@tanstack/eslint-plugin-query": "4",
     "@types/node": "^20",
@@ -48,9 +47,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.2",
     "tailwindcss": "^4",
-    "typescript": "^5.8.2",
-    "@graphql-codegen/typescript": "4.1.5",
-    "@graphql-codegen/typescript-document-nodes": "4.0.15",
-    "@graphql-codegen/introspection": "4.0.3"
+    "typescript": "^5.8.2"
   }
 }

@@ -5,12 +5,15 @@
  * @property `string[]` synonyms - Alternative names for the franchise.
  */
 
-export type Franchise<T extends Set<number> | number[] = Set<number>> = {
+export type Franchise<T = Set<number> | number[]> = {
+  popularityRank: number;
+  id: number;
   main: string;
+  mainTitle: string;
   franchiseCharacters: T;
   synonyms: string[];
 };
 
-export type FranchiseList = Map<string, Franchise>;
-
+export type InMemoryFranchise = Franchise<Set<number>>;
+export type FranchiseList = Map<string, InMemoryFranchise>;
 export type SerializedFranchiseList = Record<string, Franchise<number[]>>;
