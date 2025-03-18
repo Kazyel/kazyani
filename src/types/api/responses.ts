@@ -1,5 +1,7 @@
-import { SerializedFranchiseList } from "../franchise";
+import type { AnimeMediaData, SerializedFranchiseList } from "../animes";
 
-export type AnimeResponse = {
+export type FranchisesResponse = {
   franchiseList: SerializedFranchiseList;
 };
+
+export type AnimesMediaResponse = AnimeMediaData[];

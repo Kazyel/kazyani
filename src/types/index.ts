@@ -1,1 +1,1 @@
-export * from "./franchise";
+export * from "./animes";

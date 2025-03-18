@@ -1,5 +1,5 @@
 import type { FranchiseList, InMemoryFranchise, SerializedFranchiseList } from "@/types";
-import { AnimeRequest, AnimeRequestData, AnimeResponse } from "@/types/api";
+import { FranchiseRequest, FranchiseRequestData, FranchisesResponse } from "@/types/api";
 import { NextRequest, NextResponse } from "next/server";
 
 import { shikimoriClient } from "@/app/layout";
@@ -30,7 +30,7 @@ const buildAnimesQuery = (pageCount: number, pageOffset: number) => {
 
 const fetchAnimesData = async (pageCount: number, pageOffset: number) => {
   try {
-    const { data } = await shikimoriClient.query<AnimeRequest>({
+    const { data } = await shikimoriClient.query<FranchiseRequest>({
       query: gql(buildAnimesQuery(pageCount, pageOffset)),
       context: {
         uri: "https://shikimori.one/api/graphql",
@@ -45,7 +45,7 @@ const fetchAnimesData = async (pageCount: number, pageOffset: number) => {
 };
 
 export const addToFranchiseList = (
-  anime: AnimeRequestData,
+  anime: FranchiseRequestData,
   franchiseList: FranchiseList,
   franchise: string,
   popularityRank: number
@@ -68,7 +68,7 @@ const normalizeFranchise = (franchise: string) => {
   return franchise.replace(/[\s-]+/g, "_").toLowerCase();
 };
 
-export const buildFranchiseList = (animes: AnimeRequestData[]) => {
+export const buildFranchiseList = (animes: FranchiseRequestData[]) => {
   return animes.reduce((acc, anime, popularityRank) => {
     const franchiseName = anime.franchise ? anime.franchise : normalizeFranchise(anime.name);
 
@@ -134,7 +134,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
   const serializedFranchiseList: SerializedFranchiseList = serializeFranchiseList(franchiseList);
 
-  return NextResponse.json<AnimeResponse>({
+  return NextResponse.json<FranchisesResponse>({
     franchiseList: serializedFranchiseList,
   });
 }

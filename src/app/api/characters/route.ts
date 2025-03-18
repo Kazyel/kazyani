@@ -1,15 +1,16 @@
-import type { SerializedFranchiseList } from "@/types";
+import type { AnimeMediaData, SerializedFranchiseList } from "@/types";
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 import data from "@/data/franchiseList.json";
 import { anilistClient } from "@/app/layout";
 import { gql } from "@apollo/client";
+import { AnimeRequestData, AnimesMediaResponse } from "@/types/api";
 
 const buildAnimeQuery = (animes: string[]) => {
   const animesData = Array.from(animes).map((_, i) => {
     return `
-     character${i}: Media (search: "${animes[i]}", sort: $mediaSort) {
+     anime${i}: Media (search: "${animes[i]}", sort: $mediaSort) {
         id
         idMal
         title {
@@ -34,7 +35,7 @@ const buildAnimeQuery = (animes: string[]) => {
 
 const fetchAnimeData = async (animes: string[]) => {
   try {
-    const { data } = await anilistClient.query({
+    const { data } = await anilistClient.query<AnimeRequestData[]>({
       query: gql(buildAnimeQuery(animes)),
       variables: {
         sort: "FAVOURITES_DESC",
@@ -87,5 +88,18 @@ export async function GET() {
     });
   }
 
-  return NextResponse.json({ animesData });
+  const animesMedia: AnimeMediaData[] = animesData.map((anime) => {
+    return {
+      ...anime,
+      characters: anime.characters.nodes
+        .map((character) => ({
+          name: {
+            full: character.name.full,
+          },
+        }))
+        .filter((char) => char.name.full.toLowerCase() !== "narrator"),
+    };
+  });
+
+  return NextResponse.json<AnimesMediaResponse>(animesMedia);
 }

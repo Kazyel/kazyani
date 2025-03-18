@@ -1,4 +1,16 @@
-export type AnimeRequestData = {
+import { AnimeMediaData } from "../animes";
+
+export type AnimeRequestData = Omit<AnimeMediaData, "characters"> & {
+  characters: {
+    nodes: {
+      name: {
+        full: string;
+      };
+    }[];
+  };
+};
+
+export type FranchiseRequestData = {
   id: number;
   malId: number;
   name: string;
@@ -10,4 +22,4 @@ export type AnimeRequestData = {
   }[];
 };
 
-export type AnimeRequest = Record<string, AnimeRequestData[]>;
+export type FranchiseRequest = Record<string, FranchiseRequestData[]>;
