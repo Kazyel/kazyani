@@ -7,9 +7,14 @@ import Providers from "@/components/providers";
 
 import "./globals.css";
 
-export const apolloClient = new ApolloClient({
+export const shikimoriClient = new ApolloClient({
   uri: "https://shikimori.one/api/graphql",
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({ addTypename: false }),
+});
+
+export const anilistClient = new ApolloClient({
+  uri: "https://graphql.anilist.co",
+  cache: new InMemoryCache({ addTypename: false }),
 });
 
 const geistSans = Geist({

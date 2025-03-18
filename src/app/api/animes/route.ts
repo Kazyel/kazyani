@@ -1,10 +1,8 @@
-import { FranchiseList, InMemoryFranchise, SerializedFranchiseList } from "@/types";
+import type { FranchiseList, InMemoryFranchise, SerializedFranchiseList } from "@/types";
 import { AnimeRequest, AnimeRequestData, AnimeResponse } from "@/types/api";
 import { NextRequest, NextResponse } from "next/server";
 
-import fs from "fs";
-
-import { apolloClient } from "@/app/layout";
+import { shikimoriClient } from "@/app/layout";
 import { gql } from "@apollo/client";
 
 import { writeJSONAnimeData } from "@/lib/scripts/write-json-anime-data";
@@ -32,8 +30,11 @@ const buildAnimesQuery = (pageCount: number, pageOffset: number) => {
 
 const fetchAnimesData = async (pageCount: number, pageOffset: number) => {
   try {
-    const { data } = await apolloClient.query<AnimeRequest>({
+    const { data } = await shikimoriClient.query<AnimeRequest>({
       query: gql(buildAnimesQuery(pageCount, pageOffset)),
+      context: {
+        uri: "https://shikimori.one/api/graphql",
+      },
     });
 
     return Object.values(data).flat();
