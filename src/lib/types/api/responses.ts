@@ -1,7 +1,15 @@
-import type { AnimeMediaData, SerializedFranchiseList } from "../animes";
+import type { FranchiseList } from "../animes";
 
 export type FranchisesResponse = {
-  franchiseList: SerializedFranchiseList;
+  franchiseList: FranchiseList;
 };
 
-export type AnimesMediaResponse = AnimeMediaData[];
+export type CharacterInfo = {
+  animeName: string;
+  characterId: number;
+  characterName: string;
+  characterImage: string;
+  favourites: number;
+};
+
+export type CharactersResponse = Record<string, CharacterInfo>;

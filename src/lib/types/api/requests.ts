@@ -3,9 +3,15 @@ import { AnimeMediaData } from "../animes";
 export type AnimeRequestData = Omit<AnimeMediaData, "characters"> & {
   characters: {
     nodes: {
+      id: number;
+      image: {
+        large: string;
+      };
       name: {
+        native: string;
         full: string;
       };
+      favourites: number;
     }[];
   };
 };
