@@ -10,6 +10,8 @@ export type AnimeRequestData = Omit<AnimeMediaData, "characters"> & {
   };
 };
 
+export type AnimeRequest = AnimeRequestData[];
+
 export type FranchiseRequestData = {
   id: number;
   malId: number;

@@ -30,15 +30,14 @@ export type AnimeMediaData = {
  * @property `string[]` synonyms - Alternative names for the franchise.
  */
 
-export type Franchise<T = Set<number> | number[]> = {
+export type Franchise = {
   popularityRank: number;
   id: number;
   main: string;
   mainTitle: string;
-  franchiseCharacters: T;
   synonyms: string[];
 };
 
-export type InMemoryFranchise = Franchise<Set<number>>;
-export type FranchiseList = Map<string, InMemoryFranchise>;
-export type SerializedFranchiseList = Record<string, Franchise<number[]>>;
+export type FranchiseList = {
+  [key: string]: Franchise;
+};

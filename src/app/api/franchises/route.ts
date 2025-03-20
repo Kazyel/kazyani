@@ -1,7 +1,7 @@
-import type { FranchiseList, InMemoryFranchise, SerializedFranchiseList } from "@/types";
-import { FranchiseRequest, FranchiseRequestData, FranchisesResponse } from "@/types/api";
-import { NextRequest, NextResponse } from "next/server";
+import type { Franchise, FranchiseList } from "@/lib/types";
+import type { FranchiseRequest, FranchiseRequestData, FranchisesResponse } from "@/lib/types/api";
 
+import { NextRequest, NextResponse } from "next/server";
 import { shikimoriClient } from "@/app/layout";
 import { gql } from "@apollo/client";
 
@@ -16,11 +16,6 @@ const buildAnimesQuery = (pageCount: number, pageOffset: number) => {
         malId
         name
         franchise
-        characterRoles {
-          character {
-            id
-          }
-        }
       }
     `;
   });
@@ -50,18 +45,16 @@ export const addToFranchiseList = (
   franchise: string,
   popularityRank: number
 ) => {
-  const franchiseEntry = franchiseList.get(franchise) ?? {
+  const franchiseEntry = franchiseList[franchise] ?? {
     popularityRank,
     id: anime.malId,
     main: franchise,
     mainTitle: anime.name,
-    franchiseCharacters: new Set<number>(),
     synonyms: [],
   };
 
-  anime.characterRoles.forEach((role) => franchiseEntry.franchiseCharacters.add(role.character.id));
   franchiseEntry.synonyms.push(anime.name);
-  franchiseList.set(franchise, franchiseEntry);
+  franchiseList[franchise] = franchiseEntry;
 };
 
 const normalizeFranchise = (franchise: string) => {
@@ -75,26 +68,7 @@ export const buildFranchiseList = (animes: FranchiseRequestData[]) => {
     addToFranchiseList(anime, acc, franchiseName, popularityRank);
 
     return acc;
-  }, new Map<string, InMemoryFranchise>());
-};
-
-export const serializeFranchiseList = (franchiseList: FranchiseList) => {
-  const serialized: SerializedFranchiseList = {};
-
-  for (const [franchise, data] of franchiseList.entries()) {
-    const { popularityRank, id, main, mainTitle, franchiseCharacters, synonyms } = data;
-
-    serialized[franchise] = {
-      popularityRank,
-      id,
-      main,
-      mainTitle,
-      franchiseCharacters: Array.from(franchiseCharacters).sort((a, b) => a - b),
-      synonyms,
-    };
-  }
-
-  return serialized;
+  }, {});
 };
 
 export async function GET(req: NextRequest, res: NextResponse) {
@@ -130,11 +104,9 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
   const franchiseList: FranchiseList = buildFranchiseList(animesData);
 
-  // writeJSONAnimeData(animesData);
-
-  const serializedFranchiseList: SerializedFranchiseList = serializeFranchiseList(franchiseList);
+  // writeJSONAnimeData(franchiseList);
 
   return NextResponse.json<FranchisesResponse>({
-    franchiseList: serializedFranchiseList,
+    franchiseList: franchiseList,
   });
 }

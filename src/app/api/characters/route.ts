@@ -1,11 +1,11 @@
-import type { AnimeMediaData, SerializedFranchiseList } from "@/types";
+import type { AnimeMediaData, FranchiseList } from "@/lib/types";
+import type { AnimeRequest, AnimesMediaResponse } from "@/lib/types/api";
 
 import { NextResponse } from "next/server";
-
-import data from "@/data/franchiseList.json";
 import { anilistClient } from "@/app/layout";
 import { gql } from "@apollo/client";
-import { AnimeRequestData, AnimesMediaResponse } from "@/types/api";
+
+import data from "@/data/franchiseList.json";
 
 const buildAnimeQuery = (animes: string[]) => {
   const animesData = Array.from(animes).map((_, i) => {
@@ -35,7 +35,7 @@ const buildAnimeQuery = (animes: string[]) => {
 
 const fetchAnimeData = async (animes: string[]) => {
   try {
-    const { data } = await anilistClient.query<AnimeRequestData[]>({
+    const { data } = await anilistClient.query<AnimeRequest>({
       query: gql(buildAnimeQuery(animes)),
       variables: {
         sort: "FAVOURITES_DESC",
@@ -63,7 +63,7 @@ const getFourRandomAnimes = (animeNames: string[]) => {
   return randomIndexes;
 };
 
-const parseAnimeNames = (animes: SerializedFranchiseList) => {
+const parseAnimeNames = (animes: FranchiseList) => {
   const animesData: string[] = [];
 
   for (const [_, data] of Object.entries(animes)) {
@@ -74,7 +74,7 @@ const parseAnimeNames = (animes: SerializedFranchiseList) => {
 };
 
 export async function GET() {
-  const animes: SerializedFranchiseList = JSON.parse(JSON.stringify(data));
+  const animes: FranchiseList = JSON.parse(JSON.stringify(data));
 
   const animeNames = parseAnimeNames(animes);
   const randomAnimes = getFourRandomAnimes(animeNames);

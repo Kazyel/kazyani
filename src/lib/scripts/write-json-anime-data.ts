@@ -1,39 +1,23 @@
-import { buildFranchiseList, serializeFranchiseList } from "@/app/api/animes/route";
-
-import { FranchiseList, SerializedFranchiseList } from "@/types";
-import { AnimeRequestData } from "@/types/api";
+import { FranchiseList } from "@/lib/types";
 
 import fs from "fs";
 
-export const writeJSONAnimeData = (animes: AnimeRequestData[]) => {
-  const franchiseList: FranchiseList = buildFranchiseList(animes);
-  const serializedFranchiseList: SerializedFranchiseList = serializeFranchiseList(franchiseList);
-
+export const writeJSONAnimeData = (franchiseList: FranchiseList) => {
   if (fs.existsSync("./src/data/franchiseList.json")) {
-    const storedFranchiseList: SerializedFranchiseList = JSON.parse(
+    const storedFranchiseList: FranchiseList = JSON.parse(
       fs.readFileSync("./src/data/franchiseList.json", "utf8")
     );
 
-    const newFranchiseList: FranchiseList = buildFranchiseList(animes);
-
-    const serialized: SerializedFranchiseList = serializeFranchiseList(newFranchiseList);
-
-    for (const franchise of Object.keys(serialized)) {
+    for (const franchise of Object.keys(storedFranchiseList)) {
       if (storedFranchiseList[franchise]) {
-        const idSet = new Set<number>([
-          ...storedFranchiseList[franchise].franchiseCharacters,
-          ...serialized[franchise].franchiseCharacters,
-        ]);
-
-        storedFranchiseList[franchise].franchiseCharacters = [...idSet];
         storedFranchiseList[franchise].synonyms = [
           ...storedFranchiseList[franchise].synonyms,
-          ...serialized[franchise].synonyms,
+          ...franchiseList[franchise].synonyms,
         ];
       }
 
       if (!storedFranchiseList[franchise]) {
-        storedFranchiseList[franchise] = serialized[franchise];
+        storedFranchiseList[franchise] = franchiseList[franchise];
       }
     }
 
@@ -41,9 +25,6 @@ export const writeJSONAnimeData = (animes: AnimeRequestData[]) => {
   }
 
   if (!fs.existsSync("./src/data/franchiseList.json")) {
-    fs.writeFileSync(
-      "./src/data/franchiseList.json",
-      JSON.stringify(serializedFranchiseList, null, 2)
-    );
+    fs.writeFileSync("./src/data/franchiseList.json", JSON.stringify(franchiseList, null, 2));
   }
 };
