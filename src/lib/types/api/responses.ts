@@ -5,7 +5,8 @@ export type FranchisesResponse = {
 };
 
 export type CharacterInfo = {
-  animeName: string;
+  animeRomaji: string;
+  animeEnglish: string;
   characterId: number;
   characterName: string;
   characterImage: string;

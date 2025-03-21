@@ -6,6 +6,9 @@ import { anilistClient } from "@/app/layout";
 import { gql } from "@apollo/client";
 
 import storedJson from "@/data/franchiseList.json";
+import { shuffle } from "lodash";
+
+const DATABASE_ANIMES: FranchiseList = JSON.parse(JSON.stringify(storedJson));
 
 const buildAnimeQuery = (animes: string[]) => {
   const animesData = Array.from(animes).map((_, i) => {
@@ -66,52 +69,71 @@ const parseAnimeNames = (animes: FranchiseList) => {
 };
 
 const getFourRandomAnimes = (animeNames: string[]) => {
-  const randomIndexes: string[] = [];
+  const selectedAnimes: string[] = [];
+
+  const normalizedAnimeNames = animeNames.map((anime) =>
+    anime.toLowerCase().replace(/[\s★\W]/g, "")
+  );
 
   for (let i = 0; i < 4; i++) {
     const randomIndex = Math.floor(Math.random() * animeNames.length);
-    const randomAnime = animeNames[randomIndex];
+    const randomAnime = normalizedAnimeNames[randomIndex];
 
-    randomIndexes.push(randomAnime);
+    selectedAnimes.push(randomAnime);
   }
 
-  return randomIndexes;
+  return selectedAnimes;
 };
-
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 const buildCharactersResponse = async (animes: AnimeRequestData[]): Promise<CharactersResponse> => {
   const charactersResponse: CharactersResponse = {};
+  const usedCharacterIds = new Set<number>();
 
   for (let i = 0; i < animes.length; i++) {
     const anime = animes[i];
 
-    const randomCharacterIndex = Math.floor(
-      Math.random() * anime.characters.nodes.slice(0, 5).length
+    const animeCharacters = anime.characters.nodes.filter(
+      (character) => character.name.full.toLowerCase() !== "narrator"
     );
 
-    const selectedCharacter = anime.characters.nodes[randomCharacterIndex];
+    let randomCharacterIndex = Math.floor(Math.random() * animeCharacters.length);
+    let selectedCharacter = animeCharacters[randomCharacterIndex];
 
-    charactersResponse[anime.title.romaji] = {
-      animeName: anime.title.romaji,
+    while (usedCharacterIds.has(selectedCharacter.id)) {
+      randomCharacterIndex = Math.floor(Math.random() * animeCharacters.length);
+      selectedCharacter = animeCharacters[randomCharacterIndex];
+    }
+
+    usedCharacterIds.add(selectedCharacter.id);
+
+    const sumOfFavourites = animeCharacters.reduce(
+      (acc, character) => acc + character.favourites,
+      0
+    );
+
+    while (selectedCharacter.favourites < sumOfFavourites / 6.5) {
+      selectedCharacter = animeCharacters.find(
+        (character) => character.favourites > selectedCharacter.favourites
+      )!;
+    }
+
+    charactersResponse[`${i}`] = {
+      animeRomaji: anime.title.romaji,
+      animeEnglish: anime.title.english,
       characterId: selectedCharacter.id,
       characterName: selectedCharacter.name.full,
       characterImage: selectedCharacter.image.large,
       favourites: selectedCharacter.favourites,
     };
-
-    if ((i + 1) % 3 === 0) {
-      await delay(1000);
-    }
   }
 
   return charactersResponse;
 };
-export async function GET() {
-  const animes: FranchiseList = JSON.parse(JSON.stringify(storedJson));
 
-  const animeNames = parseAnimeNames(animes);
-  const randomAnimes = getFourRandomAnimes(animeNames);
+export async function GET() {
+  const animeNames = parseAnimeNames(DATABASE_ANIMES);
+  const randomAnimes = getFourRandomAnimes(shuffle(animeNames));
+
+  console.log(randomAnimes);
 
   const { data, status, error } = await fetchAnimeData(randomAnimes);
 

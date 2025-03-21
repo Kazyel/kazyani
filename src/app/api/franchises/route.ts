@@ -1,4 +1,4 @@
-import type { Franchise, FranchiseList } from "@/lib/types";
+import type { FranchiseList } from "@/lib/types";
 import type { FranchiseRequest, FranchiseRequestData, FranchisesResponse } from "@/lib/types/api";
 
 import { NextRequest, NextResponse } from "next/server";

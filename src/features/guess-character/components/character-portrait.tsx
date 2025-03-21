@@ -8,7 +8,7 @@ export const CharacterPortrait = async ({ image }: CharacterPortraitProps) => {
   return (
     <div>
       <Image
-        src={image}
+        src={image ? image : "https://placehold.co/200x300"}
         alt="Character Portrait"
         width={200}
         height={300}
