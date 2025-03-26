@@ -1,10 +1,3 @@
-import type { FranchiseList } from "../animes";
-import { CharacterRequestData } from "./requests";
-
-export type FranchisesResponse = {
-  franchiseList: FranchiseList;
-};
-
 export type CharacterInfo = {
   animeRomaji: string;
   animeEnglish: string;

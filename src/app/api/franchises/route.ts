@@ -1,11 +1,13 @@
 import type { FranchiseList } from "@/lib/types";
-import type { FranchiseRequest, FranchiseRequestData, FranchisesResponse } from "@/lib/types/api";
+import type { FranchiseRequest, FranchiseRequestData } from "@/lib/types/api";
 
 import { NextRequest, NextResponse } from "next/server";
-import { shikimoriClient } from "@/app/layout";
-import { gql } from "@apollo/client";
 
-import { writeJSONAnimeData } from "@/lib/scripts/write-json-anime-data";
+import { gql } from "@apollo/client";
+import { shikimoriClient } from "@/app/layout";
+import { normalizeFranchise } from "@/utils/api";
+
+import { writeJSONAnimeData } from "@/utils/scripts/write-json-anime-data";
 
 const buildAnimesQuery = (pageCount: number, pageOffset: number) => {
   const pages = [...Array(pageCount)].map((_, i) => {
@@ -59,10 +61,6 @@ export const addToFranchiseList = (
   franchiseList[franchise] = franchiseEntry;
 };
 
-const normalizeFranchise = (franchise: string) => {
-  return franchise.replace(/[\s-]+/g, "_").toLowerCase();
-};
-
 export const buildFranchiseList = (animes: FranchiseRequestData[]) => {
   return animes.reduce((acc, anime, popularityRank) => {
     const franchiseName = anime.franchise ? anime.franchise : normalizeFranchise(anime.name);
@@ -108,7 +106,5 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
   // writeJSONAnimeData(franchiseList);
 
-  return NextResponse.json<FranchisesResponse>({
-    franchiseList: franchiseList,
-  });
+  return NextResponse.json<FranchiseList>(franchiseList);
 }

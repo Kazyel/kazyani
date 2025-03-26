@@ -2,7 +2,7 @@ import { assert, expect, describe, test } from "vitest";
 
 import { FranchiseList } from "@/lib/types";
 import { AnimeRequestData, CharactersResponse } from "@/lib/types/api";
-import { parseFranchiseNames } from "@/lib/scripts/write-json-franchise-names";
+import { parseFranchiseNames } from "@/utils/scripts/write-json-franchise-names";
 
 const ANIME_DATA = {
   shingeki_no_kyojin: {

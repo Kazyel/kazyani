@@ -2,29 +2,13 @@ import type { FranchiseList } from "@/lib/types";
 import type { AnimeRequest, AnimeRequestData, CharactersResponse } from "@/lib/types/api";
 
 import { NextResponse } from "next/server";
-import { anilistClient } from "@/app/layout";
-import { gql } from "@apollo/client";
-
-import storedJson from "@/data/franchiseList.json";
 import { shuffle } from "lodash";
 
-export const parseAnimeNames = (animes: FranchiseList) => {
-  const animesData: string[] = [];
+import { gql } from "@apollo/client";
+import { anilistClient } from "@/app/layout";
+import { normalizeNames, parseAnimeNames } from "@/utils/api";
 
-  for (const [_, data] of Object.entries(animes)) {
-    animesData.push(data.mainTitle);
-  }
-
-  return animesData;
-};
-
-export const normalizeNames = (animeNames: string[]) => {
-  const normalizedAnimeNames = animeNames.map((anime) =>
-    anime.toLowerCase().replace(/[\s★\W]/g, "")
-  );
-
-  return normalizedAnimeNames;
-};
+import storedJson from "@/data/franchiseList.json";
 
 const buildAnimeQuery = (animes: string[]) => {
   const animesData = Array.from(animes).map((_, i) => {
@@ -105,7 +89,7 @@ const buildCharactersResponse = async (animes: AnimeRequestData[]): Promise<Char
       0
     );
 
-    const minFavourites = Math.floor(sumOfFavourites * 0.05);
+    const minFavourites = Math.floor(sumOfFavourites * 0.15);
 
     const validCharacters = animeCharacters.filter(
       (character) => !usedCharacterIds.has(character.id) && character.favourites >= minFavourites

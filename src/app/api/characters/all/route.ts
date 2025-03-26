@@ -2,9 +2,9 @@ import type { CharacterRequest, CharacterRequestData } from "@/lib/types/api";
 import type { FranchiseList } from "@/lib/types";
 
 import { gql } from "@apollo/client";
-import { anilistClient } from "@/app/layout";
 import { NextResponse } from "next/server";
-import { normalizeNames, parseAnimeNames } from "../route";
+import { anilistClient } from "@/app/layout";
+import { divideIntoBatches, normalizeNames, parseAnimeNames } from "@/utils/api";
 
 import storedJson from "@/data/franchiseList.json";
 
@@ -26,18 +26,6 @@ const buildCharactersQuery = (animes: string[]) => {
   });
 
   return `query($sort: [CharacterSort], $mediaSort: [MediaSort]) { ${animesData.join("\n")} } `;
-};
-
-const divideIntoBatches = (animes: string[], batches: number) => {
-  const batchSize = Math.ceil(animes.length / batches);
-
-  const dividedAnimes: string[][] = [];
-
-  for (let i = 0; i < batches; i++) {
-    dividedAnimes.push(animes.slice(i * batchSize, (i + 1) * batchSize));
-  }
-
-  return dividedAnimes;
 };
 
 const fetchCharacterNames = async (dividedAnimes: string[][]) => {
@@ -81,7 +69,7 @@ const filterCharacters = (animeData: CharacterRequestData[]) => {
       0
     );
 
-    const minFavourites = Math.floor(sumOfFavourites * 0.05);
+    const minFavourites = Math.floor(sumOfFavourites * 0.15);
 
     const validCharacters = animeCharacters.filter(
       (character) => character.favourites >= minFavourites
@@ -112,5 +100,5 @@ export async function GET() {
 
   const allCharacterNames: string[] = filterCharacters(data);
 
-  return NextResponse.json({ allCharacterNames });
+  return NextResponse.json<string[]>(allCharacterNames);
 }
