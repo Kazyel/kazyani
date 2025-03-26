@@ -4,6 +4,7 @@
     "id": "16498",
     "main": "shingeki_no_kyojin",
     "mainTitle": "Shingeki no Kyojin",
+    "englishTitle": "Attack on Titan",
     "synonyms": [
       "Shingeki no Kyojin",
       "Shingeki no Kyojin Season 2",
@@ -19,34 +20,45 @@
     "id": "1535",
     "main": "death_note",
     "mainTitle": "Death Note",
-    "synonyms": ["Death Note"]
+    "englishTitle": "Death Note",
+    "synonyms": [
+      "Death Note"
+    ]
   },
   "fullmetal_alchemist": {
     "popularityRank": 2,
     "id": "5114",
     "main": "fullmetal_alchemist",
     "mainTitle": "Fullmetal Alchemist: Brotherhood",
-    "synonyms": ["Fullmetal Alchemist: Brotherhood", "Fullmetal Alchemist"]
+    "englishTitle": "Fullmetal Alchemist: Brotherhood",
+    "synonyms": [
+      "Fullmetal Alchemist: Brotherhood",
+      "Fullmetal Alchemist"
+    ]
   },
   "one_punch_man": {
     "popularityRank": 3,
     "id": "30276",
     "main": "one_punch_man",
     "mainTitle": "One Punch Man",
-    "synonyms": ["One Punch Man", "One Punch Man 2nd Season"]
+    "englishTitle": "One Punch Man",
+    "synonyms": [
+      "One Punch Man",
+      "One Punch Man 2nd Season"
+    ]
   },
   "demon_slayer": {
     "popularityRank": 4,
     "id": "38000",
     "main": "demon_slayer",
     "mainTitle": "Kimetsu no Yaiba",
+    "englishTitle": "Demon Slayer: Kimetsu no Yaiba",
     "synonyms": [
       "Kimetsu no Yaiba",
       "Kimetsu no Yaiba Movie: Mugen Ressha-hen",
       "Kimetsu no Yaiba: Yuukaku-hen",
       "Kimetsu no Yaiba: Katanakaji no Sato-hen",
-      "Kimetsu no Yaiba: Mugen Ressha-hen",
-      "Kimetsu no Yaiba: Hashira Geiko-hen"
+      "Kimetsu no Yaiba: Mugen Ressha-hen"
     ]
   },
   "sword_art_online": {
@@ -54,14 +66,13 @@
     "id": "11757",
     "main": "sword_art_online",
     "mainTitle": "Sword Art Online",
+    "englishTitle": "Sword Art Online",
     "synonyms": [
       "Sword Art Online",
       "Sword Art Online II",
       "Sword Art Online: Alicization",
       "Sword Art Online: Alicization - War of Underworld",
-      "Sword Art Online Movie: Ordinal Scale",
-      "Sword Art Online Alternative: Gun Gale Online",
-      "Sword Art Online: Alicization - War of Underworld 2nd Season"
+      "Sword Art Online Movie: Ordinal Scale"
     ]
   },
   "boku_no_hero_academia": {
@@ -69,6 +80,7 @@
     "id": "31964",
     "main": "boku_no_hero_academia",
     "mainTitle": "Boku no Hero Academia",
+    "englishTitle": "My Hero Academia",
     "synonyms": [
       "Boku no Hero Academia",
       "Boku no Hero Academia 2nd Season",
@@ -76,8 +88,7 @@
       "Boku no Hero Academia 4th Season",
       "Boku no Hero Academia 5th Season",
       "Boku no Hero Academia the Movie 1: Futari no Hero",
-      "Boku no Hero Academia 6th Season",
-      "Boku no Hero Academia the Movie 2: Heroes:Rising"
+      "Boku no Hero Academia 6th Season"
     ]
   },
   "hunter_x_hunter": {
@@ -85,18 +96,21 @@
     "id": "11061",
     "main": "hunter_x_hunter",
     "mainTitle": "Hunter x Hunter (2011)",
-    "synonyms": ["Hunter x Hunter (2011)", "Hunter x Hunter"]
+    "englishTitle": "Hunter x Hunter",
+    "synonyms": [
+      "Hunter x Hunter (2011)"
+    ]
   },
   "naruto": {
     "popularityRank": 8,
     "id": "20",
     "main": "naruto",
     "mainTitle": "Naruto",
+    "englishTitle": "Naruto",
     "synonyms": [
       "Naruto",
       "Naruto: Shippuuden",
-      "Boruto: Naruto Next Generations",
-      "The Last: Naruto the Movie"
+      "Boruto: Naruto Next Generations"
     ]
   },
   "tokyo_ghoul": {
@@ -104,62 +118,96 @@
     "id": "22319",
     "main": "tokyo_ghoul",
     "mainTitle": "Tokyo Ghoul",
-    "synonyms": ["Tokyo Ghoul", "Tokyo Ghoul √A", "Tokyo Ghoul:re", "Tokyo Ghoul:re 2nd Season"]
+    "englishTitle": "Tokyo Ghoul",
+    "synonyms": [
+      "Tokyo Ghoul",
+      "Tokyo Ghoul √A",
+      "Tokyo Ghoul:re",
+      "Tokyo Ghoul:re 2nd Season"
+    ]
   },
   "your_name": {
     "popularityRank": 10,
     "id": "32281",
     "main": "your_name",
     "mainTitle": "Kimi no Na wa.",
-    "synonyms": ["Kimi no Na wa.", "Tenki no Ko"]
+    "englishTitle": "Your Name.",
+    "synonyms": [
+      "Kimi no Na wa.",
+      "Tenki no Ko"
+    ]
   },
   "jujutsu_kaisen": {
     "popularityRank": 12,
     "id": "40748",
     "main": "jujutsu_kaisen",
     "mainTitle": "Jujutsu Kaisen",
-    "synonyms": ["Jujutsu Kaisen", "Jujutsu Kaisen 2nd Season", "Jujutsu Kaisen 0 Movie"]
+    "englishTitle": "Jujutsu Kaisen",
+    "synonyms": [
+      "Jujutsu Kaisen",
+      "Jujutsu Kaisen 2nd Season",
+      "Jujutsu Kaisen 0 Movie"
+    ]
   },
   "science_adventure": {
     "popularityRank": 13,
     "id": "9253",
     "main": "science_adventure",
     "mainTitle": "Steins;Gate",
-    "synonyms": ["Steins;Gate", "Steins;Gate 0", "Steins;Gate Movie: Fuka Ryouiki no Dejà vu"]
+    "englishTitle": "Steins;Gate",
+    "synonyms": [
+      "Steins;Gate",
+      "Steins;Gate 0"
+    ]
   },
   "one_piece": {
     "popularityRank": 16,
     "id": "21",
     "main": "one_piece",
     "mainTitle": "One Piece",
-    "synonyms": ["One Piece"]
+    "englishTitle": "One Piece",
+    "synonyms": [
+      "One Piece"
+    ]
   },
   "no_game_no_life": {
     "popularityRank": 18,
     "id": "19815",
     "main": "no_game_no_life",
     "mainTitle": "No Game No Life",
-    "synonyms": ["No Game No Life", "No Game No Life: Zero"]
+    "englishTitle": "No Game, No Life",
+    "synonyms": [
+      "No Game No Life",
+      "No Game No Life: Zero"
+    ]
   },
   "koe_no_katachi": {
     "popularityRank": 19,
     "id": "28851",
     "main": "koe_no_katachi",
     "mainTitle": "Koe no Katachi",
-    "synonyms": ["Koe no Katachi"]
+    "englishTitle": "A Silent Voice",
+    "synonyms": [
+      "Koe no Katachi"
+    ]
   },
   "code_geass": {
     "popularityRank": 21,
     "id": "1575",
     "main": "code_geass",
     "mainTitle": "Code Geass: Hangyaku no Lelouch",
-    "synonyms": ["Code Geass: Hangyaku no Lelouch", "Code Geass: Hangyaku no Lelouch R2"]
+    "englishTitle": "Code Geass: Lelouch of the Rebellion",
+    "synonyms": [
+      "Code Geass: Hangyaku no Lelouch",
+      "Code Geass: Hangyaku no Lelouch R2"
+    ]
   },
   "re_zero": {
     "popularityRank": 22,
     "id": "31240",
     "main": "re_zero",
     "mainTitle": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "englishTitle": "Re:ZERO -Starting Life in Another World-",
     "synonyms": [
       "Re:Zero kara Hajimeru Isekai Seikatsu",
       "Re:Zero kara Hajimeru Isekai Seikatsu 2nd Season",
@@ -171,55 +219,80 @@
     "id": "23273",
     "main": "shigatsu_wa_kimi_no_uso",
     "mainTitle": "Shigatsu wa Kimi no Uso",
-    "synonyms": ["Shigatsu wa Kimi no Uso"]
+    "englishTitle": "Your Lie in April",
+    "synonyms": [
+      "Shigatsu wa Kimi no Uso"
+    ]
   },
   "toradora": {
     "popularityRank": 24,
     "id": "4224",
     "main": "toradora",
     "mainTitle": "Toradora!",
-    "synonyms": ["Toradora!"]
+    "englishTitle": "Toradora!",
+    "synonyms": [
+      "Toradora!"
+    ]
   },
   "noraneko": {
     "popularityRank": 26,
     "id": "20507",
     "main": "noraneko",
     "mainTitle": "Noragami",
-    "synonyms": ["Noragami", "Noragami Aragoto"]
+    "englishTitle": "Noragami",
+    "synonyms": [
+      "Noragami",
+      "Noragami Aragoto"
+    ]
   },
   "boku_dake_ga_inai_machi": {
     "popularityRank": 27,
     "id": "31043",
     "main": "boku_dake_ga_inai_machi",
     "mainTitle": "Boku dake ga Inai Machi",
-    "synonyms": ["Boku dake ga Inai Machi"]
+    "englishTitle": "Erased",
+    "synonyms": [
+      "Boku dake ga Inai Machi"
+    ]
   },
   "mob_psycho": {
     "popularityRank": 28,
     "id": "32182",
     "main": "mob_psycho",
     "mainTitle": "Mob Psycho 100",
-    "synonyms": ["Mob Psycho 100", "Mob Psycho 100 II", "Mob Psycho 100 III"]
+    "englishTitle": "Mob Psycho 100",
+    "synonyms": [
+      "Mob Psycho 100",
+      "Mob Psycho 100 II",
+      "Mob Psycho 100 III"
+    ]
   },
   "akame_ga_kill": {
     "popularityRank": 29,
     "id": "22199",
     "main": "akame_ga_kill",
     "mainTitle": "Akame ga Kill!",
-    "synonyms": ["Akame ga Kill!"]
+    "englishTitle": "Akame ga Kill!",
+    "synonyms": [
+      "Akame ga Kill!"
+    ]
   },
   "angel_beats": {
     "popularityRank": 30,
     "id": "6547",
     "main": "angel_beats",
     "mainTitle": "Angel Beats!",
-    "synonyms": ["Angel Beats!"]
+    "englishTitle": "Angel Beats!",
+    "synonyms": [
+      "Angel Beats!"
+    ]
   },
   "nanatsu_no_taizai": {
     "popularityRank": 31,
     "id": "23755",
     "main": "nanatsu_no_taizai",
     "mainTitle": "Nanatsu no Taizai",
+    "englishTitle": "The Seven Deadly Sins",
     "synonyms": [
       "Nanatsu no Taizai",
       "Nanatsu no Taizai: Imashime no Fukkatsu",
@@ -232,27 +305,38 @@
     "id": "24833",
     "main": "ansatsu_kyoushitsu",
     "mainTitle": "Ansatsu Kyoushitsu",
-    "synonyms": ["Ansatsu Kyoushitsu", "Ansatsu Kyoushitsu 2nd Season"]
+    "englishTitle": "Assassination Classroom",
+    "synonyms": [
+      "Ansatsu Kyoushitsu",
+      "Ansatsu Kyoushitsu 2nd Season"
+    ]
   },
   "mirai_nikki": {
     "popularityRank": 34,
     "id": "10620",
     "main": "mirai_nikki",
     "mainTitle": "Mirai Nikki (TV)",
-    "synonyms": ["Mirai Nikki (TV)"]
+    "englishTitle": "The Future Diary",
+    "synonyms": [
+      "Mirai Nikki (TV)"
+    ]
   },
   "bleach": {
     "popularityRank": 35,
     "id": "269",
     "main": "bleach",
     "mainTitle": "Bleach",
-    "synonyms": ["Bleach", "Bleach: Sennen Kessen-hen"]
+    "englishTitle": "Bleach",
+    "synonyms": [
+      "Bleach"
+    ]
   },
   "haikyuu": {
     "popularityRank": 36,
     "id": "20583",
     "main": "haikyuu",
     "mainTitle": "Haikyuu!!",
+    "englishTitle": "Haikyu!!",
     "synonyms": [
       "Haikyuu!!",
       "Haikyuu!! Second Season",
@@ -266,6 +350,7 @@
     "id": "30831",
     "main": "konosuba",
     "mainTitle": "Kono Subarashii Sekai ni Shukufuku wo!",
+    "englishTitle": "KonoSuba: God's Blessing on This Wonderful World!",
     "synonyms": [
       "Kono Subarashii Sekai ni Shukufuku wo!",
       "Kono Subarashii Sekai ni Shukufuku wo! 2",
@@ -277,45 +362,62 @@
     "id": "37779",
     "main": "yakusoku_no_neverland",
     "mainTitle": "Yakusoku no Neverland",
-    "synonyms": ["Yakusoku no Neverland", "Yakusoku no Neverland 2nd Season"]
+    "englishTitle": "The Promised Neverland",
+    "synonyms": [
+      "Yakusoku no Neverland",
+      "Yakusoku no Neverland 2nd Season"
+    ]
   },
   "ao_no_exorcist": {
     "popularityRank": 40,
     "id": "9919",
     "main": "ao_no_exorcist",
     "mainTitle": "Ao no Exorcist",
-    "synonyms": ["Ao no Exorcist", "Ao no Exorcist: Kyoto Fujouou-hen"]
+    "englishTitle": "Blue Exorcist",
+    "synonyms": [
+      "Ao no Exorcist",
+      "Ao no Exorcist: Kyoto Fujouou-hen"
+    ]
   },
   "kiseijuu:_sei_no_kakuritsu": {
     "popularityRank": 41,
     "id": "22535",
     "main": "kiseijuu:_sei_no_kakuritsu",
     "mainTitle": "Kiseijuu: Sei no Kakuritsu",
-    "synonyms": ["Kiseijuu: Sei no Kakuritsu"]
+    "englishTitle": "Parasyte: The Maxim",
+    "synonyms": [
+      "Kiseijuu: Sei no Kakuritsu"
+    ]
   },
   "cowboy_bebop": {
     "popularityRank": 42,
     "id": "1",
     "main": "cowboy_bebop",
     "mainTitle": "Cowboy Bebop",
-    "synonyms": ["Cowboy Bebop"]
+    "englishTitle": "Cowboy Bebop",
+    "synonyms": [
+      "Cowboy Bebop"
+    ]
   },
   "sen_to_chihiro_no_kamikakushi": {
     "popularityRank": 43,
     "id": "199",
     "main": "sen_to_chihiro_no_kamikakushi",
     "mainTitle": "Sen to Chihiro no Kamikakushi",
-    "synonyms": ["Sen to Chihiro no Kamikakushi"]
+    "englishTitle": "Spirited Away",
+    "synonyms": [
+      "Sen to Chihiro no Kamikakushi"
+    ]
   },
   "evangelion": {
     "popularityRank": 44,
     "id": "30",
     "main": "evangelion",
     "mainTitle": "Shinseiki Evangelion",
+    "englishTitle": "Neon Genesis Evangelion",
     "synonyms": [
       "Shinseiki Evangelion",
-      "Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni",
-      "Evangelion Movie 1: Jo"
+      "Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni"
     ]
   },
   "violet_evergarden": {
@@ -323,27 +425,39 @@
     "id": "33352",
     "main": "violet_evergarden",
     "mainTitle": "Violet Evergarden",
-    "synonyms": ["Violet Evergarden", "Violet Evergarden Movie"]
+    "englishTitle": "Violet Evergarden",
+    "synonyms": [
+      "Violet Evergarden",
+      "Violet Evergarden Movie"
+    ]
   },
   "death_parade": {
     "popularityRank": 47,
     "id": "28223",
     "main": "death_parade",
     "mainTitle": "Death Parade",
-    "synonyms": ["Death Parade"]
+    "englishTitle": "Death Parade",
+    "synonyms": [
+      "Death Parade"
+    ]
   },
   "dr_stone": {
     "popularityRank": 49,
     "id": "38691",
     "main": "dr_stone",
     "mainTitle": "Dr. Stone",
-    "synonyms": ["Dr. Stone", "Dr. Stone: Stone Wars"]
+    "englishTitle": "Dr. Stone",
+    "synonyms": [
+      "Dr. Stone",
+      "Dr. Stone: Stone Wars"
+    ]
   },
   "seishun_buta_yarou_wa_yumemiru_shoujo_no_yume_wo_minai": {
     "popularityRank": 50,
     "id": "37450",
     "main": "seishun_buta_yarou_wa_yumemiru_shoujo_no_yume_wo_minai",
     "mainTitle": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
+    "englishTitle": "Rascal Does Not Dream of Bunny Girl Senpai",
     "synonyms": [
       "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
       "Seishun Buta Yarou wa Yumemiru Shoujo no Yume wo Minai"
@@ -354,6 +468,7 @@
     "id": "37999",
     "main": "kaguya_sama",
     "mainTitle": "Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen",
+    "englishTitle": "Kaguya-sama: Love is War",
     "synonyms": [
       "Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen",
       "Kaguya-sama wa Kokurasetai? Tensai-tachi no Renai Zunousen",
@@ -365,27 +480,38 @@
     "id": "6702",
     "main": "fairy_tail",
     "mainTitle": "Fairy Tail",
-    "synonyms": ["Fairy Tail", "Fairy Tail (2014)"]
+    "englishTitle": "Fairy Tail",
+    "synonyms": [
+      "Fairy Tail",
+      "Fairy Tail (2014)"
+    ]
   },
   "kill_la_kill": {
     "popularityRank": 54,
     "id": "18679",
     "main": "kill_la_kill",
     "mainTitle": "Kill la Kill",
-    "synonyms": ["Kill la Kill"]
+    "englishTitle": "Kill la Kill",
+    "synonyms": [
+      "Kill la Kill"
+    ]
   },
   "black_clover": {
     "popularityRank": 56,
     "id": "34572",
     "main": "black_clover",
     "mainTitle": "Black Clover",
-    "synonyms": ["Black Clover"]
+    "englishTitle": "Black Clover",
+    "synonyms": [
+      "Black Clover"
+    ]
   },
   "jojo_no_kimyou_na_bouken": {
     "popularityRank": 57,
     "id": "14719",
     "main": "jojo_no_kimyou_na_bouken",
     "mainTitle": "JoJo no Kimyou na Bouken (TV)",
+    "englishTitle": "JoJo's Bizarre Adventure (2012)",
     "synonyms": [
       "JoJo no Kimyou na Bouken (TV)",
       "JoJo no Kimyou na Bouken Part 3: Stardust Crusaders",
@@ -399,26 +525,32 @@
     "id": "11111",
     "main": "another",
     "mainTitle": "Another",
-    "synonyms": ["Another"]
+    "englishTitle": "Another",
+    "synonyms": [
+      "Another"
+    ]
   },
   "darling_in_the_franxx": {
     "popularityRank": 59,
     "id": "35849",
     "main": "darling_in_the_franxx",
     "mainTitle": "Darling in the FranXX",
-    "synonyms": ["Darling in the FranXX"]
+    "englishTitle": "DARLING in the FRANXX",
+    "synonyms": [
+      "Darling in the FranXX"
+    ]
   },
   "shokugeki_no_souma": {
     "popularityRank": 60,
     "id": "28171",
     "main": "shokugeki_no_souma",
     "mainTitle": "Shokugeki no Souma",
+    "englishTitle": "Food Wars! Shokugeki no Soma",
     "synonyms": [
       "Shokugeki no Souma",
       "Shokugeki no Souma: Ni no Sara",
       "Shokugeki no Souma: San no Sara",
-      "Shokugeki no Souma: San no Sara - Tootsuki Ressha-hen",
-      "Shokugeki no Souma: Shin no Sara"
+      "Shokugeki no Souma: San no Sara - Tootsuki Ressha-hen"
     ]
   },
   "spy_x_family": {
@@ -426,87 +558,126 @@
     "id": "50265",
     "main": "spy_x_family",
     "mainTitle": "Spy x Family",
-    "synonyms": ["Spy x Family", "Spy x Family Part 2"]
+    "englishTitle": null,
+    "synonyms": [
+      "Spy x Family",
+      "Spy x Family Part 2"
+    ]
   },
   "psycho_pass": {
     "popularityRank": 62,
     "id": "13601",
     "main": "psycho_pass",
     "mainTitle": "Psycho-Pass",
-    "synonyms": ["Psycho-Pass", "Psycho-Pass 2"]
+    "englishTitle": "Psycho-Pass",
+    "synonyms": [
+      "Psycho-Pass",
+      "Psycho-Pass 2"
+    ]
   },
   "chainsaw_man": {
     "popularityRank": 63,
     "id": "44511",
     "main": "chainsaw_man",
     "mainTitle": "Chainsaw Man",
-    "synonyms": ["Chainsaw Man"]
+    "englishTitle": "Chainsaw Man",
+    "synonyms": [
+      "Chainsaw Man"
+    ]
   },
   "soul_eater": {
     "popularityRank": 64,
     "id": "3588",
     "main": "soul_eater",
     "mainTitle": "Soul Eater",
-    "synonyms": ["Soul Eater"]
+    "englishTitle": "Soul Eater",
+    "synonyms": [
+      "Soul Eater"
+    ]
   },
   "charlotte": {
     "popularityRank": 65,
     "id": "28999",
     "main": "charlotte",
     "mainTitle": "Charlotte",
-    "synonyms": ["Charlotte"]
+    "englishTitle": "Charlotte",
+    "synonyms": [
+      "Charlotte"
+    ]
   },
   "tengen_toppa_gurren_lagann": {
     "popularityRank": 66,
     "id": "2001",
     "main": "tengen_toppa_gurren_lagann",
     "mainTitle": "Tengen Toppa Gurren Lagann",
-    "synonyms": ["Tengen Toppa Gurren Lagann"]
+    "englishTitle": "Gurren Lagann",
+    "synonyms": [
+      "Tengen Toppa Gurren Lagann"
+    ]
   },
   "overlord": {
     "popularityRank": 67,
     "id": "29803",
     "main": "overlord",
     "mainTitle": "Overlord",
-    "synonyms": ["Overlord", "Overlord II", "Overlord III"]
+    "englishTitle": "Overlord",
+    "synonyms": [
+      "Overlord",
+      "Overlord II",
+      "Overlord III"
+    ]
   },
   "tate_no_yuusha_no_nariagari": {
     "popularityRank": 68,
     "id": "35790",
     "main": "tate_no_yuusha_no_nariagari",
     "mainTitle": "Tate no Yuusha no Nariagari",
-    "synonyms": ["Tate no Yuusha no Nariagari", "Tate no Yuusha no Nariagari Season 2"]
+    "englishTitle": "The Rising of the Shield Hero",
+    "synonyms": [
+      "Tate no Yuusha no Nariagari",
+      "Tate no Yuusha no Nariagari Season 2"
+    ]
   },
   "ano_hi_mita_hana_no_namae_wo_bokutachi_wa_mada_shiranai": {
     "popularityRank": 69,
     "id": "9989",
     "main": "ano_hi_mita_hana_no_namae_wo_bokutachi_wa_mada_shiranai",
     "mainTitle": "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.",
-    "synonyms": ["Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai."]
+    "englishTitle": "Anohana: The Flower We Saw That Day",
+    "synonyms": [
+      "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai."
+    ]
   },
   "vinland_saga": {
     "popularityRank": 71,
     "id": "37521",
     "main": "vinland_saga",
     "mainTitle": "Vinland Saga",
-    "synonyms": ["Vinland Saga", "Vinland Saga Season 2"]
+    "englishTitle": null,
+    "synonyms": [
+      "Vinland Saga",
+      "Vinland Saga Season 2"
+    ]
   },
   "hataraku_maou_sama": {
     "popularityRank": 72,
     "id": "15809",
     "main": "hataraku_maou_sama",
     "mainTitle": "Hataraku Maou-sama!",
-    "synonyms": ["Hataraku Maou-sama!"]
+    "englishTitle": "The Devil is a Part-Timer!",
+    "synonyms": [
+      "Hataraku Maou-sama!"
+    ]
   },
   "danmachi": {
     "popularityRank": 74,
     "id": "28121",
     "main": "danmachi",
     "mainTitle": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka",
+    "englishTitle": "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
     "synonyms": [
       "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka",
-      "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka II",
-      "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka III"
+      "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka II"
     ]
   },
   "elfen_lied": {
@@ -514,20 +685,27 @@
     "id": "226",
     "main": "elfen_lied",
     "mainTitle": "Elfen Lied",
-    "synonyms": ["Elfen Lied"]
+    "englishTitle": "Elfen Lied",
+    "synonyms": [
+      "Elfen Lied"
+    ]
   },
   "highschool_of_the_dead": {
     "popularityRank": 77,
     "id": "8074",
     "main": "highschool_of_the_dead",
     "mainTitle": "Highschool of the Dead",
-    "synonyms": ["Highschool of the Dead"]
+    "englishTitle": "High School of the Dead",
+    "synonyms": [
+      "Highschool of the Dead"
+    ]
   },
   "fate": {
     "popularityRank": 79,
     "id": "10087",
     "main": "fate",
     "mainTitle": "Fate/Zero",
+    "englishTitle": "Fate/Zero",
     "synonyms": [
       "Fate/Zero",
       "Fate/Zero 2nd Season",
@@ -541,13 +719,18 @@
     "id": "34933",
     "main": "kakegurui",
     "mainTitle": "Kakegurui",
-    "synonyms": ["Kakegurui", "Kakegurui××"]
+    "englishTitle": "Kakegurui",
+    "synonyms": [
+      "Kakegurui",
+      "Kakegurui××"
+    ]
   },
   "tensei_shitara_slime_datta_ken": {
     "popularityRank": 81,
     "id": "37430",
     "main": "tensei_shitara_slime_datta_ken",
     "mainTitle": "Tensei shitara Slime Datta Ken",
+    "englishTitle": "That Time I Got Reincarnated as a Slime",
     "synonyms": [
       "Tensei shitara Slime Datta Ken",
       "Tensei shitara Slime Datta Ken 2nd Season",
@@ -559,6 +742,7 @@
     "id": "14813",
     "main": "yahari_ore_no_seishun_love_comedy_wa_machigatteiru",
     "mainTitle": "Yahari Ore no Seishun Love Comedy wa Machigatteiru.",
+    "englishTitle": "My Teen Romantic Comedy SNAFU",
     "synonyms": [
       "Yahari Ore no Seishun Love Comedy wa Machigatteiru.",
       "Yahari Ore no Seishun Love Comedy wa Machigatteiru. Zoku",
@@ -570,20 +754,29 @@
     "id": "11617",
     "main": "high_school_dxd",
     "mainTitle": "High School DxD",
-    "synonyms": ["High School DxD", "High School DxD New", "High School DxD BorN"]
+    "englishTitle": "High School DxD",
+    "synonyms": [
+      "High School DxD",
+      "High School DxD New",
+      "High School DxD BorN"
+    ]
   },
   "horimiya": {
     "popularityRank": 88,
     "id": "42897",
     "main": "horimiya",
     "mainTitle": "Horimiya",
-    "synonyms": ["Horimiya"]
+    "englishTitle": "Horimiya",
+    "synonyms": [
+      "Horimiya"
+    ]
   },
   "bungou_stray_dogs": {
     "popularityRank": 89,
     "id": "31478",
     "main": "bungou_stray_dogs",
     "mainTitle": "Bungou Stray Dogs",
+    "englishTitle": "Bungo Stray Dogs",
     "synonyms": [
       "Bungou Stray Dogs",
       "Bungou Stray Dogs 2nd Season",
@@ -595,34 +788,50 @@
     "id": "2167",
     "main": "clannad",
     "mainTitle": "Clannad",
-    "synonyms": ["Clannad", "Clannad: After Story"]
+    "englishTitle": "Clannad",
+    "synonyms": [
+      "Clannad",
+      "Clannad: After Story"
+    ]
   },
   "made_in_abyss": {
     "popularityRank": 91,
     "id": "34599",
     "main": "made_in_abyss",
     "mainTitle": "Made in Abyss",
-    "synonyms": ["Made in Abyss"]
+    "englishTitle": "Made in Abyss",
+    "synonyms": [
+      "Made in Abyss"
+    ]
   },
   "durarara": {
     "popularityRank": 92,
     "id": "6746",
     "main": "durarara",
     "mainTitle": "Durarara!!",
-    "synonyms": ["Durarara!!"]
+    "englishTitle": "Durarara!!",
+    "synonyms": [
+      "Durarara!!"
+    ]
   },
   "bakemonogatari": {
     "popularityRank": 93,
     "id": "5081",
     "main": "bakemonogatari",
     "mainTitle": "Bakemonogatari",
-    "synonyms": ["Bakemonogatari", "Nisemonogatari", "Monogatari Series: Second Season"]
+    "englishTitle": "Bakemonogatari",
+    "synonyms": [
+      "Bakemonogatari",
+      "Nisemonogatari",
+      "Monogatari Series: Second Season"
+    ]
   },
   "mushoku_tensei": {
     "popularityRank": 94,
     "id": "39535",
     "main": "mushoku_tensei",
     "mainTitle": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+    "englishTitle": "Mushoku Tensei: Jobless Reincarnation",
     "synonyms": [
       "Mushoku Tensei: Isekai Ittara Honki Dasu",
       "Mushoku Tensei: Isekai Ittara Honki Dasu Part 2",
@@ -634,41 +843,60 @@
     "id": "12189",
     "main": "hyouka",
     "mainTitle": "Hyouka",
-    "synonyms": ["Hyouka"]
+    "englishTitle": "Hyouka",
+    "synonyms": [
+      "Hyouka"
+    ]
   },
   "fire_force": {
     "popularityRank": 96,
     "id": "38671",
     "main": "fire_force",
     "mainTitle": "Enen no Shouboutai",
-    "synonyms": ["Enen no Shouboutai", "Enen no Shouboutai: Ni no Shou"]
+    "englishTitle": "Fire Force",
+    "synonyms": [
+      "Enen no Shouboutai",
+      "Enen no Shouboutai: Ni no Shou"
+    ]
   },
   "chuunibyou_demo_koi_ga_shitai": {
     "popularityRank": 98,
     "id": "14741",
     "main": "chuunibyou_demo_koi_ga_shitai",
     "mainTitle": "Chuunibyou demo Koi ga Shitai!",
-    "synonyms": ["Chuunibyou demo Koi ga Shitai!", "Chuunibyou demo Koi ga Shitai! Ren"]
+    "englishTitle": "Love, Chunibyo & Other Delusions!",
+    "synonyms": [
+      "Chuunibyou demo Koi ga Shitai!",
+      "Chuunibyou demo Koi ga Shitai! Ren"
+    ]
   },
   "howl_no_ugoku_shiro": {
     "popularityRank": 99,
     "id": "431",
     "main": "howl_no_ugoku_shiro",
     "mainTitle": "Howl no Ugoku Shiro",
-    "synonyms": ["Howl no Ugoku Shiro"]
+    "englishTitle": "Howl's Moving Castle",
+    "synonyms": [
+      "Howl no Ugoku Shiro"
+    ]
   },
   "owari_no_seraph": {
     "popularityRank": 101,
     "id": "26243",
     "main": "owari_no_seraph",
     "mainTitle": "Owari no Seraph",
-    "synonyms": ["Owari no Seraph", "Owari no Seraph: Nagoya Kessen-hen"]
+    "englishTitle": "Seraph of the End: Vampire Reign",
+    "synonyms": [
+      "Owari no Seraph",
+      "Owari no Seraph: Nagoya Kessen-hen"
+    ]
   },
   "classroom_of_the_elite": {
     "popularityRank": 102,
     "id": "35507",
     "main": "classroom_of_the_elite",
     "mainTitle": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+    "englishTitle": "Classroom of the Elite",
     "synonyms": [
       "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
       "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e 2nd Season"
@@ -679,552 +907,800 @@
     "id": "9756",
     "main": "puella_magi_sonico_magica",
     "mainTitle": "Mahou Shoujo Madoka★Magica",
-    "synonyms": ["Mahou Shoujo Madoka★Magica"]
+    "englishTitle": "Puella Magi Madoka Magica",
+    "synonyms": [
+      "Mahou Shoujo Madoka★Magica"
+    ]
   },
   "chibi_revenger": {
     "popularityRank": 104,
     "id": "42249",
     "main": "chibi_revenger",
     "mainTitle": "Tokyo Revengers",
-    "synonyms": ["Tokyo Revengers"]
+    "englishTitle": "Tokyo Revengers",
+    "synonyms": [
+      "Tokyo Revengers"
+    ]
   },
   "mononoke_hime": {
     "popularityRank": 105,
     "id": "164",
     "main": "mononoke_hime",
     "mainTitle": "Mononoke Hime",
-    "synonyms": ["Mononoke Hime"]
+    "englishTitle": "Princess Mononoke",
+    "synonyms": [
+      "Mononoke Hime"
+    ]
   },
   "kaichou_wa_maid_sama": {
     "popularityRank": 106,
     "id": "7054",
     "main": "kaichou_wa_maid_sama",
     "mainTitle": "Kaichou wa Maid-sama!",
-    "synonyms": ["Kaichou wa Maid-sama!"]
+    "englishTitle": "Maid Sama!",
+    "synonyms": [
+      "Kaichou wa Maid-sama!"
+    ]
   },
   "dororo": {
     "popularityRank": 107,
     "id": "37520",
     "main": "dororo",
     "mainTitle": "Dororo",
-    "synonyms": ["Dororo"]
+    "englishTitle": "Dororo",
+    "synonyms": [
+      "Dororo"
+    ]
   },
   "samurai_champloo": {
     "popularityRank": 108,
     "id": "205",
     "main": "samurai_champloo",
     "mainTitle": "Samurai Champloo",
-    "synonyms": ["Samurai Champloo"]
+    "englishTitle": "Samurai Champloo",
+    "synonyms": [
+      "Samurai Champloo"
+    ]
   },
   "sakura_sou_no_pet_na_kanojo": {
     "popularityRank": 109,
     "id": "13759",
     "main": "sakura_sou_no_pet_na_kanojo",
     "mainTitle": "Sakura-sou no Pet na Kanojo",
-    "synonyms": ["Sakura-sou no Pet na Kanojo"]
+    "englishTitle": "The Pet Girl of Sakurasou",
+    "synonyms": [
+      "Sakura-sou no Pet na Kanojo"
+    ]
   },
   "kobayashi_san_chi_no_maid_dragon": {
     "popularityRank": 110,
     "id": "33206",
     "main": "kobayashi_san_chi_no_maid_dragon",
     "mainTitle": "Kobayashi-san Chi no Maid Dragon",
-    "synonyms": ["Kobayashi-san Chi no Maid Dragon", "Kobayashi-san Chi no Maid Dragon S"]
+    "englishTitle": "Miss Kobayashi's Dragon Maid",
+    "synonyms": [
+      "Kobayashi-san Chi no Maid Dragon"
+    ]
   },
   "deadman_wonderland": {
     "popularityRank": 111,
     "id": "6880",
     "main": "deadman_wonderland",
     "mainTitle": "Deadman Wonderland",
-    "synonyms": ["Deadman Wonderland"]
+    "englishTitle": "Deadman Wonderland",
+    "synonyms": [
+      "Deadman Wonderland"
+    ]
   },
   "dragon_ball": {
     "popularityRank": 113,
     "id": "813",
     "main": "dragon_ball",
     "mainTitle": "Dragon Ball Z",
-    "synonyms": ["Dragon Ball Z", "Dragon Ball", "Dragon Ball Super", "Dragon Ball GT"]
+    "englishTitle": "Dragon Ball Z",
+    "synonyms": [
+      "Dragon Ball Z",
+      "Dragon Ball",
+      "Dragon Ball Super",
+      "Dragon Ball GT"
+    ]
   },
   "kuroko_no_basket": {
     "popularityRank": 116,
     "id": "11771",
     "main": "kuroko_no_basket",
     "mainTitle": "Kuroko no Basket",
-    "synonyms": ["Kuroko no Basket", "Kuroko no Basket 2nd Season", "Kuroko no Basket 3rd Season"]
+    "englishTitle": "Kuroko's Basketball",
+    "synonyms": [
+      "Kuroko no Basket",
+      "Kuroko no Basket 2nd Season",
+      "Kuroko no Basket 3rd Season"
+    ]
   },
   "guilty_crown": {
     "popularityRank": 117,
     "id": "10793",
     "main": "guilty_crown",
     "mainTitle": "Guilty Crown",
-    "synonyms": ["Guilty Crown"]
+    "englishTitle": "Guilty Crown",
+    "synonyms": [
+      "Guilty Crown"
+    ]
   },
   "kuroshitsuji": {
     "popularityRank": 120,
     "id": "4898",
     "main": "kuroshitsuji",
     "mainTitle": "Kuroshitsuji",
-    "synonyms": ["Kuroshitsuji", "Kuroshitsuji II"]
+    "englishTitle": "Black Butler",
+    "synonyms": [
+      "Kuroshitsuji"
+    ]
   },
   "zankyou_no_terror": {
     "popularityRank": 121,
     "id": "23283",
     "main": "zankyou_no_terror",
     "mainTitle": "Zankyou no Terror",
-    "synonyms": ["Zankyou no Terror"]
+    "englishTitle": "Terror in Resonance",
+    "synonyms": [
+      "Zankyou no Terror"
+    ]
   },
   "nisekoi": {
     "popularityRank": 122,
     "id": "18897",
     "main": "nisekoi",
     "mainTitle": "Nisekoi",
-    "synonyms": ["Nisekoi", "Nisekoi:"]
+    "englishTitle": "Nisekoi: False Love",
+    "synonyms": [
+      "Nisekoi",
+      "Nisekoi:"
+    ]
   },
   "kyoukai_no_kanata": {
     "popularityRank": 123,
     "id": "18153",
     "main": "kyoukai_no_kanata",
     "mainTitle": "Kyoukai no Kanata",
-    "synonyms": ["Kyoukai no Kanata"]
+    "englishTitle": "Beyond the Boundary",
+    "synonyms": [
+      "Kyoukai no Kanata"
+    ]
   },
   "devilman": {
     "popularityRank": 124,
     "id": "35120",
     "main": "devilman",
     "mainTitle": "Devilman: Crybaby",
-    "synonyms": ["Devilman: Crybaby"]
+    "englishTitle": "Devilman: Crybaby",
+    "synonyms": [
+      "Devilman: Crybaby"
+    ]
   },
   "monster": {
     "popularityRank": 125,
     "id": "19",
     "main": "monster",
     "mainTitle": "Monster",
-    "synonyms": ["Monster"]
+    "englishTitle": "Monster",
+    "synonyms": [
+      "Monster"
+    ]
   },
   "goblin_slayer": {
     "popularityRank": 127,
     "id": "37349",
     "main": "goblin_slayer",
     "mainTitle": "Goblin Slayer",
-    "synonyms": ["Goblin Slayer"]
+    "englishTitle": "Goblin Slayer",
+    "synonyms": [
+      "Goblin Slayer"
+    ]
   },
   "ouran_koukou_host_club": {
     "popularityRank": 131,
     "id": "853",
     "main": "ouran_koukou_host_club",
     "mainTitle": "Ouran Koukou Host Club",
-    "synonyms": ["Ouran Koukou Host Club"]
+    "englishTitle": "Ouran High School Host Club",
+    "synonyms": [
+      "Ouran Koukou Host Club"
+    ]
   },
   "saiki_kusuo_no_nan": {
     "popularityRank": 133,
     "id": "33255",
     "main": "saiki_kusuo_no_nan",
     "mainTitle": "Saiki Kusuo no Ψ-nan",
-    "synonyms": ["Saiki Kusuo no Ψ-nan", "Saiki Kusuo no Ψ-nan 2"]
+    "englishTitle": "The Disastrous Life of Saiki K.",
+    "synonyms": [
+      "Saiki Kusuo no Ψ-nan",
+      "Saiki Kusuo no Ψ-nan 2"
+    ]
   },
   "log_horizon": {
     "popularityRank": 134,
     "id": "17265",
     "main": "log_horizon",
     "mainTitle": "Log Horizon",
-    "synonyms": ["Log Horizon", "Log Horizon 2nd Season"]
+    "englishTitle": "Log Horizon",
+    "synonyms": [
+      "Log Horizon"
+    ]
   },
   "my_dress_up_darling": {
     "popularityRank": 136,
     "id": "48736",
     "main": "my_dress_up_darling",
     "mainTitle": "Sono Bisque Doll wa Koi wo Suru",
-    "synonyms": ["Sono Bisque Doll wa Koi wo Suru"]
+    "englishTitle": "My Dress-Up Darling",
+    "synonyms": [
+      "Sono Bisque Doll wa Koi wo Suru"
+    ]
   },
   "tonari_no_kaibutsu_kun": {
     "popularityRank": 137,
     "id": "14227",
     "main": "tonari_no_kaibutsu_kun",
     "mainTitle": "Tonari no Kaibutsu-kun",
-    "synonyms": ["Tonari no Kaibutsu-kun"]
+    "englishTitle": "My Little Monster",
+    "synonyms": [
+      "Tonari no Kaibutsu-kun"
+    ]
   },
   "mahouka_koukou_no_rettousei": {
     "popularityRank": 138,
     "id": "20785",
     "main": "mahouka_koukou_no_rettousei",
     "mainTitle": "Mahouka Koukou no Rettousei",
-    "synonyms": ["Mahouka Koukou no Rettousei"]
+    "englishTitle": "The Irregular at Magic High School",
+    "synonyms": [
+      "Mahouka Koukou no Rettousei"
+    ]
   },
   "tonari_no_totoro": {
     "popularityRank": 140,
     "id": "523",
     "main": "tonari_no_totoro",
     "mainTitle": "Tonari no Totoro",
-    "synonyms": ["Tonari no Totoro"]
+    "englishTitle": "My Neighbor Totoro",
+    "synonyms": [
+      "Tonari no Totoro"
+    ]
   },
   "gintama": {
     "popularityRank": 143,
     "id": "918",
     "main": "gintama",
     "mainTitle": "Gintama",
-    "synonyms": ["Gintama", "Gintama°", "Gintama'"]
+    "englishTitle": "Gintama",
+    "synonyms": [
+      "Gintama",
+      "Gintama°"
+    ]
   },
   "k_on": {
     "popularityRank": 146,
     "id": "5680",
     "main": "k_on",
     "mainTitle": "K-On!",
-    "synonyms": ["K-On!", "K-On!!"]
+    "englishTitle": "K-ON!",
+    "synonyms": [
+      "K-On!",
+      "K-On!!"
+    ]
   },
   "golden_time": {
     "popularityRank": 148,
     "id": "17895",
     "main": "golden_time",
     "mainTitle": "Golden Time",
-    "synonyms": ["Golden Time"]
+    "englishTitle": "Golden Time",
+    "synonyms": [
+      "Golden Time"
+    ]
   },
   "relife": {
     "popularityRank": 149,
     "id": "30015",
     "main": "relife",
     "mainTitle": "ReLIFE",
-    "synonyms": ["ReLIFE"]
+    "englishTitle": "ReLIFE",
+    "synonyms": [
+      "ReLIFE"
+    ]
   },
   "magi": {
     "popularityRank": 150,
     "id": "14513",
     "main": "magi",
     "mainTitle": "Magi: The Labyrinth of Magic",
-    "synonyms": ["Magi: The Labyrinth of Magic", "Magi: The Kingdom of Magic"]
+    "englishTitle": "Magi: The Labyrinth of Magic",
+    "synonyms": [
+      "Magi: The Labyrinth of Magic",
+      "Magi: The Kingdom of Magic"
+    ]
   },
   "date_a_live": {
     "popularityRank": 152,
     "id": "15583",
     "main": "date_a_live",
     "mainTitle": "Date A Live",
-    "synonyms": ["Date A Live", "Date A Live II"]
+    "englishTitle": "Date A Live",
+    "synonyms": [
+      "Date A Live",
+      "Date A Live II"
+    ]
   },
   "prison_school": {
     "popularityRank": 155,
     "id": "30240",
     "main": "prison_school",
     "mainTitle": "Prison School",
-    "synonyms": ["Prison School"]
+    "englishTitle": "Prison School",
+    "synonyms": [
+      "Prison School"
+    ]
   },
   "black_lagoon": {
     "popularityRank": 157,
     "id": "889",
     "main": "black_lagoon",
     "mainTitle": "Black Lagoon",
-    "synonyms": ["Black Lagoon"]
+    "englishTitle": "Black Lagoon",
+    "synonyms": [
+      "Black Lagoon"
+    ]
   },
   "wotaku_ni_koi_wa_muzukashii": {
     "popularityRank": 159,
     "id": "35968",
     "main": "wotaku_ni_koi_wa_muzukashii",
     "mainTitle": "Wotaku ni Koi wa Muzukashii",
-    "synonyms": ["Wotaku ni Koi wa Muzukashii"]
+    "englishTitle": "Wotakoi: Love is Hard for Otaku",
+    "synonyms": [
+      "Wotaku ni Koi wa Muzukashii"
+    ]
   },
   "rent_a_girlfriend": {
     "popularityRank": 160,
     "id": "40839",
     "main": "rent_a_girlfriend",
     "mainTitle": "Kanojo, Okarishimasu",
-    "synonyms": ["Kanojo, Okarishimasu"]
+    "englishTitle": "Rent-a-Girlfriend",
+    "synonyms": [
+      "Kanojo, Okarishimasu"
+    ]
   },
   "kimi_no_suizou_wo_tabetai": {
     "popularityRank": 162,
     "id": "36098",
     "main": "kimi_no_suizou_wo_tabetai",
     "mainTitle": "Kimi no Suizou wo Tabetai",
-    "synonyms": ["Kimi no Suizou wo Tabetai"]
+    "englishTitle": "I Want To Eat Your Pancreas",
+    "synonyms": [
+      "Kimi no Suizou wo Tabetai"
+    ]
   },
   "frieren": {
     "popularityRank": 165,
     "id": "52991",
     "main": "frieren",
     "mainTitle": "Sousou no Frieren",
-    "synonyms": ["Sousou no Frieren"]
+    "englishTitle": "Frieren: Beyond Journey's End",
+    "synonyms": [
+      "Sousou no Frieren"
+    ]
   },
   "kami_no_tou": {
     "popularityRank": 166,
     "id": "40221",
     "main": "kami_no_tou",
     "mainTitle": "Kami no Tou",
-    "synonyms": ["Kami no Tou"]
+    "englishTitle": "Tower of God",
+    "synonyms": [
+      "Kami no Tou"
+    ]
   },
   "kimi_ni_todoke": {
-    "popularityRank": 167,
+    "popularityRank": 168,
     "id": "6045",
     "main": "kimi_ni_todoke",
     "mainTitle": "Kimi ni Todoke",
-    "synonyms": ["Kimi ni Todoke"]
+    "englishTitle": "Kimi ni Todoke: From Me to You",
+    "synonyms": [
+      "Kimi ni Todoke"
+    ]
   },
   "5_toubun_no_hanayome": {
     "popularityRank": 169,
     "id": "38101",
     "main": "5_toubun_no_hanayome",
     "mainTitle": "5-toubun no Hanayome",
-    "synonyms": ["5-toubun no Hanayome", "5-toubun no Hanayome ∬"]
+    "englishTitle": "The Quintessential Quintuplets",
+    "synonyms": [
+      "5-toubun no Hanayome",
+      "5-toubun no Hanayome ∬"
+    ]
   },
   "rakudai_kishi_no_cavalry": {
     "popularityRank": 171,
     "id": "30296",
     "main": "rakudai_kishi_no_cavalry",
     "mainTitle": "Rakudai Kishi no Cavalry",
-    "synonyms": ["Rakudai Kishi no Cavalry"]
+    "englishTitle": "Chivalry of a Failed Knight",
+    "synonyms": [
+      "Rakudai Kishi no Cavalry"
+    ]
   },
   "plastic_memories": {
     "popularityRank": 172,
     "id": "27775",
     "main": "plastic_memories",
     "mainTitle": "Plastic Memories",
-    "synonyms": ["Plastic Memories"]
+    "englishTitle": "Plastic Memories",
+    "synonyms": [
+      "Plastic Memories"
+    ]
   },
   "darker_than_black": {
     "popularityRank": 174,
     "id": "2025",
     "main": "darker_than_black",
     "mainTitle": "Darker than Black: Kuro no Keiyakusha",
-    "synonyms": ["Darker than Black: Kuro no Keiyakusha"]
+    "englishTitle": "Darker than Black",
+    "synonyms": [
+      "Darker than Black: Kuro no Keiyakusha"
+    ]
   },
   "byousoku_5_centimeter": {
     "popularityRank": 175,
     "id": "1689",
     "main": "byousoku_5_centimeter",
     "mainTitle": "Byousoku 5 Centimeter",
-    "synonyms": ["Byousoku 5 Centimeter"]
+    "englishTitle": "5 Centimeters per Second",
+    "synonyms": [
+      "Byousoku 5 Centimeter"
+    ]
   },
   "danganronpa": {
     "popularityRank": 178,
     "id": "16592",
     "main": "danganronpa",
     "mainTitle": "Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei The Animation",
-    "synonyms": ["Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei The Animation"]
+    "englishTitle": "Danganronpa: The Animation",
+    "synonyms": [
+      "Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei The Animation"
+    ]
   },
   "mahoyome": {
     "popularityRank": 179,
     "id": "35062",
     "main": "mahoyome",
     "mainTitle": "Mahoutsukai no Yome",
-    "synonyms": ["Mahoutsukai no Yome"]
+    "englishTitle": "The Ancient Magus' Bride",
+    "synonyms": [
+      "Mahoutsukai no Yome"
+    ]
   },
   "youjo_senki": {
     "popularityRank": 180,
     "id": "32615",
     "main": "youjo_senki",
     "mainTitle": "Youjo Senki",
-    "synonyms": ["Youjo Senki"]
+    "englishTitle": "Saga of Tanya the Evil",
+    "synonyms": [
+      "Youjo Senki"
+    ]
   },
   "hellsing": {
     "popularityRank": 181,
     "id": "777",
     "main": "hellsing",
     "mainTitle": "Hellsing Ultimate",
-    "synonyms": ["Hellsing Ultimate", "Hellsing"]
+    "englishTitle": "Hellsing Ultimate",
+    "synonyms": [
+      "Hellsing Ultimate",
+      "Hellsing"
+    ]
   },
   "ao_haru_ride": {
     "popularityRank": 182,
     "id": "21995",
     "main": "ao_haru_ride",
     "mainTitle": "Ao Haru Ride",
-    "synonyms": ["Ao Haru Ride"]
+    "englishTitle": "Blue Spring Ride",
+    "synonyms": [
+      "Ao Haru Ride"
+    ]
   },
   "gekkan_shoujo_nozaki_kun": {
     "popularityRank": 184,
     "id": "23289",
     "main": "gekkan_shoujo_nozaki_kun",
     "mainTitle": "Gekkan Shoujo Nozaki-kun",
-    "synonyms": ["Gekkan Shoujo Nozaki-kun"]
+    "englishTitle": "Monthly Girls' Nozaki-kun",
+    "synonyms": [
+      "Gekkan Shoujo Nozaki-kun"
+    ]
   },
   "the_god_of_high_school": {
     "popularityRank": 187,
     "id": "41353",
     "main": "the_god_of_high_school",
     "mainTitle": "The God of High School",
-    "synonyms": ["The God of High School"]
+    "englishTitle": "The God of High School",
+    "synonyms": [
+      "The God of High School"
+    ]
   },
   "suzumiya_haruhi_no_yuuutsu": {
     "popularityRank": 188,
     "id": "849",
     "main": "suzumiya_haruhi_no_yuuutsu",
     "mainTitle": "Suzumiya Haruhi no Yuuutsu",
-    "synonyms": ["Suzumiya Haruhi no Yuuutsu", "Suzumiya Haruhi no Shoushitsu"]
+    "englishTitle": "The Melancholy of Haruhi Suzumiya",
+    "synonyms": [
+      "Suzumiya Haruhi no Yuuutsu"
+    ]
   },
   "black_bullet": {
     "popularityRank": 189,
     "id": "20787",
     "main": "black_bullet",
     "mainTitle": "Black Bullet",
-    "synonyms": ["Black Bullet"]
+    "englishTitle": "Black Bullet",
+    "synonyms": [
+      "Black Bullet"
+    ]
   },
   "komi_can_t_communicate": {
     "popularityRank": 191,
     "id": "48926",
     "main": "komi_can_t_communicate",
     "mainTitle": "Komi-san wa, Comyushou desu.",
-    "synonyms": ["Komi-san wa, Comyushou desu."]
+    "englishTitle": "Komi Can't Communicate",
+    "synonyms": [
+      "Komi-san wa, Comyushou desu."
+    ]
   },
   "nichijou": {
     "popularityRank": 193,
     "id": "10165",
     "main": "nichijou",
     "mainTitle": "Nichijou",
-    "synonyms": ["Nichijou"]
+    "englishTitle": "Nichijou - My Ordinary Life",
+    "synonyms": [
+      "Nichijou"
+    ]
   },
   "baccano": {
     "popularityRank": 194,
     "id": "2251",
     "main": "baccano",
     "mainTitle": "Baccano!",
-    "synonyms": ["Baccano!"]
+    "englishTitle": "Baccano!",
+    "synonyms": [
+      "Baccano!"
+    ]
   },
   "masamune_kun_no_revenge": {
     "popularityRank": 196,
     "id": "33487",
     "main": "masamune_kun_no_revenge",
     "mainTitle": "Masamune-kun no Revenge",
-    "synonyms": ["Masamune-kun no Revenge"]
+    "englishTitle": "Masamune-kun's Revenge",
+    "synonyms": [
+      "Masamune-kun no Revenge"
+    ]
   },
   "to_your_eternity": {
     "popularityRank": 197,
     "id": "41025",
     "main": "to_your_eternity",
     "mainTitle": "Fumetsu no Anata e",
-    "synonyms": ["Fumetsu no Anata e"]
+    "englishTitle": "To Your Eternity",
+    "synonyms": [
+      "Fumetsu no Anata e"
+    ]
   },
   "yuri_on_ice": {
     "popularityRank": 198,
     "id": "32995",
     "main": "yuri_on_ice",
     "mainTitle": "Yuri!!! on Ice",
-    "synonyms": ["Yuri!!! on Ice"]
+    "englishTitle": "Yuri!!! On Ice",
+    "synonyms": [
+      "Yuri!!! on Ice"
+    ]
   },
   "kekkai_sensen": {
     "popularityRank": 199,
     "id": "24439",
     "main": "kekkai_sensen",
     "mainTitle": "Kekkai Sensen",
-    "synonyms": ["Kekkai Sensen"]
+    "englishTitle": "Blood Blockade Battlefront",
+    "synonyms": [
+      "Kekkai Sensen"
+    ]
   },
   "[oshi_no_ko]": {
     "popularityRank": 200,
     "id": "52034",
     "main": "[oshi_no_ko]",
     "mainTitle": "[Oshi no Ko]",
-    "synonyms": ["[Oshi no Ko]"]
+    "englishTitle": "[Oshi No Ko]",
+    "synonyms": [
+      "[Oshi no Ko]"
+    ]
   },
   "banana_fish": {
     "popularityRank": 202,
     "id": "36649",
     "main": "banana_fish",
     "mainTitle": "Banana Fish",
-    "synonyms": ["Banana Fish"]
+    "englishTitle": "Banana Fish",
+    "synonyms": [
+      "Banana Fish"
+    ]
   },
   "kotonoha_no_niwa": {
     "popularityRank": 206,
     "id": "16782",
     "main": "kotonoha_no_niwa",
     "mainTitle": "Kotonoha no Niwa",
-    "synonyms": ["Kotonoha no Niwa"]
+    "englishTitle": "The Garden of Words",
+    "synonyms": [
+      "Kotonoha no Niwa"
+    ]
   },
   "beastars": {
     "popularityRank": 207,
     "id": "39195",
     "main": "beastars",
     "mainTitle": "Beastars",
-    "synonyms": ["Beastars"]
+    "englishTitle": null,
+    "synonyms": [
+      "Beastars"
+    ]
   },
   "akira": {
     "popularityRank": 208,
     "id": "47",
     "main": "akira",
     "mainTitle": "Akira",
-    "synonyms": ["Akira"]
+    "englishTitle": "Akira",
+    "synonyms": [
+      "Akira"
+    ]
   },
   "akatsuki_no_yona": {
     "popularityRank": 209,
     "id": "25013",
     "main": "akatsuki_no_yona",
     "mainTitle": "Akatsuki no Yona",
-    "synonyms": ["Akatsuki no Yona"]
+    "englishTitle": "Yona of the Dawn",
+    "synonyms": [
+      "Akatsuki no Yona"
+    ]
   },
   "btooom!": {
     "popularityRank": 211,
     "id": "14345",
     "main": "btooom!",
     "mainTitle": "Btooom!",
-    "synonyms": ["Btooom!"]
+    "englishTitle": "BTOOOM!",
+    "synonyms": [
+      "Btooom!"
+    ]
   },
   "fruits_basket": {
     "popularityRank": 213,
     "id": "38680",
     "main": "fruits_basket",
     "mainTitle": "Fruits Basket 1st Season",
-    "synonyms": ["Fruits Basket 1st Season"]
+    "englishTitle": "Fruits Basket 1st Season",
+    "synonyms": [
+      "Fruits Basket 1st Season"
+    ]
   },
   "trinity_seven": {
     "popularityRank": 214,
     "id": "25157",
     "main": "trinity_seven",
     "mainTitle": "Trinity Seven",
-    "synonyms": ["Trinity Seven"]
+    "englishTitle": "Trinity Seven",
+    "synonyms": [
+      "Trinity Seven"
+    ]
   },
   "shonan_junai_gumi": {
     "popularityRank": 217,
     "id": "245",
     "main": "shonan_junai_gumi",
     "mainTitle": "Great Teacher Onizuka",
-    "synonyms": ["Great Teacher Onizuka"]
+    "englishTitle": "Great Teacher Onizuka",
+    "synonyms": [
+      "Great Teacher Onizuka"
+    ]
   },
   "mushishi": {
     "popularityRank": 219,
     "id": "457",
     "main": "mushishi",
     "mainTitle": "Mushishi",
-    "synonyms": ["Mushishi"]
+    "englishTitle": "Mushi-Shi",
+    "synonyms": [
+      "Mushishi"
+    ]
   },
   "kokoro_connect": {
     "popularityRank": 220,
     "id": "11887",
     "main": "kokoro_connect",
     "mainTitle": "Kokoro Connect",
-    "synonyms": ["Kokoro Connect"]
+    "englishTitle": "Kokoro Connect",
+    "synonyms": [
+      "Kokoro Connect"
+    ]
   },
   "orange": {
     "popularityRank": 222,
     "id": "32729",
     "main": "orange",
     "mainTitle": "Orange",
-    "synonyms": ["Orange"]
+    "englishTitle": "Orange",
+    "synonyms": [
+      "Orange"
+    ]
   },
   "flcl": {
     "popularityRank": 223,
     "id": "227",
     "main": "flcl",
     "mainTitle": "FLCL",
-    "synonyms": ["FLCL"]
+    "englishTitle": "FLCL",
+    "synonyms": [
+      "FLCL"
+    ]
   },
   "danshi_koukousei_no_nichijou": {
     "popularityRank": 224,
     "id": "11843",
     "main": "danshi_koukousei_no_nichijou",
     "mainTitle": "Danshi Koukousei no Nichijou",
-    "synonyms": ["Danshi Koukousei no Nichijou"]
+    "englishTitle": "Daily Lives of High School Boys",
+    "synonyms": [
+      "Danshi Koukousei no Nichijou"
+    ]
   },
   "cyberpunk": {
     "popularityRank": 225,
     "id": "42310",
     "main": "cyberpunk",
     "mainTitle": "Cyberpunk: Edgerunners",
-    "synonyms": ["Cyberpunk: Edgerunners"]
+    "englishTitle": null,
+    "synonyms": [
+      "Cyberpunk: Edgerunners"
+    ]
   },
   "hotarubi_no_mori_e": {
     "popularityRank": 226,
     "id": "10408",
     "main": "hotarubi_no_mori_e",
     "mainTitle": "Hotarubi no Mori e",
-    "synonyms": ["Hotarubi no Mori e"]
+    "englishTitle": "Into the Forest of Fireflies' Light",
+    "synonyms": [
+      "Hotarubi no Mori e"
+    ]
   },
   "maou_gakuin_no_futekigousha": {
     "popularityRank": 227,
     "id": "40496",
     "main": "maou_gakuin_no_futekigousha",
     "mainTitle": "Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou",
+    "englishTitle": "The Misfit of Demon King Academy",
     "synonyms": [
       "Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou"
     ]
@@ -1234,818 +1710,839 @@
     "id": "2966",
     "main": "ookami_to_koushinryou",
     "mainTitle": "Ookami to Koushinryou",
-    "synonyms": ["Ookami to Koushinryou"]
+    "englishTitle": "Spice and Wolf",
+    "synonyms": [
+      "Ookami to Koushinryou"
+    ]
   },
   "koutetsujou_no_kabaneri": {
     "popularityRank": 229,
     "id": "28623",
     "main": "koutetsujou_no_kabaneri",
     "mainTitle": "Koutetsujou no Kabaneri",
-    "synonyms": ["Koutetsujou no Kabaneri"]
+    "englishTitle": "Kabaneri of the Iron Fortress",
+    "synonyms": [
+      "Koutetsujou no Kabaneri"
+    ]
   },
   "86_part": {
     "popularityRank": 230,
     "id": "41457",
     "main": "86_part",
     "mainTitle": "86",
-    "synonyms": ["86"]
+    "englishTitle": "86 Eighty-Six",
+    "synonyms": [
+      "86"
+    ]
   },
   "zero_no_tsukaima": {
     "popularityRank": 231,
     "id": "1195",
     "main": "zero_no_tsukaima",
     "mainTitle": "Zero no Tsukaima",
-    "synonyms": ["Zero no Tsukaima"]
+    "englishTitle": "The Familiar of Zero",
+    "synonyms": [
+      "Zero no Tsukaima"
+    ]
   },
   "toaru_majutsu_no_index": {
     "popularityRank": 233,
     "id": "4654",
     "main": "toaru_majutsu_no_index",
     "mainTitle": "Toaru Majutsu no Index",
-    "synonyms": ["Toaru Majutsu no Index", "Toaru Kagaku no Railgun"]
+    "englishTitle": "A Certain Magical Index",
+    "synonyms": [
+      "Toaru Majutsu no Index"
+    ]
   },
   "gate": {
     "popularityRank": 234,
     "id": "28907",
     "main": "gate",
     "mainTitle": "Gate: Jieitai Kanochi nite, Kaku Tatakaeri",
-    "synonyms": ["Gate: Jieitai Kanochi nite, Kaku Tatakaeri"]
+    "englishTitle": "GATE",
+    "synonyms": [
+      "Gate: Jieitai Kanochi nite, Kaku Tatakaeri"
+    ]
   },
   "shimoneta_to_iu_gainen_ga_sonzai_shinai_taikutsu_na_sekai": {
     "popularityRank": 235,
     "id": "29786",
     "main": "shimoneta_to_iu_gainen_ga_sonzai_shinai_taikutsu_na_sekai",
     "mainTitle": "Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai",
-    "synonyms": ["Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai"]
+    "englishTitle": "SHIMONETA: A Boring World Where the Concept of Dirty Jokes Doesn't Exist",
+    "synonyms": [
+      "Shimoneta to Iu Gainen ga Sonzai Shinai Taikutsu na Sekai"
+    ]
   },
   "ijiranaide_nagatoro_san": {
     "popularityRank": 236,
     "id": "42361",
     "main": "ijiranaide_nagatoro_san",
     "mainTitle": "Ijiranaide, Nagatoro-san",
-    "synonyms": ["Ijiranaide, Nagatoro-san"]
+    "englishTitle": "Don't Toy with Me, Miss Nagatoro",
+    "synonyms": [
+      "Ijiranaide, Nagatoro-san"
+    ]
   },
   "ookami_kodomo_no_ame_to_yuki": {
     "popularityRank": 237,
     "id": "12355",
     "main": "ookami_kodomo_no_ame_to_yuki",
     "mainTitle": "Ookami Kodomo no Ame to Yuki",
-    "synonyms": ["Ookami Kodomo no Ame to Yuki"]
+    "englishTitle": "Wolf Children",
+    "synonyms": [
+      "Ookami Kodomo no Ame to Yuki"
+    ]
   },
   "boku_wa_tomodachi_ga_sukunai": {
     "popularityRank": 238,
     "id": "10719",
     "main": "boku_wa_tomodachi_ga_sukunai",
     "mainTitle": "Boku wa Tomodachi ga Sukunai",
-    "synonyms": ["Boku wa Tomodachi ga Sukunai"]
+    "englishTitle": "Haganai: I don't have many friends",
+    "synonyms": [
+      "Boku wa Tomodachi ga Sukunai"
+    ]
   },
   "when_they_cry": {
     "popularityRank": 239,
     "id": "934",
     "main": "when_they_cry",
     "mainTitle": "Higurashi no Naku Koro ni",
-    "synonyms": ["Higurashi no Naku Koro ni"]
+    "englishTitle": "Higurashi: When They Cry",
+    "synonyms": [
+      "Higurashi no Naku Koro ni"
+    ]
   },
   "inuyasha": {
     "popularityRank": 242,
     "id": "249",
     "main": "inuyasha",
     "mainTitle": "InuYasha",
-    "synonyms": ["InuYasha"]
+    "englishTitle": "InuYasha",
+    "synonyms": [
+      "InuYasha"
+    ]
   },
   "serial_experiments_lain": {
     "popularityRank": 244,
     "id": "339",
     "main": "serial_experiments_lain",
     "mainTitle": "Serial Experiments Lain",
-    "synonyms": ["Serial Experiments Lain"]
+    "englishTitle": "Serial Experiments Lain",
+    "synonyms": [
+      "Serial Experiments Lain"
+    ]
   },
   "free": {
     "popularityRank": 245,
     "id": "18507",
     "main": "free",
     "mainTitle": "Free!",
-    "synonyms": ["Free!"]
+    "englishTitle": "Free! - Iwatobi Swim Club",
+    "synonyms": [
+      "Free!"
+    ]
   },
   "grand_blue": {
     "popularityRank": 247,
     "id": "37105",
     "main": "grand_blue",
     "mainTitle": "Grand Blue",
-    "synonyms": ["Grand Blue"]
+    "englishTitle": "Grand Blue Dreaming",
+    "synonyms": [
+      "Grand Blue"
+    ]
   },
   "yamada_kun_to_7_nin_no_majo": {
     "popularityRank": 248,
     "id": "28677",
     "main": "yamada_kun_to_7_nin_no_majo",
     "mainTitle": "Yamada-kun to 7-nin no Majo",
-    "synonyms": ["Yamada-kun to 7-nin no Majo"]
+    "englishTitle": "Yamada-kun and the Seven Witches",
+    "synonyms": [
+      "Yamada-kun to 7-nin no Majo"
+    ]
   },
   "toki_wo_kakeru_shoujo": {
     "popularityRank": 250,
     "id": "2236",
     "main": "toki_wo_kakeru_shoujo",
     "mainTitle": "Toki wo Kakeru Shoujo",
-    "synonyms": ["Toki wo Kakeru Shoujo"]
+    "englishTitle": "The Girl Who Leapt Through Time",
+    "synonyms": [
+      "Toki wo Kakeru Shoujo"
+    ]
   },
   "solo_leveling": {
     "popularityRank": 251,
     "id": "52299",
     "main": "solo_leveling",
     "mainTitle": "Ore dake Level Up na Ken",
-    "synonyms": ["Ore dake Level Up na Ken"]
+    "englishTitle": "Solo Leveling",
+    "synonyms": [
+      "Ore dake Level Up na Ken"
+    ]
   },
   "shinsekai_yori": {
     "popularityRank": 254,
     "id": "13125",
     "main": "shinsekai_yori",
     "mainTitle": "Shinsekai yori",
-    "synonyms": ["Shinsekai yori"]
+    "englishTitle": "From the New World",
+    "synonyms": [
+      "Shinsekai yori"
+    ]
   },
   "sakamoto_desu_ga": {
     "popularityRank": 256,
     "id": "32542",
     "main": "sakamoto_desu_ga",
     "mainTitle": "Sakamoto desu ga?",
-    "synonyms": ["Sakamoto desu ga?"]
+    "englishTitle": "Haven't You Heard? I'm Sakamoto",
+    "synonyms": [
+      "Sakamoto desu ga?"
+    ]
   },
   "trigun": {
     "popularityRank": 258,
     "id": "6",
     "main": "trigun",
     "mainTitle": "Trigun",
-    "synonyms": ["Trigun"]
+    "englishTitle": "Trigun",
+    "synonyms": [
+      "Trigun"
+    ]
   },
   "wonder_egg_priority": {
     "popularityRank": 260,
     "id": "43299",
     "main": "wonder_egg_priority",
     "mainTitle": "Wonder Egg Priority",
-    "synonyms": ["Wonder Egg Priority"]
+    "englishTitle": "Wonder Egg Priority",
+    "synonyms": [
+      "Wonder Egg Priority"
+    ]
   },
   "domestic_na_kanojo": {
     "popularityRank": 261,
     "id": "37982",
     "main": "domestic_na_kanojo",
     "mainTitle": "Domestic na Kanojo",
-    "synonyms": ["Domestic na Kanojo"]
+    "englishTitle": "Domestic Girlfriend",
+    "synonyms": [
+      "Domestic na Kanojo"
+    ]
   },
   "k": {
     "popularityRank": 262,
     "id": "14467",
     "main": "k",
     "mainTitle": "K",
-    "synonyms": ["K"]
+    "englishTitle": "K",
+    "synonyms": [
+      "K"
+    ]
   },
   "tonikawa": {
     "popularityRank": 263,
     "id": "41389",
     "main": "tonikawa",
     "mainTitle": "Tonikaku Kawaii",
-    "synonyms": ["Tonikaku Kawaii"]
+    "englishTitle": "Tonikawa: Over The Moon For You",
+    "synonyms": [
+      "Tonikaku Kawaii"
+    ]
   },
   "nhk_ni_youkoso!": {
     "popularityRank": 265,
     "id": "1210",
     "main": "nhk_ni_youkoso!",
     "mainTitle": "NHK ni Youkoso!",
-    "synonyms": ["NHK ni Youkoso!"]
+    "englishTitle": "Welcome to the N.H.K.",
+    "synonyms": [
+      "NHK ni Youkoso!"
+    ]
   },
   "monster_musume_no_iru_nichijou": {
     "popularityRank": 266,
     "id": "30307",
     "main": "monster_musume_no_iru_nichijou",
     "mainTitle": "Monster Musume no Iru Nichijou",
-    "synonyms": ["Monster Musume no Iru Nichijou"]
+    "englishTitle": "Monster Musume: Everyday Life with Monster Girls",
+    "synonyms": [
+      "Monster Musume no Iru Nichijou"
+    ]
   },
   "blue_lock": {
     "popularityRank": 267,
     "id": "49596",
     "main": "blue_lock",
     "mainTitle": "Blue Lock",
-    "synonyms": ["Blue Lock"]
+    "englishTitle": "Blue Lock",
+    "synonyms": [
+      "Blue Lock"
+    ]
   },
   "jigokuraku": {
     "popularityRank": 268,
     "id": "46569",
     "main": "jigokuraku",
     "mainTitle": "Jigokuraku",
-    "synonyms": ["Jigokuraku"]
+    "englishTitle": "Hell's Paradise",
+    "synonyms": [
+      "Jigokuraku"
+    ]
   },
   "rokudenashi_majutsu_koushi_to_akashic_records": {
     "popularityRank": 269,
     "id": "32951",
     "main": "rokudenashi_majutsu_koushi_to_akashic_records",
     "mainTitle": "Rokudenashi Majutsu Koushi to Akashic Records",
-    "synonyms": ["Rokudenashi Majutsu Koushi to Akashic Records"]
+    "englishTitle": "Akashic Records of Bastard Magic Instructor",
+    "synonyms": [
+      "Rokudenashi Majutsu Koushi to Akashic Records"
+    ]
   },
   "kiznaiver": {
     "popularityRank": 270,
     "id": "31798",
     "main": "kiznaiver",
     "mainTitle": "Kiznaiver",
-    "synonyms": ["Kiznaiver"]
+    "englishTitle": "Kiznaiver",
+    "synonyms": [
+      "Kiznaiver"
+    ]
   },
   "hai_to_gensou_no_grimgar": {
     "popularityRank": 273,
     "id": "31859",
     "main": "hai_to_gensou_no_grimgar",
     "mainTitle": "Hai to Gensou no Grimgar",
-    "synonyms": ["Hai to Gensou no Grimgar"]
+    "englishTitle": "Grimgar: Ashes and Illusions",
+    "synonyms": [
+      "Hai to Gensou no Grimgar"
+    ]
   },
   "how_not_to_summon_a_demon_lord": {
     "popularityRank": 274,
     "id": "37210",
     "main": "how_not_to_summon_a_demon_lord",
     "mainTitle": "Isekai Maou to Shoukan Shoujo no Dorei Majutsu",
-    "synonyms": ["Isekai Maou to Shoukan Shoujo no Dorei Majutsu"]
+    "englishTitle": "How Not to Summon a Demon Lord",
+    "synonyms": [
+      "Isekai Maou to Shoukan Shoujo no Dorei Majutsu"
+    ]
   },
   "tsurezure_children": {
     "popularityRank": 276,
     "id": "34902",
     "main": "tsurezure_children",
     "mainTitle": "Tsurezure Children",
-    "synonyms": ["Tsurezure Children"]
+    "englishTitle": "Tsuredure Children",
+    "synonyms": [
+      "Tsurezure Children"
+    ]
   },
   "91_days": {
     "popularityRank": 278,
     "id": "32998",
     "main": "91_days",
     "mainTitle": "91 Days",
-    "synonyms": ["91 Days"]
+    "englishTitle": "91 Days",
+    "synonyms": [
+      "91 Days"
+    ]
   },
   "arifureta": {
     "popularityRank": 283,
     "id": "36882",
     "main": "arifureta",
     "mainTitle": "Arifureta Shokugyou de Sekai Saikyou",
-    "synonyms": ["Arifureta Shokugyou de Sekai Saikyou"]
+    "englishTitle": "Arifureta: From Commonplace to World's Strongest",
+    "synonyms": [
+      "Arifureta Shokugyou de Sekai Saikyou"
+    ]
   },
   "perfect_blue": {
     "popularityRank": 284,
     "id": "437",
     "main": "perfect_blue",
     "mainTitle": "Perfect Blue",
-    "synonyms": ["Perfect Blue"]
+    "englishTitle": "Perfect Blue",
+    "synonyms": [
+      "Perfect Blue"
+    ]
   },
   "eromanga_sensei": {
     "popularityRank": 287,
     "id": "32901",
     "main": "eromanga_sensei",
     "mainTitle": "Eromanga-sensei",
-    "synonyms": ["Eromanga-sensei"]
+    "englishTitle": "Eromanga Sensei",
+    "synonyms": [
+      "Eromanga-sensei"
+    ]
   },
   "accel_world": {
     "popularityRank": 289,
     "id": "11759",
     "main": "accel_world",
     "mainTitle": "Accel World",
-    "synonyms": ["Accel World"]
+    "englishTitle": "Accel World",
+    "synonyms": [
+      "Accel World"
+    ]
   },
   "kagejitsu": {
     "popularityRank": 290,
     "id": "48316",
     "main": "kagejitsu",
     "mainTitle": "Kage no Jitsuryokusha ni Naritakute!",
-    "synonyms": ["Kage no Jitsuryokusha ni Naritakute!"]
+    "englishTitle": "The Eminence in Shadow",
+    "synonyms": [
+      "Kage no Jitsuryokusha ni Naritakute!"
+    ]
   },
   "yuu_yuu_hakusho": {
     "popularityRank": 294,
     "id": "392",
     "main": "yuu_yuu_hakusho",
     "mainTitle": "Yuu☆Yuu☆Hakusho",
-    "synonyms": ["Yuu☆Yuu☆Hakusho"]
+    "englishTitle": "Yu Yu Hakusho: Ghost Files",
+    "synonyms": [
+      "Yuu☆Yuu☆Hakusho"
+    ]
   },
   "himouto_umaru_chan": {
     "popularityRank": 295,
     "id": "28825",
     "main": "himouto_umaru_chan",
     "mainTitle": "Himouto! Umaru-chan",
-    "synonyms": ["Himouto! Umaru-chan"]
+    "englishTitle": "Himouto! Umaru-chan",
+    "synonyms": [
+      "Himouto! Umaru-chan"
+    ]
   },
   "nana": {
     "popularityRank": 297,
     "id": "877",
     "main": "nana",
     "mainTitle": "Nana",
-    "synonyms": ["Nana"]
+    "englishTitle": "Nana",
+    "synonyms": [
+      "Nana"
+    ]
   },
   "d_gray_man": {
     "popularityRank": 298,
     "id": "1482",
     "main": "d_gray_man",
     "mainTitle": "D.Gray-man",
-    "synonyms": ["D.Gray-man"]
+    "englishTitle": "D.Gray-man",
+    "synonyms": [
+      "D.Gray-man"
+    ]
   },
   "kuzu_no_honkai": {
     "popularityRank": 299,
     "id": "32949",
     "main": "kuzu_no_honkai",
     "mainTitle": "Kuzu no Honkai",
-    "synonyms": ["Kuzu no Honkai"]
+    "englishTitle": "Scum's Wish",
+    "synonyms": [
+      "Kuzu no Honkai"
+    ]
   },
   "hotaru_no_haka": {
     "popularityRank": 300,
     "id": "578",
     "main": "hotaru_no_haka",
     "mainTitle": "Hotaru no Haka",
-    "synonyms": ["Hotaru no Haka"]
+    "englishTitle": "Grave of the Fireflies",
+    "synonyms": [
+      "Hotaru no Haka"
+    ]
   },
   "rosario_to_vampire": {
     "popularityRank": 301,
     "id": "2993",
     "main": "rosario_to_vampire",
     "mainTitle": "Rosario to Vampire",
-    "synonyms": ["Rosario to Vampire"]
+    "englishTitle": "Rosario + Vampire",
+    "synonyms": [
+      "Rosario to Vampire"
+    ]
   },
   "blood_lad": {
     "popularityRank": 302,
     "id": "11633",
     "main": "blood_lad",
     "mainTitle": "Blood Lad",
-    "synonyms": ["Blood Lad"]
+    "englishTitle": "Blood Lad",
+    "synonyms": [
+      "Blood Lad"
+    ]
   },
   "shinmai_maou_no_testament": {
     "popularityRank": 303,
     "id": "23233",
     "main": "shinmai_maou_no_testament",
     "mainTitle": "Shinmai Maou no Testament",
-    "synonyms": ["Shinmai Maou no Testament"]
+    "englishTitle": "The Testament of Sister New Devil",
+    "synonyms": [
+      "Shinmai Maou no Testament"
+    ]
   },
   "akagami_no_shirayuki_hime": {
     "popularityRank": 304,
     "id": "30123",
     "main": "akagami_no_shirayuki_hime",
     "mainTitle": "Akagami no Shirayuki-hime",
-    "synonyms": ["Akagami no Shirayuki-hime"]
+    "englishTitle": "Snow White with the Red Hair",
+    "synonyms": [
+      "Akagami no Shirayuki-hime"
+    ]
   },
   "ore_no_imouto": {
     "popularityRank": 305,
     "id": "8769",
     "main": "ore_no_imouto",
     "mainTitle": "Ore no Imouto ga Konnani Kawaii Wake ga Nai",
-    "synonyms": ["Ore no Imouto ga Konnani Kawaii Wake ga Nai"]
+    "englishTitle": "OreImo",
+    "synonyms": [
+      "Ore no Imouto ga Konnani Kawaii Wake ga Nai"
+    ]
   },
   "3_gatsu_no_lion": {
     "popularityRank": 306,
     "id": "31646",
     "main": "3_gatsu_no_lion",
     "mainTitle": "3-gatsu no Lion",
-    "synonyms": ["3-gatsu no Lion"]
+    "englishTitle": "March Comes In Like a Lion",
+    "synonyms": [
+      "3-gatsu no Lion"
+    ]
   },
   "ore_monogatari!!": {
     "popularityRank": 308,
     "id": "28297",
     "main": "ore_monogatari!!",
     "mainTitle": "Ore Monogatari!!",
-    "synonyms": ["Ore Monogatari!!"]
+    "englishTitle": "My Love Story!!",
+    "synonyms": [
+      "Ore Monogatari!!"
+    ]
   },
   "satsuriku_no_tenshi": {
     "popularityRank": 309,
     "id": "35994",
     "main": "satsuriku_no_tenshi",
     "mainTitle": "Satsuriku no Tenshi",
-    "synonyms": ["Satsuriku no Tenshi"]
+    "englishTitle": "Angels of Death",
+    "synonyms": [
+      "Satsuriku no Tenshi"
+    ]
   },
   "berserk": {
     "popularityRank": 310,
     "id": "33",
     "main": "berserk",
     "mainTitle": "Kenpuu Denki Berserk",
-    "synonyms": ["Kenpuu Denki Berserk"]
+    "englishTitle": "Berserk",
+    "synonyms": [
+      "Kenpuu Denki Berserk"
+    ]
   },
   "great_pretender": {
     "popularityRank": 311,
     "id": "40052",
     "main": "great_pretender",
     "mainTitle": "Great Pretender",
-    "synonyms": ["Great Pretender"]
+    "englishTitle": null,
+    "synonyms": [
+      "Great Pretender"
+    ]
   },
   "claymore": {
     "popularityRank": 312,
     "id": "1818",
     "main": "claymore",
     "mainTitle": "Claymore",
-    "synonyms": ["Claymore"]
+    "englishTitle": "Claymore",
+    "synonyms": [
+      "Claymore"
+    ]
   },
   "ousama_ranking": {
     "popularityRank": 315,
     "id": "40834",
     "main": "ousama_ranking",
     "mainTitle": "Ousama Ranking",
-    "synonyms": ["Ousama Ranking"]
+    "englishTitle": "Ranking of Kings",
+    "synonyms": [
+      "Ousama Ranking"
+    ]
   },
   "saenai_heroine_no_sodatekata": {
     "popularityRank": 316,
     "id": "23277",
     "main": "saenai_heroine_no_sodatekata",
     "mainTitle": "Saenai Heroine no Sodatekata",
-    "synonyms": ["Saenai Heroine no Sodatekata"]
+    "englishTitle": "Saekano: How to Raise a Boring Girlfriend",
+    "synonyms": [
+      "Saenai Heroine no Sodatekata"
+    ]
   },
   "school_days": {
     "popularityRank": 317,
     "id": "2476",
     "main": "school_days",
     "mainTitle": "School Days",
-    "synonyms": ["School Days"]
+    "englishTitle": "School Days",
+    "synonyms": [
+      "School Days"
+    ]
   },
   "handa_kun": {
     "popularityRank": 318,
     "id": "22789",
     "main": "handa_kun",
     "mainTitle": "Barakamon",
-    "synonyms": ["Barakamon"]
+    "englishTitle": "Barakamon",
+    "synonyms": [
+      "Barakamon"
+    ]
   },
   "gakusen_toshi_asterisk": {
     "popularityRank": 319,
     "id": "30544",
     "main": "gakusen_toshi_asterisk",
     "mainTitle": "Gakusen Toshi Asterisk",
-    "synonyms": ["Gakusen Toshi Asterisk"]
+    "englishTitle": "The Asterisk War",
+    "synonyms": [
+      "Gakusen Toshi Asterisk"
+    ]
   },
   "kamisama_hajimemashita": {
     "popularityRank": 320,
     "id": "14713",
     "main": "kamisama_hajimemashita",
     "mainTitle": "Kamisama Hajimemashita",
-    "synonyms": ["Kamisama Hajimemashita"]
+    "englishTitle": "Kamisama Kiss",
+    "synonyms": [
+      "Kamisama Hajimemashita"
+    ]
   },
   "blend_s": {
     "popularityRank": 321,
     "id": "34618",
     "main": "blend_s",
     "mainTitle": "Blend S",
-    "synonyms": ["Blend S"]
+    "englishTitle": "BLEND-S",
+    "synonyms": [
+      "Blend S"
+    ]
   },
   "amagi_brilliant_park": {
     "popularityRank": 322,
     "id": "22147",
     "main": "amagi_brilliant_park",
     "mainTitle": "Amagi Brilliant Park",
-    "synonyms": ["Amagi Brilliant Park"]
+    "englishTitle": "Amagi Brilliant Park",
+    "synonyms": [
+      "Amagi Brilliant Park"
+    ]
   },
   "watashi_ga_motenai_no_wa_dou_kangaetemo_omaera_ga_warui": {
     "popularityRank": 323,
     "id": "16742",
     "main": "watashi_ga_motenai_no_wa_dou_kangaetemo_omaera_ga_warui",
     "mainTitle": "Watashi ga Motenai no wa Dou Kangaetemo Omaera ga Warui!",
-    "synonyms": ["Watashi ga Motenai no wa Dou Kangaetemo Omaera ga Warui!"]
+    "englishTitle": "WataMote: No Matter How I Look At It, It's You Guys' Fault I'm Not Popular!",
+    "synonyms": [
+      "Watashi ga Motenai no wa Dou Kangaetemo Omaera ga Warui!"
+    ]
   },
   "ergo_proxy": {
     "popularityRank": 324,
     "id": "790",
     "main": "ergo_proxy",
     "mainTitle": "Ergo Proxy",
-    "synonyms": ["Ergo Proxy"]
+    "englishTitle": "Ergo Proxy",
+    "synonyms": [
+      "Ergo Proxy"
+    ]
   },
   "gamers!": {
     "popularityRank": 325,
     "id": "34280",
     "main": "gamers!",
     "mainTitle": "Gamers!",
-    "synonyms": ["Gamers!"]
+    "englishTitle": "Gamers!",
+    "synonyms": [
+      "Gamers!"
+    ]
   },
   "say_i_love_you": {
     "popularityRank": 326,
     "id": "14289",
     "main": "say_i_love_you",
     "mainTitle": "Suki tte Ii na yo.",
-    "synonyms": ["Suki tte Ii na yo."]
+    "englishTitle": "Say \"I Love You.\"",
+    "synonyms": [
+      "Suki tte Ii na yo."
+    ]
   },
   "inuyashiki": {
     "popularityRank": 328,
     "id": "34542",
     "main": "inuyashiki",
     "mainTitle": "Inuyashiki",
-    "synonyms": ["Inuyashiki"]
-  },
-  "lucky_star": {
-    "popularityRank": 330,
-    "id": "1887",
-    "main": "lucky_star",
-    "mainTitle": "Lucky☆Star",
-    "synonyms": ["Lucky☆Star"]
-  },
-  "hataraku_saibou": {
-    "popularityRank": 331,
-    "id": "37141",
-    "main": "hataraku_saibou",
-    "mainTitle": "Hataraku Saibou",
-    "synonyms": ["Hataraku Saibou"]
-  },
-  "little_witch_academia": {
-    "popularityRank": 332,
-    "id": "33489",
-    "main": "little_witch_academia",
-    "mainTitle": "Little Witch Academia (TV)",
-    "synonyms": ["Little Witch Academia (TV)"]
-  },
-  "ghost_in_the_shell": {
-    "popularityRank": 335,
-    "id": "43",
-    "main": "ghost_in_the_shell",
-    "mainTitle": "Koukaku Kidoutai",
-    "synonyms": ["Koukaku Kidoutai"]
-  },
-  "to_love_ru": {
-    "popularityRank": 336,
-    "id": "3455",
-    "main": "to_love_ru",
-    "mainTitle": "To LOVE-Ru",
-    "synonyms": ["To LOVE-Ru"]
+    "englishTitle": "Inuyashiki: Last Hero",
+    "synonyms": [
+      "Inuyashiki"
+    ]
   },
   "dandadan": {
-    "popularityRank": 337,
+    "popularityRank": 330,
     "id": "57334",
     "main": "dandadan",
     "mainTitle": "Dandadan",
-    "synonyms": ["Dandadan"]
+    "englishTitle": "Dan Da Dan",
+    "synonyms": [
+      "Dandadan"
+    ]
+  },
+  "lucky_star": {
+    "popularityRank": 331,
+    "id": "1887",
+    "main": "lucky_star",
+    "mainTitle": "Lucky☆Star",
+    "englishTitle": "Lucky☆Star",
+    "synonyms": [
+      "Lucky☆Star"
+    ]
+  },
+  "hataraku_saibou": {
+    "popularityRank": 332,
+    "id": "37141",
+    "main": "hataraku_saibou",
+    "mainTitle": "Hataraku Saibou",
+    "englishTitle": "Cells at Work!",
+    "synonyms": [
+      "Hataraku Saibou"
+    ]
+  },
+  "little_witch_academia": {
+    "popularityRank": 333,
+    "id": "33489",
+    "main": "little_witch_academia",
+    "mainTitle": "Little Witch Academia (TV)",
+    "englishTitle": "Little Witch Academia",
+    "synonyms": [
+      "Little Witch Academia (TV)"
+    ]
+  },
+  "ghost_in_the_shell": {
+    "popularityRank": 336,
+    "id": "43",
+    "main": "ghost_in_the_shell",
+    "mainTitle": "Koukaku Kidoutai",
+    "englishTitle": "Ghost in the Shell",
+    "synonyms": [
+      "Koukaku Kidoutai"
+    ]
+  },
+  "to_love_ru": {
+    "popularityRank": 337,
+    "id": "3455",
+    "main": "to_love_ru",
+    "mainTitle": "To LOVE-Ru",
+    "englishTitle": "To Love Ru",
+    "synonyms": [
+      "To LOVE-Ru"
+    ]
   },
   "infinite_stratos": {
     "popularityRank": 338,
     "id": "9041",
     "main": "infinite_stratos",
     "mainTitle": "IS: Infinite Stratos",
-    "synonyms": ["IS: Infinite Stratos"]
+    "englishTitle": "Infinite Stratos",
+    "synonyms": [
+      "IS: Infinite Stratos"
+    ]
   },
   "strike_the_blood": {
     "popularityRank": 339,
     "id": "18277",
     "main": "strike_the_blood",
     "mainTitle": "Strike the Blood",
-    "synonyms": ["Strike the Blood"]
+    "englishTitle": "Strike the Blood",
+    "synonyms": [
+      "Strike the Blood"
+    ]
   },
   "bocchi_the_rock": {
     "popularityRank": 341,
     "id": "47917",
     "main": "bocchi_the_rock",
     "mainTitle": "Bocchi the Rock!",
-    "synonyms": ["Bocchi the Rock!"]
+    "englishTitle": "Bocchi the Rock!",
+    "synonyms": [
+      "Bocchi the Rock!"
+    ]
   },
   "rokka_no_yuusha": {
     "popularityRank": 342,
     "id": "28497",
     "main": "rokka_no_yuusha",
     "mainTitle": "Rokka no Yuusha",
-    "synonyms": ["Rokka no Yuusha"]
+    "englishTitle": "Rokka: Braves of the Six Flowers",
+    "synonyms": [
+      "Rokka no Yuusha"
+    ]
   },
   "cautious_hero": {
     "popularityRank": 343,
     "id": "38659",
     "main": "cautious_hero",
     "mainTitle": "Shinchou Yuusha: Kono Yuusha ga Ore Tueee Kuse ni Shinchou Sugiru",
-    "synonyms": ["Shinchou Yuusha: Kono Yuusha ga Ore Tueee Kuse ni Shinchou Sugiru"]
-  },
-  "pokemon": {
-    "popularityRank": 344,
-    "id": "527",
-    "main": "pokemon",
-    "mainTitle": "Pokemon",
-    "synonyms": ["Pokemon"]
+    "englishTitle": "Cautious Hero: The Hero Is Overpowered but Overly Cautious",
+    "synonyms": [
+      "Shinchou Yuusha: Kono Yuusha ga Ore Tueee Kuse ni Shinchou Sugiru"
+    ]
   },
   "yofukashi_no_uta": {
-    "popularityRank": 346,
+    "popularityRank": 345,
     "id": "50346",
     "main": "yofukashi_no_uta",
     "mainTitle": "Yofukashi no Uta",
-    "synonyms": ["Yofukashi no Uta"]
+    "englishTitle": "Call of the Night",
+    "synonyms": [
+      "Yofukashi no Uta"
+    ]
   },
   "baka_to_test_to_shoukanjuu": {
     "popularityRank": 348,
     "id": "6347",
     "main": "baka_to_test_to_shoukanjuu",
     "mainTitle": "Baka to Test to Shoukanjuu",
-    "synonyms": ["Baka to Test to Shoukanjuu"]
+    "englishTitle": "Baka & Test - Summon the Beasts",
+    "synonyms": [
+      "Baka to Test to Shoukanjuu"
+    ]
   },
   "mashle": {
     "popularityRank": 349,
     "id": "52211",
     "main": "mashle",
     "mainTitle": "Mashle",
-    "synonyms": ["Mashle"]
-  },
-  "kami_nomi_zo_shiru_sekai": {
-    "popularityRank": 352,
-    "id": "8525",
-    "main": "kami_nomi_zo_shiru_sekai",
-    "mainTitle": "Kami nomi zo Shiru Sekai",
-    "synonyms": ["Kami nomi zo Shiru Sekai"]
-  },
-  "kore_wa_zombie_desu_ka": {
-    "popularityRank": 353,
-    "id": "8841",
-    "main": "kore_wa_zombie_desu_ka",
-    "mainTitle": "Kore wa Zombie desu ka?",
-    "synonyms": ["Kore wa Zombie desu ka?"]
-  },
-  "bakuman": {
-    "popularityRank": 356,
-    "id": "7674",
-    "main": "bakuman",
-    "mainTitle": "Bakuman.",
-    "synonyms": ["Bakuman."]
-  },
-  "hige_wo_soru._soshite_joshikousei_wo_hirou.": {
-    "popularityRank": 357,
-    "id": "40938",
-    "main": "hige_wo_soru._soshite_joshikousei_wo_hirou.",
-    "mainTitle": "Hige wo Soru. Soshite Joshikousei wo Hirou.",
-    "synonyms": ["Hige wo Soru. Soshite Joshikousei wo Hirou."]
-  },
-  "sankarea": {
-    "popularityRank": 358,
-    "id": "11499",
-    "main": "sankarea",
-    "mainTitle": "Sankarea",
-    "synonyms": ["Sankarea"]
-  },
-  "grisaia": {
-    "popularityRank": 360,
-    "id": "17729",
-    "main": "grisaia",
-    "mainTitle": "Grisaia no Kajitsu",
-    "synonyms": ["Grisaia no Kajitsu"]
-  },
-  "hajime_no_ippo": {
-    "popularityRank": 363,
-    "id": "263",
-    "main": "hajime_no_ippo",
-    "mainTitle": "Hajime no Ippo",
-    "synonyms": ["Hajime no Ippo"]
-  },
-  "after_school_hanako_kun": {
-    "popularityRank": 366,
-    "id": "39534",
-    "main": "after_school_hanako_kun",
-    "mainTitle": "Jibaku Shounen Hanako-kun",
-    "synonyms": ["Jibaku Shounen Hanako-kun"]
-  },
-  "kenja_no_mago": {
-    "popularityRank": 367,
-    "id": "36407",
-    "main": "kenja_no_mago",
-    "mainTitle": "Kenja no Mago",
-    "synonyms": ["Kenja no Mago"]
-  },
-  "shiki": {
-    "popularityRank": 368,
-    "id": "7724",
-    "main": "shiki",
-    "mainTitle": "Shiki",
-    "synonyms": ["Shiki"]
-  },
-  "vampire_knight": {
-    "popularityRank": 369,
-    "id": "3457",
-    "main": "vampire_knight",
-    "mainTitle": "Vampire Knight",
-    "synonyms": ["Vampire Knight"]
-  },
-  "nagi_no_asu_kara": {
-    "popularityRank": 370,
-    "id": "16067",
-    "main": "nagi_no_asu_kara",
-    "mainTitle": "Nagi no Asu kara",
-    "synonyms": ["Nagi no Asu kara"]
-  },
-  "majo_no_takkyuubin": {
-    "popularityRank": 371,
-    "id": "512",
-    "main": "majo_no_takkyuubin",
-    "mainTitle": "Majo no Takkyuubin",
-    "synonyms": ["Majo no Takkyuubin"]
-  },
-  "lovely★complex": {
-    "popularityRank": 372,
-    "id": "2034",
-    "main": "lovely★complex",
-    "mainTitle": "Lovely★Complex",
-    "synonyms": ["Lovely★Complex"]
-  },
-  "beelzebub": {
-    "popularityRank": 375,
-    "id": "9513",
-    "main": "beelzebub",
-    "mainTitle": "Beelzebub",
-    "synonyms": ["Beelzebub"]
-  },
-  "zetsuen_no_tempest": {
-    "popularityRank": 376,
-    "id": "14075",
-    "main": "zetsuen_no_tempest",
-    "mainTitle": "Zetsuen no Tempest",
-    "synonyms": ["Zetsuen no Tempest"]
-  },
-  "karakai_jouzu_no_takagi_san": {
-    "popularityRank": 377,
-    "id": "35860",
-    "main": "karakai_jouzu_no_takagi_san",
-    "mainTitle": "Karakai Jouzu no Takagi-san",
-    "synonyms": ["Karakai Jouzu no Takagi-san"]
-  },
-  "gake_no_ue_no_ponyo": {
-    "popularityRank": 378,
-    "id": "2890",
-    "main": "gake_no_ue_no_ponyo",
-    "mainTitle": "Gake no Ue no Ponyo",
-    "synonyms": ["Gake no Ue no Ponyo"]
-  },
-  "ajin": {
-    "popularityRank": 379,
-    "id": "31580",
-    "main": "ajin",
-    "mainTitle": "Ajin",
-    "synonyms": ["Ajin"]
-  },
-  "mondaiji_tachi_ga_isekai_kara_kuru_sou_desu_yo": {
-    "popularityRank": 381,
-    "id": "15315",
-    "main": "mondaiji_tachi_ga_isekai_kara_kuru_sou_desu_yo",
-    "mainTitle": "Mondaiji-tachi ga Isekai kara Kuru Sou desu yo?",
-    "synonyms": ["Mondaiji-tachi ga Isekai kara Kuru Sou desu yo?"]
-  },
-  "gangsta": {
-    "popularityRank": 382,
-    "id": "25183",
-    "main": "gangsta",
-    "mainTitle": "Gangsta.",
-    "synonyms": ["Gangsta."]
-  },
-  "zom_100": {
-    "popularityRank": 383,
-    "id": "54112",
-    "main": "zom_100",
-    "mainTitle": "Zom 100: Zombie ni Naru made ni Shitai 100 no Koto",
-    "synonyms": ["Zom 100: Zombie ni Naru made ni Shitai 100 no Koto"]
-  },
-  "isekai_wa_smartphone_to_tomo_ni": {
-    "popularityRank": 385,
-    "id": "35203",
-    "main": "isekai_wa_smartphone_to_tomo_ni",
-    "mainTitle": "Isekai wa Smartphone to Tomo ni.",
-    "synonyms": ["Isekai wa Smartphone to Tomo ni."]
-  },
-  "drifters": {
-    "popularityRank": 386,
-    "id": "31339",
-    "main": "drifters",
-    "mainTitle": "Drifters",
-    "synonyms": ["Drifters"]
-  },
-  "kiss_x_sis": {
-    "popularityRank": 388,
-    "id": "7593",
-    "main": "kiss_x_sis",
-    "mainTitle": "Kiss x Sis (TV)",
-    "synonyms": ["Kiss x Sis (TV)"]
-  },
-  "summertime_render": {
-    "popularityRank": 390,
-    "id": "47194",
-    "main": "summertime_render",
-    "mainTitle": "Summertime Render",
-    "synonyms": ["Summertime Render"]
-  },
-  "sk8_the_infinity": {
-    "popularityRank": 392,
-    "id": "42923",
-    "main": "sk8_the_infinity",
-    "mainTitle": "SK∞",
-    "synonyms": ["SK∞"]
-  },
-  "darwin_s_game": {
-    "popularityRank": 393,
-    "id": "38656",
-    "main": "darwin_s_game",
-    "mainTitle": "Darwin's Game",
-    "synonyms": ["Darwin's Game"]
-  },
-  "higashi_no_eden": {
-    "popularityRank": 394,
-    "id": "5630",
-    "main": "higashi_no_eden",
-    "mainTitle": "Higashi no Eden",
-    "synonyms": ["Higashi no Eden"]
-  },
-  "sekai_saikou_no_ansatsusha_isekai_kizoku_ni_tensei_suru": {
-    "popularityRank": 396,
-    "id": "47790",
-    "main": "sekai_saikou_no_ansatsusha_isekai_kizoku_ni_tensei_suru",
-    "mainTitle": "Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru",
-    "synonyms": ["Sekai Saikou no Ansatsusha, Isekai Kizoku ni Tensei suru"]
-  },
-  "dorohedoro": {
-    "popularityRank": 397,
-    "id": "38668",
-    "main": "dorohedoro",
-    "mainTitle": "Dorohedoro",
-    "synonyms": ["Dorohedoro"]
-  },
-  "katanagatari": {
-    "popularityRank": 399,
-    "id": "6594",
-    "main": "katanagatari",
-    "mainTitle": "Katanagatari",
-    "synonyms": ["Katanagatari"]
+    "englishTitle": "Mashle: Magic and Muscles",
+    "synonyms": [
+      "Mashle"
+    ]
   }
 }

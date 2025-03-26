@@ -1,5 +1,11 @@
-import { CharacterList } from "@/features/guess-character/components/character-list";
+import { CharacterList } from "@/app/guess/character/character-list";
 import { CharactersResponse } from "@/lib/types/api";
+
+import storedFranchiseNamesJson from "@/data/franchiseNames.json";
+import storedCharacterNamesJson from "@/data/characterNames.json";
+
+const FRANCHISE_NAMES: string[] = JSON.parse(JSON.stringify(storedFranchiseNamesJson));
+const CHARACTER_NAMES: string[] = JSON.parse(JSON.stringify(storedCharacterNamesJson));
 
 export const fetchCharacters = async (): Promise<CharactersResponse | null> => {
   const response = await fetch("http://localhost:3000/api/characters", {
@@ -28,11 +34,13 @@ export default async function GuessCharacter() {
     return <div>No data available.</div>;
   }
 
-  console.log(data);
-
   return (
     <div className="flex gap-x-4">
-      <CharacterList data={data} />
+      <CharacterList
+        data={data}
+        franchiseNames={FRANCHISE_NAMES}
+        characterNames={CHARACTER_NAMES}
+      />
     </div>
   );
 }

@@ -8,7 +8,23 @@ import { gql } from "@apollo/client";
 import storedJson from "@/data/franchiseList.json";
 import { shuffle } from "lodash";
 
-const DATABASE_ANIMES: FranchiseList = JSON.parse(JSON.stringify(storedJson));
+export const parseAnimeNames = (animes: FranchiseList) => {
+  const animesData: string[] = [];
+
+  for (const [_, data] of Object.entries(animes)) {
+    animesData.push(data.mainTitle);
+  }
+
+  return animesData;
+};
+
+export const normalizeNames = (animeNames: string[]) => {
+  const normalizedAnimeNames = animeNames.map((anime) =>
+    anime.toLowerCase().replace(/[\s★\W]/g, "")
+  );
+
+  return normalizedAnimeNames;
+};
 
 const buildAnimeQuery = (animes: string[]) => {
   const animesData = Array.from(animes).map((_, i) => {
@@ -58,65 +74,54 @@ const fetchAnimeData = async (animes: string[]) => {
   }
 };
 
-const parseAnimeNames = (animes: FranchiseList) => {
-  const animesData: string[] = [];
-
-  for (const [_, data] of Object.entries(animes)) {
-    animesData.push(data.mainTitle);
-  }
-
-  return animesData;
-};
-
 const getFourRandomAnimes = (animeNames: string[]) => {
   const selectedAnimes: string[] = [];
 
-  const normalizedAnimeNames = animeNames.map((anime) =>
-    anime.toLowerCase().replace(/[\s★\W]/g, "")
-  );
-
   for (let i = 0; i < 4; i++) {
-    const randomIndex = Math.floor(Math.random() * animeNames.length);
-    const randomAnime = normalizedAnimeNames[randomIndex];
-
+    const randomAnime = animeNames[Math.floor(Math.random() * animeNames.length)];
     selectedAnimes.push(randomAnime);
   }
 
   return selectedAnimes;
 };
+
 const buildCharactersResponse = async (animes: AnimeRequestData[]): Promise<CharactersResponse> => {
-  const charactersResponse: CharactersResponse = {};
+  const charactersResponse: CharactersResponse = [];
   const usedCharacterIds = new Set<number>();
 
-  for (let i = 0; i < animes.length; i++) {
-    const anime = animes[i];
-
+  for (const [index, anime] of animes.entries()) {
     const animeCharacters = anime.characters.nodes.filter(
       (character) => character.name.full.toLowerCase() !== "narrator"
     );
 
-    let randomCharacterIndex = Math.floor(Math.random() * animeCharacters.length);
-    let selectedCharacter = animeCharacters[randomCharacterIndex];
-
-    while (usedCharacterIds.has(selectedCharacter.id)) {
-      randomCharacterIndex = Math.floor(Math.random() * animeCharacters.length);
-      selectedCharacter = animeCharacters[randomCharacterIndex];
+    if (animeCharacters.length === 0) {
+      console.warn(`No valid characters found for anime: ${anime.title.romaji}`);
+      charactersResponse[index] = null;
+      continue;
     }
-
-    usedCharacterIds.add(selectedCharacter.id);
 
     const sumOfFavourites = animeCharacters.reduce(
       (acc, character) => acc + character.favourites,
       0
     );
 
-    while (selectedCharacter.favourites < sumOfFavourites / 6.5) {
-      selectedCharacter = animeCharacters.find(
-        (character) => character.favourites > selectedCharacter.favourites
-      )!;
+    const minFavourites = Math.floor(sumOfFavourites * 0.05);
+
+    const validCharacters = animeCharacters.filter(
+      (character) => !usedCharacterIds.has(character.id) && character.favourites >= minFavourites
+    );
+
+    if (validCharacters.length === 0) {
+      console.warn(`No valid characters above threshold for anime: ${anime.title.romaji}`);
+      charactersResponse[index] = null;
+      continue;
     }
 
-    charactersResponse[`${i}`] = {
+    const selectedCharacter = validCharacters[Math.floor(Math.random() * validCharacters.length)];
+
+    usedCharacterIds.add(selectedCharacter.id);
+
+    charactersResponse[index] = {
       animeRomaji: anime.title.romaji,
       animeEnglish: anime.title.english,
       characterId: selectedCharacter.id,
@@ -129,10 +134,13 @@ const buildCharactersResponse = async (animes: AnimeRequestData[]): Promise<Char
   return charactersResponse;
 };
 
+const DATABASE_ANIMES: FranchiseList = JSON.parse(JSON.stringify(storedJson));
+
 export async function GET() {
-  const animeNames = parseAnimeNames(DATABASE_ANIMES);
+  const animeNames = normalizeNames(parseAnimeNames(DATABASE_ANIMES));
   const randomAnimes = getFourRandomAnimes(shuffle(animeNames));
 
+  console.log("\n\nStart of GET");
   console.log(randomAnimes);
 
   const { data, status, error } = await fetchAnimeData(randomAnimes);
@@ -144,6 +152,8 @@ export async function GET() {
       error,
     });
   }
+
+  console.log(data);
 
   const characterResponse = await buildCharactersResponse(data);
 

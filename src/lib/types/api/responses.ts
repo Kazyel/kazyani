@@ -1,4 +1,5 @@
 import type { FranchiseList } from "../animes";
+import { CharacterRequestData } from "./requests";
 
 export type FranchisesResponse = {
   franchiseList: FranchiseList;
@@ -11,6 +12,6 @@ export type CharacterInfo = {
   characterName: string;
   characterImage: string;
   favourites: number;
-};
+} | null;
 
-export type CharactersResponse = Record<string, CharacterInfo>;
+export type CharactersResponse = CharacterInfo[];

@@ -35,6 +35,7 @@ export type Franchise = {
   id: number;
   main: string;
   mainTitle: string;
+  englishTitle: string;
   synonyms: string[];
 };
 

@@ -15,6 +15,7 @@ const buildAnimesQuery = (pageCount: number, pageOffset: number) => {
       page${pageNumber}: animes(page: ${pageNumber}, limit: 50, order: popularity) {
         malId
         name
+        english
         franchise
       }
     `;
@@ -50,6 +51,7 @@ export const addToFranchiseList = (
     id: anime.malId,
     main: franchise,
     mainTitle: anime.name,
+    englishTitle: anime.english,
     synonyms: [],
   };
 

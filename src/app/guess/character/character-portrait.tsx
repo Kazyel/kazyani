@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 interface CharacterPortraitProps {
-  image: string;
+  image: string | null;
 }
 
-export const CharacterPortrait = async ({ image }: CharacterPortraitProps) => {
+export const CharacterPortrait = ({ image }: CharacterPortraitProps) => {
   return (
     <div>
       <Image

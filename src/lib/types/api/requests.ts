@@ -22,6 +22,7 @@ export type FranchiseRequestData = {
   id: number;
   malId: number;
   name: string;
+  english: string | null;
   franchise: string;
   characterRoles: {
     character: {
@@ -31,3 +32,17 @@ export type FranchiseRequestData = {
 };
 
 export type FranchiseRequest = Record<string, FranchiseRequestData[]>;
+
+export type CharacterRequestData = {
+  characters: {
+    nodes: {
+      name: {
+        native: string;
+        full: string;
+      };
+      favourites: number;
+    }[];
+  };
+};
+
+export type CharacterRequest = CharacterRequestData[];
