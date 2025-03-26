@@ -3,6 +3,8 @@
 import { CharactersResponse } from "@/lib/types/api";
 import { CharacterPortrait } from "./character-portrait";
 
+import { ComboBox } from "@/components/combo-box";
+
 interface CharacterListProps {
   data: CharactersResponse;
   franchiseNames: string[];
@@ -10,7 +12,7 @@ interface CharacterListProps {
 }
 
 export const CharacterList = ({ data, franchiseNames, characterNames }: CharacterListProps) => {
-  const characters = Object.values(data);
+  const charactersToGuess = Object.values(data);
 
   return (
     <>
@@ -21,7 +23,7 @@ export const CharacterList = ({ data, franchiseNames, characterNames }: Characte
       )}
 
       {data &&
-        characters.map((character) => {
+        charactersToGuess.map((character) => {
           return (
             <div key={character?.characterId} className="flex flex-col gap-y-4 max-w-[200px]">
               <CharacterPortrait image={character && character.characterImage} />
@@ -32,6 +34,8 @@ export const CharacterList = ({ data, franchiseNames, characterNames }: Characte
 
               <p className="italic">{character?.characterName}</p>
               <p>{character?.favourites}</p>
+
+              <ComboBox characterNames={characterNames} placeholder="Search character..." />
             </div>
           );
         })}

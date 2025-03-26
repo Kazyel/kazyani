@@ -104,7 +104,5 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
   const franchiseList: FranchiseList = buildFranchiseList(animesData);
 
-  // writeJSONAnimeData(franchiseList);
-
   return NextResponse.json<FranchiseList>(franchiseList);
 }
