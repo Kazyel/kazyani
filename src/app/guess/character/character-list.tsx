@@ -35,7 +35,7 @@ export const CharacterList = ({ data, franchiseNames, characterNames }: Characte
               <p className="italic">{character?.characterName}</p>
               <p>{character?.favourites}</p>
 
-              <ComboBox characterNames={characterNames} placeholder="Search character..." />
+              <ComboBox data={characterNames} placeholder="Search character..." />
             </div>
           );
         })}
