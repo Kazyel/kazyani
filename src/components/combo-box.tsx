@@ -6,25 +6,33 @@ import { Input } from "./ui/input";
 interface ComboBoxProps {
   data: string[];
   placeholder?: string;
+  onSelect: (value: string) => void;
+  isCorrect: boolean;
+  showHint?: boolean;
 }
 
-export const ComboBox = ({ data, placeholder }: ComboBoxProps) => {
+export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: ComboBoxProps) => {
   const [characterSearch, setCharacterSearch] = useState<string>("");
-
-  const [openList, setOpenList] = useState<boolean>(false);
-  const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
-
-  const listRef = useRef<HTMLUListElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
-
   const [sortedCharacterNames, setSortedCharacterNames] = useState<string[]>(
     data.sort((a, b) => a.localeCompare(b))
   );
+  const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
+  const [openList, setOpenList] = useState<boolean>(false);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   useEffect(() => {
     setHighlightedIndex(sortedCharacterNames.length > 0 ? 0 : -1);
   }, [sortedCharacterNames]);
+
+  useEffect(() => {
+    if (highlightedIndex >= 0 && itemRefs.current[highlightedIndex]) {
+      itemRefs.current[highlightedIndex]?.scrollIntoView({
+        block: "nearest",
+      });
+    }
+  }, [highlightedIndex]);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value;
@@ -41,6 +49,13 @@ export const ComboBox = ({ data, placeholder }: ComboBoxProps) => {
     setSortedCharacterNames(
       data
         .filter((characterName) => characterName.toLowerCase().includes(searchTerm.toLowerCase()))
+        .sort((a, b) => {
+          const aStartsWith = a.toLowerCase().startsWith(searchTerm.toLowerCase());
+          const bStartsWith = b.toLowerCase().startsWith(searchTerm.toLowerCase());
+          if (aStartsWith && !bStartsWith) return -1;
+          if (!aStartsWith && bStartsWith) return 1;
+          return a.localeCompare(b);
+        })
         .slice(0, 10)
     );
   };
@@ -64,6 +79,7 @@ export const ComboBox = ({ data, placeholder }: ComboBoxProps) => {
           setOpenList(false);
         }
         break;
+
       case "Escape":
         e.preventDefault();
         setOpenList(false);
@@ -74,16 +90,9 @@ export const ComboBox = ({ data, placeholder }: ComboBoxProps) => {
     }
   };
 
-  useEffect(() => {
-    if (highlightedIndex >= 0 && itemRefs.current[highlightedIndex]) {
-      itemRefs.current[highlightedIndex]?.scrollIntoView({
-        block: "nearest",
-      });
-    }
-  }, [highlightedIndex]);
-
-  const handleSelect = (characterName: string) => {
-    setCharacterSearch(characterName);
+  const handleSelect = (inputValue: string) => {
+    setCharacterSearch(inputValue);
+    onSelect(inputValue);
     setOpenList(false);
     inputRef.current?.focus();
   };
@@ -108,9 +117,11 @@ export const ComboBox = ({ data, placeholder }: ComboBoxProps) => {
         aria-controls="anime-list"
       />
 
+      {isCorrect && <div className="text-green-500">Correct!</div>}
+      {showHint && <div className="text-red-500">Not selected</div>}
+
       {openList && sortedCharacterNames.length > 0 && (
         <ul
-          ref={listRef}
           id="anime-list"
           role="listbox"
           className="bg-background overflow-auto flex flex-col w-full absolute top-11 max-h-[172px] rounded-sm border border-white/25 z-10"

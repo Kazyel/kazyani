@@ -79,9 +79,7 @@ const buildCharactersResponse = async (animes: AnimeRequestData[]): Promise<Char
     );
 
     if (animeCharacters.length === 0) {
-      console.warn(`No valid characters found for anime: ${anime.title.romaji}`);
-      charactersResponse[index] = null;
-      continue;
+      throw new Error(`No valid characters for anime ${anime.title.romaji}`);
     }
 
     const sumOfFavourites = animeCharacters.reduce(
@@ -89,16 +87,14 @@ const buildCharactersResponse = async (animes: AnimeRequestData[]): Promise<Char
       0
     );
 
-    const minFavourites = Math.floor(sumOfFavourites * 0.15);
+    const minFavourites = Math.floor(sumOfFavourites * 0.025);
 
     const validCharacters = animeCharacters.filter(
       (character) => !usedCharacterIds.has(character.id) && character.favourites >= minFavourites
     );
 
     if (validCharacters.length === 0) {
-      console.warn(`No valid characters above threshold for anime: ${anime.title.romaji}`);
-      charactersResponse[index] = null;
-      continue;
+      throw new Error(`No valid characters above threshold ${anime.title.romaji}`);
     }
 
     const selectedCharacter = validCharacters[Math.floor(Math.random() * validCharacters.length)];

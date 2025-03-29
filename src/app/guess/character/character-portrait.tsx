@@ -12,7 +12,7 @@ export const CharacterPortrait = ({ image }: CharacterPortraitProps) => {
         alt="Character Portrait"
         width={200}
         height={300}
-        className="h-[300px] w-[200px]"
+        className="h-[300px] w-[200px] rounded-sm"
       />
     </div>
   );

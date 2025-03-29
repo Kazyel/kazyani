@@ -2,17 +2,14 @@ import { FranchiseList } from "@/lib/types";
 
 export const normalizeNames = (animeNames: string[]) => {
   const normalizedAnimeNames = animeNames.map((anime) =>
-    anime
-      .toLowerCase()
-      .replace(/\s/g, "_")
-      .replace(/[★\W-]/g, "")
+    anime.toLowerCase().replace(/[\s★]|[^\w:]/g, "")
   );
 
   return normalizedAnimeNames;
 };
 
 export const normalizeFranchise = (franchise: string) => {
-  return franchise.replace(/\s/g, "_").toLowerCase();
+  return franchise.replace(/[\s-]+/g, "_").toLowerCase();
 };
 
 export const parseAnimeNames = (animes: FranchiseList) => {

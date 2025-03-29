@@ -69,7 +69,7 @@ const filterCharacters = (animeData: CharacterRequestData[]) => {
       0
     );
 
-    const minFavourites = Math.floor(sumOfFavourites * 0.15);
+    const minFavourites = Math.floor(sumOfFavourites * 0.025);
 
     const validCharacters = animeCharacters.filter(
       (character) => character.favourites >= minFavourites
