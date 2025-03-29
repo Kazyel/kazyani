@@ -1,12 +1,15 @@
 "use client";
-import { useState } from "react";
-import type { CharactersResponse } from "@/lib/types/api";
+
+import type { CharacterInfo } from "@/lib/types/api";
+
 import { CharacterPortrait } from "./character-portrait";
 import { ComboBox } from "@/components/combo-box";
 import { Button } from "@/components/ui/button";
 
+import { useState } from "react";
+
 interface CharacterListProps {
-  data: CharactersResponse;
+  charactersToGuess: CharacterInfo[];
   animeNames: string[];
   characterNames: string[];
 }
@@ -16,25 +19,30 @@ type Selection = {
   anime: { animeName: string; isCorrect: boolean } | null;
 };
 
-export const CharacterGame = ({ data, animeNames, characterNames }: CharacterListProps) => {
-  const charactersToGuess = Object.values(data);
-
+export const CharacterGame = ({
+  charactersToGuess,
+  animeNames,
+  characterNames,
+}: CharacterListProps) => {
   const [selections, setSelections] = useState<Selection[]>(
     Array(charactersToGuess.length).fill({ character: null, anime: null })
   );
 
   const [showHints, setShowHints] = useState<boolean>(false);
+  const [hasChecked, setHasChecked] = useState<boolean>(false);
+
+  console.log(selections);
+  console.log(charactersToGuess);
 
   const handleCharacterSelect = (value: string, index: number) => {
     setSelections((prev) => {
       const newSelections = [...prev];
       newSelections[index] = {
         ...newSelections[index],
-        character: { characterName: value, isCorrect: false },
+        character: value ? { characterName: value, isCorrect: false } : null,
       };
       return newSelections;
     });
-    setShowHints(false);
   };
 
   const handleAnimeSelect = (value: string, index: number) => {
@@ -42,14 +50,15 @@ export const CharacterGame = ({ data, animeNames, characterNames }: CharacterLis
       const newSelections = [...prev];
       newSelections[index] = {
         ...newSelections[index],
-        anime: { animeName: value, isCorrect: false },
+        anime: value ? { animeName: value, isCorrect: false } : null,
       };
       return newSelections;
     });
-    setShowHints(false);
   };
 
   const handleCheckAnswers = () => {
+    setHasChecked(true);
+
     const hasEmptySelections = selections.some(
       (selection) => !selection.character || !selection.anime
     );
@@ -59,62 +68,64 @@ export const CharacterGame = ({ data, animeNames, characterNames }: CharacterLis
       return;
     }
 
-    const updatedSelections = selections.map((selection, index) => {
-      const correctChar = charactersToGuess[index];
-      if (!correctChar) return selection;
+    setSelections((prevSelections) =>
+      prevSelections.map((selection, index) => {
+        const correctChar = charactersToGuess[index];
+        if (!correctChar) return selection;
 
-      return {
-        character: {
-          characterName: selection.character!.characterName,
-          isCorrect: selection.character!.characterName === correctChar.characterName,
-        },
-        anime: {
-          animeName: selection.anime!.animeName,
-          isCorrect:
-            selection.anime!.animeName === correctChar.animeRomaji ||
-            selection.anime!.animeName === correctChar.animeEnglish,
-        },
-      };
-    });
-
-    setSelections(updatedSelections);
+        return {
+          character: {
+            characterName: selection.character!.characterName,
+            isCorrect: selection.character!.characterName === correctChar.characterName,
+          },
+          anime: {
+            animeName: selection.anime!.animeName,
+            isCorrect:
+              selection.anime!.animeName === correctChar.animeRomaji ||
+              selection.anime!.animeName === correctChar.animeEnglish,
+          },
+        };
+      })
+    );
   };
 
   return (
-    <>
-      {!data && (
-        <div className="flex flex-col gap-y-4 max-w-[200px]">
-          <h1 className="text-xl font-bold">No data available</h1>
-        </div>
-      )}
+    <section className="flex justify-center flex-col items-center gap-y-8">
+      <div>
+        {!charactersToGuess && (
+          <div className="flex flex-col gap-y-4 max-w-[200px]">
+            <h1 className="text-xl font-bold">No data available</h1>
+          </div>
+        )}
 
-      {data && (
-        <div className="gap-x-10 flex justify-center">
-          {charactersToGuess.map((character, index) => (
-            <div key={character?.characterId} className="flex flex-col gap-y-6 max-w-[200px]">
-              <CharacterPortrait image={character?.characterImage!} />
+        {charactersToGuess && (
+          <div className="gap-x-10 flex justify-center">
+            {charactersToGuess.map((character, index) => (
+              <div key={character?.characterId} className="flex flex-col gap-y-6 max-w-[200px]">
+                <CharacterPortrait image={character?.characterImage!} />
 
-              <ComboBox
-                data={characterNames}
-                placeholder="Search character..."
-                showHint={showHints && !selections[index].character}
-                isCorrect={selections[index].character?.isCorrect ?? false}
-                onSelect={(value) => handleCharacterSelect(value, index)}
-              />
+                <ComboBox
+                  data={characterNames}
+                  placeholder="Search character..."
+                  isCorrect={selections[index].character?.isCorrect ?? false}
+                  showHint={showHints && !selections[index].character}
+                  onSelect={(value) => handleCharacterSelect(value, index)}
+                />
 
-              <ComboBox
-                data={animeNames}
-                placeholder="Search anime..."
-                showHint={showHints && !selections[index].anime}
-                isCorrect={selections[index].anime?.isCorrect ?? false}
-                onSelect={(value) => handleAnimeSelect(value, index)}
-              />
-            </div>
-          ))}
-        </div>
-      )}
+                <ComboBox
+                  data={animeNames}
+                  placeholder="Search anime..."
+                  isCorrect={selections[index].anime?.isCorrect ?? false}
+                  showHint={showHints && !selections[index].anime}
+                  onSelect={(value) => handleAnimeSelect(value, index)}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
 
       <Button onClick={handleCheckAnswers}>Guess</Button>
-    </>
+    </section>
   );
 };

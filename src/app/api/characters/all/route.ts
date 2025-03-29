@@ -7,6 +7,7 @@ import { anilistClient } from "@/app/layout";
 import { divideIntoBatches, normalizeNames, parseAnimeNames } from "@/utils/api";
 
 import storedJson from "@/data/franchiseList.json";
+import { writeJSONCharacterNames } from "@/utils/scripts/write-json-character-names";
 
 const buildCharactersQuery = (animes: string[]) => {
   const animesData = Array.from(animes).map((_, i) => {
@@ -99,6 +100,8 @@ export async function GET() {
   }
 
   const allCharacterNames: string[] = filterCharacters(data);
+
+  writeJSONCharacterNames(allCharacterNames);
 
   return NextResponse.json<string[]>(allCharacterNames);
 }

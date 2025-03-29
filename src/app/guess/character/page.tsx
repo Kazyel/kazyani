@@ -34,9 +34,15 @@ export default async function GuessCharacter() {
     return <div>No data available.</div>;
   }
 
+  const charactersToGuess = Object.values(data);
+
   return (
     <div className="flex gap-x-4">
-      <CharacterGame data={data} animeNames={ANIME_NAMES} characterNames={CHARACTER_NAMES} />
+      <CharacterGame
+        charactersToGuess={charactersToGuess}
+        animeNames={ANIME_NAMES}
+        characterNames={CHARACTER_NAMES}
+      />
     </div>
   );
 }

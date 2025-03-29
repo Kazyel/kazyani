@@ -2,13 +2,14 @@
 
 import { ChangeEvent, useEffect, useRef, useState, KeyboardEvent } from "react";
 import { Input } from "./ui/input";
+import { cn } from "@/lib/utils";
 
 interface ComboBoxProps {
   data: string[];
   placeholder?: string;
-  onSelect: (value: string) => void;
   isCorrect: boolean;
   showHint?: boolean;
+  onSelect: (value: string) => void;
 }
 
 export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: ComboBoxProps) => {
@@ -37,15 +38,14 @@ export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: C
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value;
 
-    if (searchTerm.length === 0) {
+    if (searchTerm.length === 0 && !characterSearch) {
       setOpenList(false);
-      setCharacterSearch("");
-      setSortedCharacterNames(data);
       return;
     }
 
     setOpenList(true);
     setCharacterSearch(searchTerm);
+
     setSortedCharacterNames(
       data
         .filter((characterName) => characterName.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -104,6 +104,12 @@ export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: C
         type="text"
         placeholder={placeholder}
         value={characterSearch}
+        className={cn(
+          "bg-background rounded-md border border-indigo-600/50 focus-visible:ring-indigo-500/50 focus-visible:ring-[2px] focus-visible:border-indigo-500/50 pr-6 ",
+          showHint &&
+            !characterSearch &&
+            "border-red-500/50 focus-visible:ring-red-500/50 focus-visible:ring-[2px] focus-visible:border-red-500/50"
+        )}
         onChange={handleSearch}
         onKeyDown={handleKeyDown}
         onBlur={() => setOpenList(false)}
@@ -117,14 +123,27 @@ export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: C
         aria-controls="anime-list"
       />
 
-      {isCorrect && <div className="text-green-500">Correct!</div>}
-      {showHint && <div className="text-red-500">Not selected</div>}
+      {characterSearch && (
+        <span
+          onClick={() => {
+            setCharacterSearch("");
+            onSelect("");
+          }}
+          className="absolute right-2 top-1 cursor-pointer"
+        >
+          ×
+        </span>
+      )}
+
+      <div className="h-6 mt-1">
+        {isCorrect && <span className="text-green-500 text-sm">✓ Correct</span>}
+      </div>
 
       {openList && sortedCharacterNames.length > 0 && (
         <ul
           id="anime-list"
           role="listbox"
-          className="bg-background overflow-auto flex flex-col w-full absolute top-11 max-h-[172px] rounded-sm border border-white/25 z-10"
+          className="bg-background overflow-auto flex flex-col w-full absolute top-11 max-h-[192px] rounded-sm border border-white/25 z-10"
           tabIndex={-1}
         >
           {sortedCharacterNames.map((characterName, index) => {
@@ -132,9 +151,10 @@ export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: C
               <li
                 key={index}
                 role="option"
-                className={`text-sm px-2 py-1 cursor-pointer ${
-                  highlightedIndex === index ? "bg-muted-foreground/20" : ""
-                }`}
+                className={cn(
+                  "text-sm px-2 py-1 cursor-pointer bg-background",
+                  highlightedIndex === index && "bg-muted-foreground/20"
+                )}
                 ref={(el) => {
                   if (el) itemRefs.current[index] = el;
                 }}
