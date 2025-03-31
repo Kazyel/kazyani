@@ -15,8 +15,8 @@ interface CharacterListProps {
 }
 
 type Selection = {
-  character: { characterName: string; isCorrect: boolean } | null;
-  anime: { animeName: string; isCorrect: boolean } | null;
+  character: { characterName: string | null; isCorrect: boolean; isInvalid: boolean };
+  anime: { animeName: string | null; isCorrect: boolean; isInvalid: boolean };
 };
 
 export const CharacterGame = ({
@@ -25,21 +25,25 @@ export const CharacterGame = ({
   characterNames,
 }: CharacterListProps) => {
   const [selections, setSelections] = useState<Selection[]>(
-    Array(charactersToGuess.length).fill({ character: null, anime: null })
+    Array(charactersToGuess.length).fill({
+      character: { characterNames: null, isCorrect: false, isInvalid: false },
+      anime: { animeNames: null, isCorrect: false, isInvalid: false },
+    })
   );
 
   const [showHints, setShowHints] = useState<boolean>(false);
   const [hasChecked, setHasChecked] = useState<boolean>(false);
-
-  console.log(selections);
-  console.log(charactersToGuess);
 
   const handleCharacterSelect = (value: string, index: number) => {
     setSelections((prev) => {
       const newSelections = [...prev];
       newSelections[index] = {
         ...newSelections[index],
-        character: value ? { characterName: value, isCorrect: false } : null,
+        character: {
+          characterName: value,
+          isCorrect: false,
+          isInvalid: handleCharacterIsInvalid(value),
+        },
       };
       return newSelections;
     });
@@ -50,43 +54,72 @@ export const CharacterGame = ({
       const newSelections = [...prev];
       newSelections[index] = {
         ...newSelections[index],
-        anime: value ? { animeName: value, isCorrect: false } : null,
+        anime: { animeName: value, isCorrect: false, isInvalid: handleAnimeIsInvalid(value) },
       };
       return newSelections;
     });
   };
 
-  const handleCheckAnswers = () => {
-    setHasChecked(true);
+  const handleCharacterIsCorrect = (selection: Selection, correctChar: CharacterInfo) => {
+    return (
+      selection.character?.characterName?.toLowerCase() ===
+      correctChar!.characterName?.toLowerCase()
+    );
+  };
 
-    const hasEmptySelections = selections.some(
-      (selection) => !selection.character || !selection.anime
+  const handleAnimeIsCorrect = (selection: Selection, correctChar: CharacterInfo) => {
+    if (!correctChar?.animeEnglish) {
+      return selection.anime?.animeName?.toLowerCase() === correctChar!.animeRomaji?.toLowerCase();
+    }
+
+    return (
+      selection.anime?.animeName?.toLowerCase() === correctChar!.animeRomaji?.toLowerCase() ||
+      selection.anime?.animeName?.toLowerCase() === correctChar!.animeEnglish?.toLowerCase()
+    );
+  };
+
+  const handleCharacterIsInvalid = (character: string | null) => {
+    if (!character) return false;
+    return !characterNames.includes(character);
+  };
+
+  const handleAnimeIsInvalid = (anime: string | null) => {
+    if (!anime) return false;
+    return !animeNames.includes(anime);
+  };
+
+  const handleCheckAnswers = async () => {
+    const updatedSelections = selections.map((selection, index) => {
+      const correctChar = charactersToGuess[index];
+      if (!correctChar) return selection;
+
+      return {
+        character: {
+          characterName: selection.character?.characterName ?? null,
+          isCorrect: handleCharacterIsCorrect(selection, correctChar),
+          isInvalid: handleCharacterIsInvalid(selection.character?.characterName),
+        },
+        anime: {
+          animeName: selection.anime?.animeName ?? null,
+          isCorrect: handleAnimeIsCorrect(selection, correctChar),
+          isInvalid: handleAnimeIsInvalid(selection.anime?.animeName),
+        },
+      };
+    });
+
+    const invalidExists = updatedSelections.some(
+      (selection) => selection.character?.isInvalid || selection.anime?.isInvalid
     );
 
-    if (hasEmptySelections) {
-      setShowHints(true);
+    setSelections(updatedSelections);
+
+    if (invalidExists) {
+      setShowHints(invalidExists);
+      setHasChecked(false);
       return;
     }
 
-    setSelections((prevSelections) =>
-      prevSelections.map((selection, index) => {
-        const correctChar = charactersToGuess[index];
-        if (!correctChar) return selection;
-
-        return {
-          character: {
-            characterName: selection.character!.characterName,
-            isCorrect: selection.character!.characterName === correctChar.characterName,
-          },
-          anime: {
-            animeName: selection.anime!.animeName,
-            isCorrect:
-              selection.anime!.animeName === correctChar.animeRomaji ||
-              selection.anime!.animeName === correctChar.animeEnglish,
-          },
-        };
-      })
-    );
+    setHasChecked(true);
   };
 
   return (
@@ -107,17 +140,21 @@ export const CharacterGame = ({
                 <ComboBox
                   data={characterNames}
                   placeholder="Search character..."
+                  hasChecked={hasChecked}
                   isCorrect={selections[index].character?.isCorrect ?? false}
-                  showHint={showHints && !selections[index].character}
+                  showHint={showHints && selections[index].character?.isInvalid}
                   onSelect={(value) => handleCharacterSelect(value, index)}
+                  onChange={(value) => handleCharacterSelect(value, index)}
                 />
 
                 <ComboBox
                   data={animeNames}
                   placeholder="Search anime..."
+                  hasChecked={hasChecked}
                   isCorrect={selections[index].anime?.isCorrect ?? false}
-                  showHint={showHints && !selections[index].anime}
+                  showHint={showHints && selections[index].anime?.isInvalid}
                   onSelect={(value) => handleAnimeSelect(value, index)}
+                  onChange={(value) => handleAnimeSelect(value, index)}
                 />
               </div>
             ))}

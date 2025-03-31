@@ -1,18 +1,29 @@
 "use client";
 
-import { ChangeEvent, useEffect, useRef, useState, KeyboardEvent } from "react";
+import { ChangeEvent, useEffect, useRef, useState, KeyboardEvent, useCallback } from "react";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
+import { debounce } from "lodash";
 
 interface ComboBoxProps {
   data: string[];
   placeholder?: string;
   isCorrect: boolean;
   showHint?: boolean;
+  hasChecked?: boolean;
   onSelect: (value: string) => void;
+  onChange: (value: string) => void;
 }
 
-export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: ComboBoxProps) => {
+export const ComboBox = ({
+  data,
+  placeholder,
+  isCorrect,
+  showHint,
+  hasChecked,
+  onSelect,
+  onChange,
+}: ComboBoxProps) => {
   const [characterSearch, setCharacterSearch] = useState<string>("");
   const [sortedCharacterNames, setSortedCharacterNames] = useState<string[]>(
     data.sort((a, b) => a.localeCompare(b))
@@ -34,6 +45,8 @@ export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: C
       });
     }
   }, [highlightedIndex]);
+
+  const debouncedOnChange = useCallback(debounce(onChange, 500), []);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value;
@@ -58,6 +71,8 @@ export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: C
         })
         .slice(0, 10)
     );
+
+    onChange(searchTerm);
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -75,8 +90,7 @@ export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: C
       case "Enter":
         e.preventDefault();
         if (highlightedIndex >= 0 && highlightedIndex < sortedCharacterNames.length) {
-          setCharacterSearch(sortedCharacterNames[highlightedIndex]);
-          setOpenList(false);
+          handleSelect(sortedCharacterNames[highlightedIndex]);
         }
         break;
 
@@ -91,8 +105,8 @@ export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: C
   };
 
   const handleSelect = (inputValue: string) => {
-    setCharacterSearch(inputValue);
     onSelect(inputValue);
+    setCharacterSearch(inputValue);
     setOpenList(false);
     inputRef.current?.focus();
   };
@@ -107,7 +121,7 @@ export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: C
         className={cn(
           "bg-background rounded-md border border-indigo-600/50 focus-visible:ring-indigo-500/50 focus-visible:ring-[2px] focus-visible:border-indigo-500/50 pr-6 ",
           showHint &&
-            !characterSearch &&
+            !hasChecked &&
             "border-red-500/50 focus-visible:ring-red-500/50 focus-visible:ring-[2px] focus-visible:border-red-500/50"
         )}
         onChange={handleSearch}
@@ -135,9 +149,15 @@ export const ComboBox = ({ data, placeholder, isCorrect, showHint, onSelect }: C
         </span>
       )}
 
-      <div className="h-6 mt-1">
-        {isCorrect && <span className="text-green-500 text-sm">✓ Correct</span>}
-      </div>
+      {hasChecked && (
+        <div className="h-6 mt-1">
+          {isCorrect ? (
+            <span className="text-green-500 text-sm">✓ Correct</span>
+          ) : (
+            <div className="text-red-500 text-sm">✗ Incorrect</div>
+          )}
+        </div>
+      )}
 
       {openList && sortedCharacterNames.length > 0 && (
         <ul
