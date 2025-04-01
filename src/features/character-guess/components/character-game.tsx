@@ -4,7 +4,7 @@ import type { CharacterInfo } from "@/lib/types/api";
 
 import { CharacterPortrait } from "./character-portrait";
 import { ComboBox } from "@/components/combo-box";
-import { Button } from "@/components/ui/button";
+import { ButtonRipple } from "@/components/button-ripple";
 
 import { useState } from "react";
 
@@ -162,7 +162,12 @@ export const CharacterGame = ({
         )}
       </div>
 
-      <Button onClick={handleCheckAnswers}>Guess</Button>
+      <ButtonRipple
+        className="rounded-xs bg-indigo-500 text-foreground hover:bg-indigo-400 cursor-pointer px-8 py-4"
+        onClick={handleCheckAnswers}
+      >
+        Guess
+      </ButtonRipple>
     </section>
   );
 };

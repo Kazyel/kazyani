@@ -4,10 +4,11 @@ import { Button } from "./ui/button";
 interface ButtonCircleProps {
   children: React.ReactNode;
   className?: string;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
-export const ButtonRipple = ({ children, className, onClick }: ButtonCircleProps) => {
+export const ButtonRipple = ({ children, className, disabled, onClick }: ButtonCircleProps) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -44,6 +45,7 @@ export const ButtonRipple = ({ children, className, onClick }: ButtonCircleProps
       className={`ripple-button relative overflow-hidden transition-all duration-150 ease ${className}`}
       ref={buttonRef}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </Button>

@@ -6,6 +6,8 @@ import { Toaster } from "sonner";
 import Providers from "@/components/providers";
 
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 export const shikimoriClient = new ApolloClient({
   uri: "https://shikimori.one/api/graphql",
@@ -40,7 +42,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="grid grid-cols-[250px_1fr] grid-rows-[1fr_95px] min-h-screen font-[family-name:var(--font-geist-sans)]">
+            <Navbar />
+            <main className="flex flex-col items-center justify-center">{children}</main>
+            <Footer />
+          </div>
+        </Providers>
         <Toaster />
       </body>
     </html>

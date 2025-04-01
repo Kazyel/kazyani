@@ -1,4 +1,4 @@
-import { CharacterGame } from "@/app/guess/character/character-game";
+import { CharacterGame } from "@/features/character-guess/components/character-game";
 import { CharactersResponse } from "@/lib/types/api";
 
 import storedFranchiseNamesJson from "@/data/franchiseNames.json";
@@ -40,12 +40,14 @@ export default async function GuessCharacter() {
   const characterNames = Array.from(characterNamesSet);
 
   return (
-    <div className="flex gap-x-4">
-      <CharacterGame
-        charactersToGuess={charactersToGuess}
-        animeNames={ANIME_NAMES}
-        characterNames={characterNames}
-      />
+    <div className="grid grid-rows-[120px_1fr] justify-items-center place-items-center">
+      <div className="flex gap-x-4">
+        <CharacterGame
+          charactersToGuess={charactersToGuess}
+          animeNames={ANIME_NAMES}
+          characterNames={characterNames}
+        />
+      </div>
     </div>
   );
 }

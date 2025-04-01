@@ -46,8 +46,6 @@ export const ComboBox = ({
     }
   }, [highlightedIndex]);
 
-  const debouncedOnChange = useCallback(debounce(onChange, 500), []);
-
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value;
 
@@ -119,7 +117,7 @@ export const ComboBox = ({
         placeholder={placeholder}
         value={characterSearch}
         className={cn(
-          "bg-background rounded-md border border-indigo-600/50 focus-visible:ring-indigo-500/50 focus-visible:ring-[2px] focus-visible:border-indigo-500/50 pr-6 ",
+          "bg-background rounded-md border border-indigo-500/30 focus-visible:ring-indigo-500/30 focus-visible:ring-[2px] focus-visible:border-indigo-500/50 pr-6 ",
           showHint &&
             !hasChecked &&
             "border-red-500/50 focus-visible:ring-red-500/50 focus-visible:ring-[2px] focus-visible:border-red-500/50"
@@ -137,7 +135,7 @@ export const ComboBox = ({
         aria-controls="anime-list"
       />
 
-      {characterSearch && (
+      {characterSearch && !hasChecked && (
         <span
           onClick={() => {
             setCharacterSearch("");
@@ -163,7 +161,7 @@ export const ComboBox = ({
         <ul
           id="anime-list"
           role="listbox"
-          className="bg-background overflow-auto flex flex-col w-full absolute top-11 max-h-[192px] rounded-sm border border-white/25 z-10"
+          className="bg-background overflow-auto flex flex-col  w-full absolute top-11 max-h-[192px] rounded-sm border border-foreground/15 z-10"
           tabIndex={-1}
         >
           {sortedCharacterNames.map((characterName, index) => {

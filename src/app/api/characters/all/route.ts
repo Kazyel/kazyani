@@ -3,11 +3,11 @@ import type { FranchiseList } from "@/lib/types";
 
 import { gql } from "@apollo/client";
 import { NextResponse } from "next/server";
-import { anilistClient } from "@/app/layout";
 import { divideIntoBatches, normalizeNames, parseAnimeNames } from "@/utils/api";
 
 import storedJson from "@/data/franchiseList.json";
 import { writeJSONCharacterNames } from "@/utils/scripts/write-json-character-names";
+import { anilistClient } from "@/app/layout";
 
 const buildCharactersQuery = (animes: string[]) => {
   const animesData = Array.from(animes).map((_, i) => {

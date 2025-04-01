@@ -1,39 +1,68 @@
 "use client";
 
+import { ButtonRipple } from "@/components/button-ripple";
+import { useRouter } from "next/navigation";
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 export default function Home() {
-  const { setTheme } = useTheme();
+  const router = useRouter();
+
+  const handleNavigation = (path: string) => {
+    router.prefetch(path);
+    router.push(path);
+  };
 
   return (
-    <div className="flex flex-col items-center justify-items-center min-h-screen px-8 py-16  gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center justify-center sm:items-start">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="icon">
-              <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          </DropdownMenuTrigger>
+    <div className="flex flex-col gap-y-12 max-w-[625px]">
+      <div className="gap-y-4 w-full flex flex-col">
+        <h1 className="text-5xl font-bold">Kazyani</h1>
+        <div className="">
+          <p className="text-indigo-200 text-lg pl-2">
+            Welcome to Kazyani, a silly little website where you can have fun putting your knowledge
+            about animes to test!
+          </p>
+        </div>
+      </div>
 
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      </main>
+      <div className="gap-y-4 flex flex-col w-full">
+        <ButtonRipple
+          className="bg-indigo-500/50 rounded-md px-6 py-12 hover:bg-indigo-500/75 transition-all flex flex-col items-start w-full cursor-pointer"
+          onClick={() => handleNavigation("/guess/character")}
+        >
+          <p className="text-xl font-bold text-white">Character guessing</p>
+          <p className="text-sm text-indigo-200/85">How many characters you can guess?</p>
+        </ButtonRipple>
+
+        <ButtonRipple
+          className="bg-indigo-500/50 rounded-md px-6 py-12 hover:bg-indigo-500/75 transition-all flex flex-col items-start w-full cursor-pointer"
+          cursor-pointer
+          disabled={true}
+          onClick={() => handleNavigation("/")}
+        >
+          <p className="text-xl font-bold text-white">???</p>
+          <p className="text-sm text-indigo-200/85">Coming soon...</p>
+        </ButtonRipple>
+
+        <ButtonRipple
+          className="bg-indigo-500/50 rounded-md px-6 py-12 hover:bg-indigo-500/75 transition-all flex flex-col items-start w-full cursor-pointer"
+          cursor-pointer
+          disabled={true}
+          onClick={() => handleNavigation("/")}
+        >
+          <p className="text-xl font-bold text-white">???</p>
+          <p className="text-sm text-indigo-200/85">Coming soon...</p>
+        </ButtonRipple>
+
+        <ButtonRipple
+          className="bg-indigo-500/50 rounded-md px-6 py-12 hover:bg-indigo-500/75 transition-all flex flex-col items-start w-full cursor-pointer"
+          cursor-pointer
+          disabled={true}
+          onClick={() => handleNavigation("/")}
+        >
+          <p className="text-xl font-bold text-white">???</p>
+          <p className="text-sm text-indigo-200/85">Coming soon...</p>
+        </ButtonRipple>
+      </div>
     </div>
   );
 }
