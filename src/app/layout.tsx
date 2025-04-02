@@ -44,25 +44,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const backgroundImage = `radial-gradient(145% 145% at 50% 0%, ${DARK_COLOR} 50%, ${STATIC_COLOR})`;
+  const backgroundImage = `radial-gradient(125% 125% at 50% 0%, ${DARK_COLOR} 50%, ${STATIC_COLOR})`;
 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
-          <div className="grid grid-cols-[250px_1fr] grid-rows-[1fr_95px] min-h-screen font-[family-name:var(--font-geist-sans)]">
-            <Navbar />
+          <div className="grid grid-rows-[1fr_95px] min-h-screen font-[family-name:var(--font-geist-sans)]">
             <main
               style={{ backgroundImage }}
-              className="flex flex-col items-center justify-center relative"
+              className="grid grid-rows-[95px_1fr] place-items-center relative col-span-full"
             >
+              <Navbar />
+
               <DotPattern
                 className={cn(
-                  "[mask-image:radial-gradient(600px_circle_at_center,#FFFFFFbb,transparent)]"
+                  "[mask-image:radial-gradient(800px_circle_at_center,#FFFFFFbb,transparent)]"
                 )}
               />
               {children}
             </main>
+
             <Footer />
           </div>
         </Providers>
