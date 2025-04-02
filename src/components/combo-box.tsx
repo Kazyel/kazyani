@@ -117,7 +117,7 @@ export const ComboBox = ({
         placeholder={placeholder}
         value={characterSearch}
         className={cn(
-          "bg-background rounded-md border border-indigo-500/30 focus-visible:ring-indigo-500/30 focus-visible:ring-[2px] focus-visible:border-indigo-500/50 pr-6 ",
+          "bg-background rounded-md border border-indigo-border focus-visible:ring-indigo-border focus-visible:ring-[2px] focus-visible:border-indigo-500/50 pr-6 placeholder:text-indigo-200/65",
           showHint &&
             !hasChecked &&
             "border-red-500/50 focus-visible:ring-red-500/50 focus-visible:ring-[2px] focus-visible:border-red-500/50"
@@ -161,7 +161,7 @@ export const ComboBox = ({
         <ul
           id="anime-list"
           role="listbox"
-          className="bg-background overflow-auto flex flex-col  w-full absolute top-11 max-h-[192px] rounded-sm border border-foreground/15 z-10"
+          className="bg-background overflow-auto flex flex-col  w-full absolute top-11 max-h-[192px] rounded-sm border border-indigo-border z-10"
           tabIndex={-1}
         >
           {sortedCharacterNames.map((characterName, index) => {
@@ -170,8 +170,8 @@ export const ComboBox = ({
                 key={index}
                 role="option"
                 className={cn(
-                  "text-sm px-2 py-1 cursor-pointer bg-background",
-                  highlightedIndex === index && "bg-muted-foreground/20"
+                  "text-sm px-2 py-2 cursor-pointer bg-background",
+                  highlightedIndex === index && "bg-indigo-500/15"
                 )}
                 ref={(el) => {
                   if (el) itemRefs.current[index] = el;

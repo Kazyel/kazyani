@@ -13,7 +13,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col gap-y-12 max-w-[625px]">
+    <section className="flex flex-col gap-y-12 max-w-[625px]">
       <div className="gap-y-4 w-full flex flex-col">
         <h1 className="text-5xl font-bold">Kazyani</h1>
         <div className="">
@@ -26,7 +26,7 @@ export default function Home() {
 
       <div className="gap-y-4 flex flex-col w-full">
         <ButtonRipple
-          className="bg-indigo-500/50 rounded-md px-6 py-12 hover:bg-indigo-500/75 transition-all flex flex-col items-start w-full cursor-pointer"
+          className="bg-indigo-400 rounded-md px-6 py-12 hover:bg-indigo-500 transition-all flex flex-col items-start w-full cursor-pointer"
           onClick={() => handleNavigation("/guess/character")}
         >
           <p className="text-xl font-bold text-white">Character guessing</p>
@@ -34,7 +34,7 @@ export default function Home() {
         </ButtonRipple>
 
         <ButtonRipple
-          className="bg-indigo-500/50 rounded-md px-6 py-12 hover:bg-indigo-500/75 transition-all flex flex-col items-start w-full cursor-pointer"
+          className="bg-indigo-500 rounded-md px-6 py-12 hover:bg-indigo-600 transition-all flex flex-col items-start w-full cursor-pointer disabled:opacity-100 disabled:bg-indigo-disabled"
           cursor-pointer
           disabled={true}
           onClick={() => handleNavigation("/")}
@@ -44,7 +44,7 @@ export default function Home() {
         </ButtonRipple>
 
         <ButtonRipple
-          className="bg-indigo-500/50 rounded-md px-6 py-12 hover:bg-indigo-500/75 transition-all flex flex-col items-start w-full cursor-pointer"
+          className="bg-indigo-500 rounded-md px-6 py-12 hover:bg-indigo-600 transition-all flex flex-col items-start w-full cursor-pointer disabled:opacity-100 disabled:bg-indigo-disabled"
           cursor-pointer
           disabled={true}
           onClick={() => handleNavigation("/")}
@@ -54,7 +54,7 @@ export default function Home() {
         </ButtonRipple>
 
         <ButtonRipple
-          className="bg-indigo-500/50 rounded-md px-6 py-12 hover:bg-indigo-500/75 transition-all flex flex-col items-start w-full cursor-pointer"
+          className="bg-indigo-500 rounded-md px-6 py-12 hover:bg-indigo-600 transition-all flex flex-col items-start w-full cursor-pointer disabled:opacity-100 disabled:bg-indigo-disabled"
           cursor-pointer
           disabled={true}
           onClick={() => handleNavigation("/")}
@@ -63,6 +63,6 @@ export default function Home() {
           <p className="text-sm text-indigo-200/85">Coming soon...</p>
         </ButtonRipple>
       </div>
-    </div>
+    </section>
   );
 }

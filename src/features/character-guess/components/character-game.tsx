@@ -123,7 +123,7 @@ export const CharacterGame = ({
   };
 
   return (
-    <section className="flex justify-center flex-col items-center gap-y-8">
+    <section className="flex justify-center flex-col items-center gap-y-8 z-50">
       <div>
         {!charactersToGuess && (
           <div className="flex flex-col gap-y-4 max-w-[200px]">
@@ -163,7 +163,7 @@ export const CharacterGame = ({
       </div>
 
       <ButtonRipple
-        className="rounded-xs bg-indigo-500 text-foreground hover:bg-indigo-400 cursor-pointer px-8 py-4"
+        className="rounded-xs bg-indigo-400 text-white hover:bg-indigo-500 cursor-pointer px-6 py-5 text-lg"
         onClick={handleCheckAnswers}
       >
         Guess
