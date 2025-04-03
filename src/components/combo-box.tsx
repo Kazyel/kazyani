@@ -3,8 +3,6 @@
 import { ChangeEvent, useEffect, useRef, useState, KeyboardEvent, useCallback } from "react";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
-import { debounce } from "lodash";
-
 interface ComboBoxProps {
   data: string[];
   placeholder?: string;
@@ -141,7 +139,7 @@ export const ComboBox = ({
             setCharacterSearch("");
             onSelect("");
           }}
-          className="absolute right-2 top-1 cursor-pointer"
+          className="absolute right-2 top-1.5 cursor-pointer"
         >
           ×
         </span>

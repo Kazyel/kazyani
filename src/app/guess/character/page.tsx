@@ -35,12 +35,13 @@ export default async function GuessCharacter() {
   }
 
   const charactersToGuess = Object.values(data);
-
   const characterNamesSet = new Set(CHARACTER_NAMES);
   const characterNames = Array.from(characterNamesSet);
 
   return (
-    <div className="flex flex-col justify-center items-center size-full">
+    <div className="flex flex-col justify-center items-center size-full gap-y-6">
+      <h1 className="font-mono text-3xl font-semibold text-indigo-100">Character Guessing</h1>
+
       <div className="flex gap-x-4">
         <CharacterGame
           charactersToGuess={charactersToGuess}

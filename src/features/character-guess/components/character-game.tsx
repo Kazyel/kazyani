@@ -8,6 +8,9 @@ import { ButtonRipple } from "@/components/button-ripple";
 
 import { useState } from "react";
 
+// TODO: SOME NAMES IN ENGLISH ARE NOT APPEARING! (e.g. Oregairu)
+// TODO: ANIME FETCHED HAS WRONG NAME (e.g. Madoka Magica)
+
 interface CharacterListProps {
   charactersToGuess: CharacterInfo[];
   animeNames: string[];

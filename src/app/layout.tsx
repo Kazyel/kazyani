@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+
 import { Geist, Geist_Mono } from "next/font/google";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { cn } from "@/lib/utils";
 
 import { Toaster } from "sonner";
+import { Navbar } from "@/app/navbar";
+import { Footer } from "@/app/footer";
+import { DotPattern } from "@/components/magicui/dot-pattern";
 import Providers from "@/components/providers";
 
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { DotPattern } from "@/components/magicui/dot-pattern";
-import { cn } from "@/lib/utils";
 
 export const shikimoriClient = new ApolloClient({
   uri: "https://shikimori.one/api/graphql",
@@ -57,11 +58,11 @@ export default function RootLayout({
             >
               <Navbar />
 
-              <DotPattern
+              {/* <DotPattern
                 className={cn(
                   "[mask-image:radial-gradient(800px_circle_at_center,#FFFFFFbb,transparent)]"
                 )}
-              />
+              /> */}
               {children}
             </main>
 
