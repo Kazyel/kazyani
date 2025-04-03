@@ -6,7 +6,6 @@ import { NextResponse } from "next/server";
 import { divideIntoBatches, normalizeNames, parseAnimeNames } from "@/utils/api";
 
 import storedJson from "@/data/franchiseList.json";
-import { writeJSONCharacterNames } from "@/utils/scripts/write-json-character-names";
 import { anilistClient } from "@/app/layout";
 
 const buildCharactersQuery = (animes: string[]) => {
@@ -100,8 +99,6 @@ export async function GET() {
   }
 
   const allCharacterNames: string[] = filterCharacters(data);
-
-  writeJSONCharacterNames(allCharacterNames);
 
   return NextResponse.json<string[]>(allCharacterNames);
 }

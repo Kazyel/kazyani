@@ -37,6 +37,16 @@ export type Franchise = {
   mainTitle: string;
   englishTitle: string;
   synonyms: string[];
+  studios: {
+    name: string;
+  };
+  genres: {
+    name: string;
+    kind: string;
+  };
+  airedOn: {
+    year: number;
+  };
 };
 
 export type FranchiseList = {

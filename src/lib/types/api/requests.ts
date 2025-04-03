@@ -24,11 +24,16 @@ export type FranchiseRequestData = {
   name: string;
   english: string | null;
   franchise: string;
-  characterRoles: {
-    character: {
-      id: number;
-    };
-  }[];
+  studios: {
+    name: string;
+  };
+  genres: {
+    name: string;
+    kind: string;
+  };
+  airedOn: {
+    year: number;
+  };
 };
 
 export type FranchiseRequest = Record<string, FranchiseRequestData[]>;

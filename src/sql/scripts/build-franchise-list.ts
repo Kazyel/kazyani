@@ -1,12 +1,13 @@
-import type { FranchiseList } from "@/lib/types";
-import type { FranchiseRequest, FranchiseRequestData } from "@/lib/types/api";
-
-import { NextRequest, NextResponse } from "next/server";
-
-import { gql } from "@apollo/client";
-import { shikimoriClient } from "@/app/layout";
-
+import { FranchiseList } from "@/lib/types";
+import { FranchiseRequest, FranchiseRequestData } from "@/lib/types/api";
 import { normalizeFranchise } from "@/utils/api";
+import { writeJSONAnimeData } from "@/sql/scripts/write-json-anime-data";
+import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
+
+export const shikimoriClient = new ApolloClient({
+  uri: "https://shikimori.one/api/graphql",
+  cache: new InMemoryCache({ addTypename: false }),
+});
 
 const buildAnimesQuery = (pageCount: number, pageOffset: number) => {
   const pages = [...Array(pageCount)].map((_, i) => {
@@ -18,6 +19,16 @@ const buildAnimesQuery = (pageCount: number, pageOffset: number) => {
         name
         english
         franchise
+        studios {
+          name
+        }
+        genres {
+          name
+          kind
+        }
+        airedOn {
+          year
+        }
       }
     `;
   });
@@ -54,6 +65,9 @@ export const addToFranchiseList = (
     mainTitle: anime.name,
     englishTitle: anime.english,
     synonyms: [],
+    studios: anime.studios,
+    genres: anime.genres,
+    airedOn: anime.airedOn.year,
   };
 
   franchiseEntry.synonyms.push(anime.name);
@@ -70,40 +84,8 @@ export const buildFranchiseList = (animes: FranchiseRequestData[]) => {
   }, {});
 };
 
-export async function GET(req: NextRequest, res: NextResponse) {
-  const searchParams = req.nextUrl.searchParams;
-  const pageCount = searchParams.get("pageCount");
-  const pageOffset = searchParams.get("pageOffset");
+const animes = await fetchAnimesData(10, 0);
 
-  if (!Number.isInteger(Number(pageCount))) {
-    return NextResponse.json({
-      error: "Invalid anime count provided, must be a valid integer.",
-      status: 400,
-    });
-  }
+const franchiseList = buildFranchiseList(animes!);
 
-  let pageCountNumber = Number(pageCount) || 1;
-  let pageOffsetNumber = Number(pageOffset) || 0;
-
-  if (!Number.isInteger(pageOffsetNumber)) {
-    return NextResponse.json({
-      error: "Invalid page offset provided, must be a non-negative integer.",
-      status: 400,
-    });
-  }
-
-  const animesData = await fetchAnimesData(pageCountNumber, pageOffsetNumber);
-
-  if (!animesData) {
-    return NextResponse.json({
-      error: "No data returned from the API. Please try again later.",
-      status: 500,
-    });
-  }
-
-  const franchiseList: FranchiseList = buildFranchiseList(animesData);
-
-  // writeJSONAnimeData(franchiseList);
-
-  return NextResponse.json<FranchiseList>(franchiseList);
-}
+writeJSONAnimeData(franchiseList, "./src/sql/data/franchiseList.json");
