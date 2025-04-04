@@ -1,7 +1,7 @@
 import { Database } from "bun:sqlite";
 
 function getDatabase() {
-  const db = new Database("./src/sql/database.db");
+  const db = new Database("./database.db");
   db.exec("PRAGMA foreign_keys = ON");
   db.exec("PRAGMA journal_mode = WAL;");
   return db;
@@ -12,7 +12,6 @@ const initDB = () => {
 
   db.exec(`
    CREATE TABLE IF NOT EXISTS anime_characters (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
     anime_id INTEGER NOT NULL,
     character_name TEXT NOT NULL,
     images TEXT,
@@ -22,13 +21,13 @@ const initDB = () => {
   );
 
   CREATE TABLE IF NOT EXISTS animes (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    malId INTEGER NOT NULL,
     jp_title TEXT NOT NULL,
     en_title TEXT,
     genres TEXT,
     studios TEXT,
     images TEXT,
-    synonyms TEXT,
+    franchise_entries TEXT,
     franchise TEXT,
     opening_links TEXT,
     score FLOAT,
