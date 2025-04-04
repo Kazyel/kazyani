@@ -1,9 +1,10 @@
-import type { AnimeDatabaseEntry } from "@/sql/models/anime-entry";
+import type { AnimeDatabaseEntry } from "@/database/models/anime-entry";
+import type { AnimeShikimoriEntry } from "@/database/models/shikimori-requests";
 
-import storedRequest from "@/sql/data/backup.json";
-import getDatabase from "@/sql/db";
+import storedRequest from "@/sql/data/shikimori-request.json";
+import getDatabase from "@/database/db";
 
-const animesRequest: AnimeDatabaseEntry[] = JSON.parse(JSON.stringify(storedRequest));
+const animesRequest: AnimeShikimoriEntry[] = JSON.parse(JSON.stringify(storedRequest));
 
 const db = getDatabase();
 
@@ -15,7 +16,7 @@ const insertAnime = db.prepare(`
     genres,
     studios, 
     images, 
-    franchise_entries, 
+    synonyms, 
     franchise, 
     score,
     airedOn,

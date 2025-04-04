@@ -1,8 +1,8 @@
-import type { ShikimoriRequest } from "../models/shikimori-requests";
-import type { AnimeDatabaseEntry } from "../models/anime-entry";
+import type { ShikimoriRequest } from "../../models/shikimori-requests";
+import type { AnimeDatabaseEntry } from "../../models/anime-entry";
 
 import storedJson from "@/sql/data/shikimori-request.json";
-import getDatabase from "../db";
+import getDatabase from "../../db";
 
 const FRANCHISES: ShikimoriRequest = JSON.parse(JSON.stringify(storedJson));
 const db = getDatabase();

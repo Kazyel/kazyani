@@ -1,5 +1,5 @@
 import { FranchiseList } from "@/lib/types";
-import { FranchiseDatabaseList } from "../insert-new-animes";
+import { FranchiseDatabaseList } from "../sql/insert-new-animes";
 
 import fs from "fs";
 

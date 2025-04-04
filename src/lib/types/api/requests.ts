@@ -24,6 +24,7 @@ export type FranchiseRequestData = {
   name: string;
   english: string | null;
   franchise: string;
+  score: number;
   studios: {
     name: string;
   };

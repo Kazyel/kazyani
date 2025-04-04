@@ -47,6 +47,9 @@ export type Franchise = {
   airedOn: {
     year: number;
   };
+  score: number;
+  source: string;
+  difficulty: string;
 };
 
 export type FranchiseList = {

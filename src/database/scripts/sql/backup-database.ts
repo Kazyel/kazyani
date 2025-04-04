@@ -1,8 +1,8 @@
-import type { AnimeDatabaseEntry } from "@/sql/models/anime-entry";
+import type { AnimeDatabaseEntry } from "@/database/models/anime-entry";
 
-import { writeJSONAnimeData } from "@/sql/scripts/json/write-json-anime-data";
+import { writeJSONAnimeData } from "@/database/scripts/json/write-json-anime-data";
 
-import getDatabase from "@/sql/db";
+import getDatabase from "@/database/db";
 
 const db = getDatabase();
 
@@ -21,7 +21,7 @@ for (const anime of backupData) {
     en_title: anime.en_title,
     jp_title: anime.jp_title,
     images: anime.images,
-    synonyms: anime.synonyms,
+    franchise_entries: anime.franchise_entries,
     studios: anime.studios,
     genres: anime.genres,
     opening_links: anime.opening_links,

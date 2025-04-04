@@ -41,7 +41,7 @@ for (let i = 0; i < animes.length; i += BATCH_SIZE) {
   // Check if we're approaching the rate limit
   if (requestTimestamps.length + BATCH_SIZE >= MAX_REQUESTS_PER_MINUTE) {
     const oldestRequestTime = requestTimestamps[0];
-    const timeToWait = oldestRequestTime + 65000 - now; // Added 5000ms buffer
+    const timeToWait = oldestRequestTime + 65000 - now; // Added 500ms buffer
     console.log(`Approaching rate limit. Waiting ${timeToWait}ms...`);
     await new Promise((resolve) => setTimeout(resolve, timeToWait));
 
