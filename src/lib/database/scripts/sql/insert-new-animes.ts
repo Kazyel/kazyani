@@ -1,8 +1,8 @@
-import type { AnimeDatabaseEntry } from "@/database/models/anime-entry";
-import type { AnimeShikimoriEntry } from "@/database/models/shikimori-requests";
+import type { AnimeDatabaseEntry } from "@/lib/database/models/anime-entry";
+import type { AnimeShikimoriEntry } from "@/lib/database/models/shikimori-requests";
 
 import storedRequest from "@/sql/data/shikimori-request.json";
-import getDatabase from "@/database/db";
+import getDatabase from "@/lib/database/db";
 
 const animesRequest: AnimeShikimoriEntry[] = JSON.parse(JSON.stringify(storedRequest));
 

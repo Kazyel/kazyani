@@ -1,7 +1,7 @@
-import type { AnimeDatabaseEntry } from "@/database/models/anime-entry";
+import type { AnimeDatabaseEntry } from "@/lib/database/models/anime-entry";
 
 import storedRequest from "@/sql/data/backup.json";
-import getDatabase from "@/database/db";
+import getDatabase from "@/lib/database/db";
 
 const animesRequest: AnimeDatabaseEntry[] = JSON.parse(JSON.stringify(storedRequest));
 

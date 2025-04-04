@@ -1,6 +1,6 @@
 "use client";
 
-import type { CharacterInfo } from "@/lib/types/api";
+import type { CharacterInfo } from "@/types/api";
 
 import { CharacterPortrait } from "./character-portrait";
 import { ComboBox } from "@/components/combo-box";

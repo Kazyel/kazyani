@@ -1,6 +1,6 @@
 import storedJikanAnimeData from "@/sql/data/jikan-request.json";
 
-import getDatabase from "@/database/db";
+import getDatabase from "@/lib/database/db";
 
 const db = getDatabase();
 

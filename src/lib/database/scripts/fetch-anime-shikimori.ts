@@ -1,9 +1,12 @@
-import type { AnimeShikimoriEntry, ShikimoriRequest } from "@/database/models/shikimori-requests";
+import type {
+  AnimeShikimoriEntry,
+  ShikimoriRequest,
+} from "@/lib/database/models/shikimori-requests";
 
 import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 
-import { normalizeFranchise } from "@/utils/api";
-import { writeJSONAnimeData } from "@/database/scripts/json/write-json-anime-data";
+import { normalizeFranchise } from "@/lib/utils/api";
+import { writeJSONAnimeData } from "@/lib/database/scripts/json/write-json-anime-data";
 
 export const shikimoriClient = new ApolloClient({
   uri: "https://shikimori.one/api/graphql",

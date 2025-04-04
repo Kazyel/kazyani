@@ -2,7 +2,7 @@
 
 import { ChangeEvent, useEffect, useRef, useState, KeyboardEvent, useCallback } from "react";
 import { Input } from "./ui/input";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/utils";
 interface ComboBoxProps {
   data: string[];
   placeholder?: string;

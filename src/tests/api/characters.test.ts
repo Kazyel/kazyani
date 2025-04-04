@@ -1,7 +1,7 @@
 import { assert, expect, describe, test } from "vitest";
 
-import { FranchiseList } from "@/lib/types";
-import { AnimeRequestData, CharactersResponse } from "@/lib/types/api";
+import { FranchiseList } from "@/types";
+import { AnimeRequestData, CharactersResponse } from "@/types/api";
 import { parseFranchiseNames } from "@/utils/scripts/write-json-franchise-names";
 
 const ANIME_DATA = {

@@ -1,4 +1,4 @@
-import { FranchiseList } from "../../../lib/types";
+import { FranchiseList } from "../../../../types";
 import fs from "fs";
 
 const storedFranchiseList: FranchiseList = JSON.parse(

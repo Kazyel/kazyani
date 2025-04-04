@@ -1,12 +1,12 @@
-import type { FranchiseList } from "@/lib/types";
-import type { AnimeRequest, AnimeRequestData, CharactersResponse } from "@/lib/types/api";
+import type { FranchiseList } from "@/types";
+import type { AnimeRequest, AnimeRequestData, CharactersResponse } from "@/types/api";
 
 import { NextResponse } from "next/server";
 import { shuffle } from "lodash";
 
 import { gql } from "@apollo/client";
 import { anilistClient } from "@/app/layout";
-import { normalizeNames, parseAnimeNames } from "@/utils/api";
+import { normalizeNames, parseAnimeNames } from "@/lib/utils/api";
 
 import storedJson from "@/data/franchiseList.json";
 

@@ -1,4 +1,4 @@
-import { FranchiseList } from "@/lib/types";
+import { FranchiseList } from "@/types";
 
 export const normalizeNames = (animeNames: string[]) => {
   const normalizedAnimeNames = animeNames.map((anime) =>

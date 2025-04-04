@@ -1,12 +1,12 @@
-import type { FranchiseList } from "@/lib/types";
-import type { FranchiseRequest, FranchiseRequestData } from "@/lib/types/api";
+import type { FranchiseList } from "@/types";
+import type { FranchiseRequest, FranchiseRequestData } from "@/types/api";
 
 import { NextRequest, NextResponse } from "next/server";
 
 import { gql } from "@apollo/client";
 import { shikimoriClient } from "@/app/layout";
 
-import { normalizeFranchise } from "@/utils/api";
+import { normalizeFranchise } from "@/lib/utils/api";
 
 const buildAnimesQuery = (pageCount: number, pageOffset: number) => {
   const pages = [...Array(pageCount)].map((_, i) => {

@@ -1,5 +1,5 @@
 import { CharacterGame } from "@/features/character-guess/components/character-game";
-import { CharactersResponse } from "@/lib/types/api";
+import { CharactersResponse } from "@/types/api";
 
 import storedFranchiseNamesJson from "@/data/franchiseNames.json";
 import storedCharacterNamesJson from "@/data/characterNames.json";

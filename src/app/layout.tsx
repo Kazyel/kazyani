@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
-import { cn } from "@/lib/utils";
 
 import { Toaster } from "sonner";
 import { Navbar } from "@/app/navbar";
 import { Footer } from "@/app/footer";
+import { cn } from "@/lib/utils/utils";
 import { DotPattern } from "@/components/magicui/dot-pattern";
-import Providers from "@/components/providers";
+
+import Providers from "@/lib/providers/react-query";
 
 import "./globals.css";
 

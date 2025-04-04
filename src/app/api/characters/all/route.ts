@@ -1,9 +1,9 @@
-import type { CharacterRequest, CharacterRequestData } from "@/lib/types/api";
-import type { FranchiseList } from "@/lib/types";
+import type { CharacterRequest, CharacterRequestData } from "@/types/api";
+import type { FranchiseList } from "@/types";
 
 import { gql } from "@apollo/client";
 import { NextResponse } from "next/server";
-import { divideIntoBatches, normalizeNames, parseAnimeNames } from "@/utils/api";
+import { divideIntoBatches, normalizeNames, parseAnimeNames } from "@/lib/utils/api";
 
 import storedJson from "@/data/franchiseList.json";
 import { anilistClient } from "@/app/layout";

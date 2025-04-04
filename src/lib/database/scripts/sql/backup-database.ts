@@ -1,8 +1,8 @@
-import type { AnimeDatabaseEntry } from "@/database/models/anime-entry";
+import type { AnimeDatabaseEntry } from "@/lib/database/models/anime-entry";
 
-import { writeJSONAnimeData } from "@/database/scripts/json/write-json-anime-data";
+import { writeJSONAnimeData } from "@/lib/database/scripts/json/write-json-anime-data";
 
-import getDatabase from "@/database/db";
+import getDatabase from "@/lib/database/db";
 
 const db = getDatabase();
 
